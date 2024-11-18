@@ -17,7 +17,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/keycloakify/keycloakify-svelte.git"
+    "url": "git+https://github.com/keycloakify/keycloakify-svelte.git"
 },
   "sideEffects": [
     "**/*.css"
@@ -106,7 +106,7 @@
     "dev": "vite dev",
     "build": "vite build && npm run package",
     "preview": "vite preview",
-    "package": "svelte-kit sync && svelte-package && publint",
+    "package": "svelte-kit sync && rm -rf dist && svelte-package && cp package.json dist && publint",
     "prepublishOnly": "npm run package",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
