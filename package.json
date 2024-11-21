@@ -1,58 +1,57 @@
 {
   "name": "@keycloakify/svelte",
-  "author": "u/luca-peruzzo",
-  "license": "MIT",
   "version": "0.0.1-rc.0",
-  "type": "module",
-  "svelte": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "description": "",
   "keywords": [
     "keycloak",
     "svelte",
     "keycloakify"
   ],
   "homepage": "https://www.keycloakify.dev",
-  "files": [
-    "dist",
-    "!dist/**/*.test.*",
-    "!dist/**/*.spec.*"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/keycloakify/keycloakify-svelte.git"
-},
-  "sideEffects": [
-    "**/*.css"
-  ],
+  },
+  "license": "MIT",
+  "author": "u/luca-peruzzo",
+  "sideEffects": false,
+  "type": "module",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "svelte": "./dist/index.js"
+      "svelte": "./dist/index.js",
+      "default": "./dist/index.js"
     },
+    "./package.json": "./package.json",
     "./tools/useConst": {
       "types": "./dist/tools/useConst.d.ts",
-      "svelte": "./dist/tools/useConst.js"
+      "svelte": "./dist/tools/useConst.js",
+      "default": "./dist/tools/useConst.js"
     },
     "./tools/useInsertLinkTags": {
       "types": "./dist/tools/useInsertLinkTags.d.ts",
-      "svelte": "./dist/tools/useInsertLinkTags.js"
+      "svelte": "./dist/tools/useInsertLinkTags.js",
+      "default": "./dist/tools/useInsertLinkTags.js"
     },
     "./tools/useInsertScriptTags": {
       "types": "./dist/tools/useInsertScriptTags.d.ts",
-      "svelte": "./dist/tools/useInsertScriptTags.js"
+      "svelte": "./dist/tools/useInsertScriptTags.js",
+      "default": "./dist/tools/useInsertScriptTags.js"
     },
     "./tools/useReducer": {
       "types": "./dist/tools/useReducer.d.ts",
-      "svelte": "./dist/tools/useReducer.js"
+      "svelte": "./dist/tools/useReducer.js",
+      "default": "./dist/tools/useReducer.js"
     },
     "./tools/useSetClassName": {
       "types": "./dist/tools/useSetClassName.d.ts",
-      "svelte": "./dist/tools/useSetClassName.js"
+      "svelte": "./dist/tools/useSetClassName.js",
+      "default": "./dist/tools/useSetClassName.js"
     },
     "./tools/useState": {
       "types": "./dist/tools/useState.d.ts",
-      "svelte": "./dist/tools/useState.js"
+      "svelte": "./dist/tools/useState.js",
+      "default": "./dist/tools/useState.js"
     },
     "./login/components/PasswordWrapper.svelte": {
       "types": "./dist/login/components/PasswordWrapper.svelte.d.ts",
@@ -60,11 +59,13 @@
     },
     "./login/i18n": {
       "types": "./dist/login/i18n/index.d.ts",
-      "svelte": "./dist/login/i18n/index.js"
+      "svelte": "./dist/login/i18n/index.js",
+      "default": "./dist/login/i18n/index.js"
     },
     "./login/KcContext": {
       "types": "./dist/login/KcContext/index.d.ts",
-      "svelte": "./dist/login/KcContext/index.js"
+      "svelte": "./dist/login/KcContext/index.js",
+      "default": "./dist/login/KcContext/index.js"
     },
     "./login/DefaultPage": {
       "types": "./dist/login/DefaultPage.svelte.d.ts",
@@ -76,15 +77,18 @@
     },
     "./login/Template.useInitialize": {
       "types": "./dist/login/Template.useInitialize.d.ts",
-      "svelte": "./dist/login/Template.useInitialize.js"
+      "svelte": "./dist/login/Template.useInitialize.js",
+      "default": "./dist/login/Template.useInitialize.js"
     },
     "./login/TemplateProps": {
       "types": "./dist/login/TemplateProps.d.ts",
-      "svelte": "./dist/login/TemplateProps.js"
+      "svelte": "./dist/login/TemplateProps.js",
+      "default": "./dist/login/TemplateProps.js"
     },
     "./login/UserProfileFormFieldsProps": {
       "types": "./dist/login/UserProfileFormFieldsProps.d.ts",
-      "svelte": "./dist/login/UserProfileFormFieldsProps.js"
+      "svelte": "./dist/login/UserProfileFormFieldsProps.js",
+      "default": "./dist/login/UserProfileFormFieldsProps.js"
     },
     "./login/pages/Code": {
       "types": "./dist/login/pages/Code.svelte.d.ts",
@@ -96,13 +100,29 @@
     },
     "./login/pages/PageProps": {
       "types": "./dist/login/pages/PageProps.d.ts",
-      "svelte": "./dist/login/pages/PageProps.js"
+      "svelte": "./dist/login/pages/PageProps.js",
+      "default": "./dist/login/pages/PageProps.js"
     },
     "./login/pages/Register": {
       "types": "./dist/login/pages/Register.svelte.d.ts",
       "svelte": "./dist/login/pages/Register.svelte"
     }
   },
+  "svelte": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    ">4.0": {
+      "*": [
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist",
+    "!dist/**/*.test.*",
+    "!dist/**/*.spec.*"
+  ],
   "scripts": {
     "dev": "vite dev",
     "build": "vite build && npm run package",
