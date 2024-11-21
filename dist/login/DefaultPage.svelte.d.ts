@@ -1,5 +1,5 @@
 type DefaultPageProps = PageProps<KcContext, I18n> & {
-    UserProfileFormFields: Component<UserProfileFormFieldsProps>;
+    UserProfileFormFields?: Component<UserProfileFormFieldsProps>;
     doMakeUserConfirmPassword: boolean;
 };
 import type { PageProps } from './pages/PageProps';

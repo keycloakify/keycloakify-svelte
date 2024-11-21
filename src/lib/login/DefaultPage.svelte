@@ -6,7 +6,7 @@
   import type { KcContext } from './KcContext';
 
   type DefaultPageProps = PageProps<KcContext, I18n> & {
-    UserProfileFormFields: Component<UserProfileFormFieldsProps>;
+    UserProfileFormFields?: Component<UserProfileFormFieldsProps>;
     doMakeUserConfirmPassword: boolean;
   };
   const props: DefaultPageProps = $props();

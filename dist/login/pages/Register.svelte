@@ -6,7 +6,7 @@
   import type { KcContext } from '../KcContext';
 
   type RegisterProps = PageProps<Extract<KcContext, { pageId: 'register.ftl' }>, I18n> & {
-    UserProfileFormFields: Component<UserProfileFormFieldsProps>;
+    UserProfileFormFields?: Component<UserProfileFormFieldsProps>;
     doMakeUserConfirmPassword: boolean;
   };
   const props: RegisterProps = $props();
