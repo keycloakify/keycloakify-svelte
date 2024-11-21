@@ -112,7 +112,7 @@
         {/if}
         {#snippet node()}
           {#if !(auth !== undefined && auth.showUsername && !auth.showResetCredentials)}
-            <h1 id="kc-page-title">{headerNode}</h1>
+            <h1 id="kc-page-title">{@render headerNode?.()}</h1>
           {:else}
             <div
               id="kc-username"
@@ -171,7 +171,7 @@
               <span class={kcClsx('kcAlertTitleClass')}>{@html message.summary}</span>
             </div>
           {/if}
-          {children}
+          {@render children?.()}
           {#if auth !== undefined && auth.showTryAnotherWayLink}
             <form
               id="kc-select-try-another-way-form"
@@ -197,7 +197,7 @@
               </div>
             </form>
           {/if}
-          {socialProvidersNode}
+          {@render socialProvidersNode?.()}
           {#if displayInfo}
             <div
               id="kc-info"
@@ -207,7 +207,7 @@
                 id="kc-info-wrapper"
                 class={kcClsx('kcInfoAreaWrapperClass')}
               >
-                {infoNode}
+                {@render infoNode?.()}
               </div>
             </div>
           {/if}

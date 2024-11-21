@@ -2,10 +2,10 @@
   import { useReducer } from '../../tools/useReducer';
   import type { KcClsx } from 'keycloakify/login/lib/kcClsx';
   import { assert } from 'keycloakify/tools/assert';
-  import type { Component } from 'svelte';
+  import type { Snippet } from 'svelte';
   import type { I18n } from '../i18n';
 
-  const props: { kcClsx: KcClsx; i18n: I18n; passwordInputId: string; children: Component } = $props();
+  const props: { kcClsx: KcClsx; i18n: I18n; passwordInputId: string; children: Snippet } = $props();
   const { kcClsx, i18n, passwordInputId, children } = props;
 
   const { msgStr } = i18n;
@@ -24,7 +24,7 @@
 </script>
 
 <div class={kcClsx('kcInputGroup')}>
-  {children}
+  {@render children?.()}
   <button
     type="button"
     class={kcClsx('kcFormPasswordVisibilityButtonClass')}
