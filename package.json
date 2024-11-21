@@ -17,12 +17,6 @@
   "sideEffects": false,
   "type": "module",
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "svelte": "./dist/index.js",
-      "default": "./dist/index.js"
-    },
-    "./package.json": "./package.json",
     "./tools/useConst": {
       "types": "./dist/tools/useConst.d.ts",
       "svelte": "./dist/tools/useConst.js",
@@ -67,11 +61,11 @@
       "svelte": "./dist/login/KcContext/index.js",
       "default": "./dist/login/KcContext/index.js"
     },
-    "./login/DefaultPage": {
+    "./login/DefaultPage.svelte": {
       "types": "./dist/login/DefaultPage.svelte.d.ts",
       "svelte": "./dist/login/DefaultPage.svelte"
     },
-    "./login/Template": {
+    "./login/Template.svelte": {
       "types": "./dist/login/Template.svelte.d.ts",
       "svelte": "./dist/login/Template.svelte"
     },
@@ -90,11 +84,11 @@
       "svelte": "./dist/login/UserProfileFormFieldsProps.js",
       "default": "./dist/login/UserProfileFormFieldsProps.js"
     },
-    "./login/pages/Code": {
+    "./login/pages/Code.svelte": {
       "types": "./dist/login/pages/Code.svelte.d.ts",
       "svelte": "./dist/login/pages/Code.svelte"
     },
-    "./login/pages/Login": {
+    "./login/pages/Login.svelte": {
       "types": "./dist/login/pages/Login.svelte.d.ts",
       "svelte": "./dist/login/pages/Login.svelte"
     },
@@ -103,18 +97,66 @@
       "svelte": "./dist/login/pages/PageProps.js",
       "default": "./dist/login/pages/PageProps.js"
     },
-    "./login/pages/Register": {
+    "./login/pages/Register.svelte": {
       "types": "./dist/login/pages/Register.svelte.d.ts",
       "svelte": "./dist/login/pages/Register.svelte"
     }
   },
-  "svelte": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
   "typesVersions": {
     ">4.0": {
-      "*": [
-        "./dist/index.d.ts"
+      "tools/useConst": [
+        "./dist/tools/useConst.d.ts"
+      ],
+      "tools/useInsertLinkTags": [
+        "./dist/tools/useInsertLinkTags.d.ts"
+      ],
+      "tools/useInsertScriptTags": [
+        "./dist/tools/useInsertScriptTags.d.ts"
+      ],
+      "tools/useReducer": [
+        "./dist/tools/useReducer.d.ts"
+      ],
+      "tools/useSetClassName": [
+        "./dist/tools/useSetClassName.d.ts"
+      ],
+      "tools/useState": [
+        "./dist/tools/useState.d.ts"
+      ],
+      "login/components/PasswordWrapper.svelte": [
+        "./dist/login/components/PasswordWrapper.svelte.d.ts"
+      ],
+      "login/i18n": [
+        "./dist/login/i18n/index.d.ts"
+      ],
+      "login/KcContext": [
+        "./dist/login/KcContext/index.d.ts"
+      ],
+      "login/DefaultPage.svelte": [
+        "./dist/login/DefaultPage.svelte.d.ts"
+      ],
+      "login/Template.svelte": [
+        "./dist/login/Template.svelte.d.ts"
+      ],
+      "login/Template.useInitialize": [
+        "./dist/login/Template.useInitialize.d.ts"
+      ],
+      "login/TemplateProps": [
+        "./dist/login/TemplateProps.d.ts"
+      ],
+      "login/UserProfileFormFieldsProps": [
+        "./dist/login/UserProfileFormFieldsProps.d.ts"
+      ],
+      "login/pages/Code.svelte": [
+        "./dist/login/pages/Code.svelte.d.ts"
+      ],
+      "login/pages/PageProps": [
+        "./dist/login/pages/PageProps.d.ts"
+      ],
+      "login/pages/Login.svelte": [
+        "./dist/login/pages/Login.svelte.d.ts"
+      ],
+      "login/pages/Register.svelte": [
+        "./dist/login/pages/Register.svelte.d.ts"
       ]
     }
   },
