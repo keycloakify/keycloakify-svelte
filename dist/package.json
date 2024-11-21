@@ -4,6 +4,7 @@
   "license": "MIT",
   "version": "0.0.1-rc.0",
   "type": "module",
+  "module": "index.js",
   "keywords": [
     "keycloak",
     "svelte",
@@ -22,91 +23,89 @@
   "sideEffects": [
     "**/*.css"
   ],
-  "svelte": "./dist/index.js",
-  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "svelte": "./dist/index.js"
+      "types": "./index.d.ts",
+      "svelte": "./index.js"
     },
     "./tools/useConst": {
-      "types": "./dist/tools/useConst.d.ts",
-      "svelte": "./dist/tools/useConst.js"
+      "types": "./tools/useConst.d.ts",
+      "svelte": "./tools/useConst.js"
     },
     "./tools/useInsertLinkTags": {
-      "types": "./dist/tools/useInsertLinkTags.d.ts",
-      "svelte": "./dist/tools/useInsertLinkTags.js"
+      "types": "./tools/useInsertLinkTags.d.ts",
+      "svelte": "./tools/useInsertLinkTags.js"
     },
     "./tools/useInsertScriptTags": {
-      "types": "./dist/tools/useInsertScriptTags.d.ts",
-      "svelte": "./dist/tools/useInsertScriptTags.js"
+      "types": "./tools/useInsertScriptTags.d.ts",
+      "svelte": "./tools/useInsertScriptTags.js"
     },
     "./tools/useReducer": {
-      "types": "./dist/tools/useReducer.d.ts",
-      "svelte": "./dist/tools/useReducer.js"
+      "types": "./tools/useReducer.d.ts",
+      "svelte": "./tools/useReducer.js"
     },
     "./tools/useSetClassName": {
-      "types": "./dist/tools/useSetClassName.d.ts",
-      "svelte": "./dist/tools/useSetClassName.js"
+      "types": "./tools/useSetClassName.d.ts",
+      "svelte": "./tools/useSetClassName.js"
     },
     "./tools/useState": {
-      "types": "./dist/tools/useState.d.ts",
-      "svelte": "./dist/tools/useState.js"
+      "types": "./tools/useState.d.ts",
+      "svelte": "./tools/useState.js"
     },
     "./login/components/PasswordWrapper.svelte": {
-      "types": "./dist/login/components/PasswordWrapper.svelte.d.ts",
-      "svelte": "./dist/login/components/PasswordWrapper.svelte"
+      "types": "./login/components/PasswordWrapper.svelte.d.ts",
+      "svelte": "./login/components/PasswordWrapper.svelte"
     },
     "./login/i18n": {
-      "types": "./dist/login/i18n/index.d.ts",
-      "svelte": "./dist/login/i18n/index.js"
+      "types": "./login/i18n/index.d.ts",
+      "svelte": "./login/i18n/index.js"
     },
     "./login/KcContext": {
-      "types": "./dist/login/KcContext/index.d.ts",
-      "svelte": "./dist/login/KcContext/index.js"
+      "types": "./login/KcContext/index.d.ts",
+      "svelte": "./login/KcContext/index.js"
     },
     "./login/DefaultPage": {
-      "types": "./dist/login/DefaultPage.svelte.d.ts",
-      "svelte": "./dist/login/DefaultPage.svelte"
+      "types": "./login/DefaultPage.svelte.d.ts",
+      "svelte": "./login/DefaultPage.svelte"
     },
     "./login/Template": {
-      "types": "./dist/login/Template.svelte.d.ts",
-      "svelte": "./dist/login/Template.svelte"
+      "types": "./login/Template.svelte.d.ts",
+      "svelte": "./login/Template.svelte"
     },
     "./login/Template.useInitialize": {
-      "types": "./dist/login/Template.useInitialize.d.ts",
-      "svelte": "./dist/login/Template.useInitialize.js"
+      "types": "./login/Template.useInitialize.d.ts",
+      "svelte": "./login/Template.useInitialize.js"
     },
     "./login/TemplateProps": {
-      "types": "./dist/login/TemplateProps.d.ts",
-      "svelte": "./dist/login/TemplateProps.js"
+      "types": "./login/TemplateProps.d.ts",
+      "svelte": "./login/TemplateProps.js"
     },
     "./login/UserProfileFormFieldsProps": {
-      "types": "./dist/login/UserProfileFormFieldsProps.d.ts",
-      "svelte": "./dist/login/UserProfileFormFieldsProps.js"
+      "types": "./login/UserProfileFormFieldsProps.d.ts",
+      "svelte": "./login/UserProfileFormFieldsProps.js"
     },
     "./login/pages/Code": {
-      "types": "./dist/login/pages/Code.svelte.d.ts",
-      "svelte": "./dist/login/pages/Code.svelte"
+      "types": "./login/pages/Code.svelte.d.ts",
+      "svelte": "./login/pages/Code.svelte"
     },
     "./login/pages/Login": {
-      "types": "./dist/login/pages/Login.svelte.d.ts",
-      "svelte": "./dist/login/pages/Login.svelte"
+      "types": "./login/pages/Login.svelte.d.ts",
+      "svelte": "./login/pages/Login.svelte"
     },
     "./login/pages/PageProps": {
-      "types": "./dist/login/pages/PageProps.d.ts",
-      "svelte": "./dist/login/pages/PageProps.js"
+      "types": "./login/pages/PageProps.d.ts",
+      "svelte": "./login/pages/PageProps.js"
     },
     "./login/pages/Register": {
-      "types": "./dist/login/pages/Register.svelte.d.ts",
-      "svelte": "./dist/login/pages/Register.svelte"
+      "types": "./login/pages/Register.svelte.d.ts",
+      "svelte": "./login/pages/Register.svelte"
     }
   },
   "scripts": {
     "dev": "vite dev",
     "build": "vite build && npm run package",
     "preview": "vite preview",
-    "package": "svelte-kit sync && rm -rf dist && svelte-package && cp package.json dist && publint",
+    "package": "svelte-kit sync && rm -rf dist && svelte-package && cp package.json dist",
     "prepublishOnly": "npm run package",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
