@@ -102,68 +102,11 @@
       "svelte": "./dist/login/pages/Register.svelte"
     }
   },
-  "typesVersions": {
-    ">4.0": {
-      "tools/useConst": [
-        "./dist/tools/useConst.d.ts"
-      ],
-      "tools/useInsertLinkTags": [
-        "./dist/tools/useInsertLinkTags.d.ts"
-      ],
-      "tools/useInsertScriptTags": [
-        "./dist/tools/useInsertScriptTags.d.ts"
-      ],
-      "tools/useReducer": [
-        "./dist/tools/useReducer.d.ts"
-      ],
-      "tools/useSetClassName": [
-        "./dist/tools/useSetClassName.d.ts"
-      ],
-      "tools/useState": [
-        "./dist/tools/useState.d.ts"
-      ],
-      "login/components/PasswordWrapper.svelte": [
-        "./dist/login/components/PasswordWrapper.svelte.d.ts"
-      ],
-      "login/i18n": [
-        "./dist/login/i18n/index.d.ts"
-      ],
-      "login/KcContext": [
-        "./dist/login/KcContext/index.d.ts"
-      ],
-      "login/DefaultPage.svelte": [
-        "./dist/login/DefaultPage.svelte.d.ts"
-      ],
-      "login/Template.svelte": [
-        "./dist/login/Template.svelte.d.ts"
-      ],
-      "login/Template.useInitialize": [
-        "./dist/login/Template.useInitialize.d.ts"
-      ],
-      "login/TemplateProps": [
-        "./dist/login/TemplateProps.d.ts"
-      ],
-      "login/UserProfileFormFieldsProps": [
-        "./dist/login/UserProfileFormFieldsProps.d.ts"
-      ],
-      "login/pages/Code.svelte": [
-        "./dist/login/pages/Code.svelte.d.ts"
-      ],
-      "login/pages/PageProps": [
-        "./dist/login/pages/PageProps.d.ts"
-      ],
-      "login/pages/Login.svelte": [
-        "./dist/login/pages/Login.svelte.d.ts"
-      ],
-      "login/pages/Register.svelte": [
-        "./dist/login/pages/Register.svelte.d.ts"
-      ]
-    }
-  },
   "files": [
     "dist",
     "!dist/**/*.test.*",
-    "!dist/**/*.spec.*"
+    "!dist/**/*.spec.*",
+    "package.json"
   ],
   "scripts": {
     "dev": "vite dev",
