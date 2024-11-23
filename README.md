@@ -1,58 +1,51 @@
-# create-svelte
+<p align="center">
+    <img src="https://github.com/user-attachments/assets/28b68619-6a35-4c4a-a7c3-a62521bd2002">  
+</p>
+<p align="center">
+    <i>🔏 Svelte Component Library for Keycloakify 🔏</i>
+    <br>
+    <br>
+    <a href="https://github.com/keycloakify/keycloakify-svelte/actions">
+      <img src="https://github.com/keycloakify/keycloakify/workflows/ci/badge.svg?branch=main">
+    </a>
+    <a href="https://www.npmjs.com/package/@keycloakify/svelte">
+      <img src="https://img.shields.io/npm/dm/@keycloakify/svelte">
+    </a>
+    <a href="https://github.com/keycloakify/keycloakify/blob/main/LICENSE">
+      <img src="https://img.shields.io/npm/l/@keycloakify/svelte">
+    </a>
+    <p align="center">
+      Check out our discord server!<br/>
+      <a href="https://discord.gg/mJdYJSdcm4">
+        <img src="https://dcbadge.limes.pink/api/server/kYFZG7fQmn"/>
+      </a>
+    </p>
+    <p align="center">
+        <a href="https://www.keycloakify.dev">Home</a>
+        -
+        <a href="https://docs.keycloakify.dev">Documentation</a>
+        -
+        <a href="https://github.com/keycloakify/keycloakify-starter-svelte">Starter Project Svelte + Vite</a>
+    </p>
+</p>
 
-Everything you need to build a Svelte library, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+## Using the library
 
-Read more about creating a library [in the docs](https://svelte.dev/docs/kit/packaging).
+Don't it's not ready yet. Subscribe to alerts on the repo to get notified when it is.
 
-## Creating a project
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Contributing
 
-```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
-
-## Building
-
-To build your library:
-
-```bash
-npm run package
-```
-
-To create a production version of your showcase app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
-
-## Publishing
-
-Go into the `package.json` and give your package the desired name through the `"name"` option. Also consider adding a `"license"` field and point it to a `LICENSE` file which you can create from a template (one popular option is the [MIT license](https://opensource.org/license/mit/)).
-
-To publish your library to [npm](https://www.npmjs.com):
+> **Note:**: This is **not** for using the library, but for contributing to it.
 
 ```bash
-npm publish
+git clone https://github.com/keycloakify/keycloakify-svelte
+git clone https://github.com/keycloakify/keycloakify-starter-svelte
+
+cd keycloakify-svelte
+yarn install
+yarn link-in-starter # When prompted select the starter you want to link into
+
+# At this point you can navigate to the starter you've picked.
+# The changes in the library will be reflected live in the starter.
 ```
