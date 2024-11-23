@@ -56,6 +56,16 @@
       "svelte": "./dist/login/i18n/index.js",
       "default": "./dist/login/i18n/index.js"
     },
+    "./login/i18n/i18nBuilder": {
+      "types": "./dist/login/i18n/i18nBuilder.d.ts",
+      "svelte": "./dist/login/i18n/i18nBuilder.js",
+      "default": "./dist/login/i18n/i18nBuilder.js"
+    },
+    "./login/i18n/useI18n": {
+      "types": "./dist/login/i18n/useI18n.d.ts",
+      "svelte": "./dist/login/i18n/useI18n.js",
+      "default": "./dist/login/i18n/useI18n.js"
+    },
     "./login/KcContext": {
       "types": "./dist/login/KcContext/index.d.ts",
       "svelte": "./dist/login/KcContext/index.js",
