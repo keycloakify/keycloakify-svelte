@@ -156,9 +156,123 @@
       "types": "./dist/login/pages/Code.svelte.d.ts",
       "svelte": "./dist/login/pages/Code.svelte"
     },
+    "./login/pages/DeleteAccountConfirm.svelte": {
+      "types": "./dist/login/pages/DeleteAccountConfirm.svelte.d.ts",
+      "svelte": "./dist/login/pages/DeleteAccountConfirm.svelte"
+    },
+    "./login/pages/DeleteCredential.svelte": {
+      "types": "./dist/login/pages/DeleteCredential.svelte.d.ts",
+      "svelte": "./dist/login/pages/DeleteCredential.svelte"
+    },
+    "./login/pages/Error.svelte": {
+      "types": "./dist/login/pages/Error.svelte.d.ts",
+      "svelte": "./dist/login/pages/Error.svelte"
+    },
+    "./login/pages/FrontchannelLogout.svelte": {
+      "types": "./dist/login/pages/FrontchannelLogout.svelte.d.ts",
+      "svelte": "./dist/login/pages/FrontchannelLogout.svelte"
+    },
+    "./login/pages/IdpReviewUserProfile.svelte": {
+      "types": "./dist/login/pages/IdpReviewUserProfile.svelte.d.ts",
+      "svelte": "./dist/login/pages/IdpReviewUserProfile.svelte"
+    },
+    "./login/pages/Info.svelte": {
+      "types": "./dist/login/pages/Info.svelte.d.ts",
+      "svelte": "./dist/login/pages/Info.svelte"
+    },
+    "./login/pages/LoginConfigTotp.svelte": {
+      "types": "./dist/login/pages/LoginConfigTotp.svelte.d.ts",
+      "svelte": "./dist/login/pages/LoginConfigTotp.svelte"
+    },
+    "./login/pages/LoginIdpLinkConfirmOverride.svelte": {
+      "types": "./dist/login/pages/LoginIdpLinkConfirmOverride.svelte.d.ts",
+      "svelte": "./dist/login/pages/LoginIdpLinkConfirmOverride.svelte"
+    },
+    "./login/pages/LoginIdpLinkConfirm.svelte": {
+      "types": "./dist/login/pages/LoginIdpLinkConfirm.svelte.d.ts",
+      "svelte": "./dist/login/pages/LoginIdpLinkConfirm.svelte"
+    },
+    "./login/pages/LoginIdpLinkEmail.svelte": {
+      "types": "./dist/login/pages/LoginIdpLinkEmail.svelte.d.ts",
+      "svelte": "./dist/login/pages/LoginIdpLinkEmail.svelte"
+    },
+    "./login/pages/LoginOauth2DeviceVerifyUserCode.svelte": {
+      "types": "./dist/login/pages/LoginOauth2DeviceVerifyUserCode.svelte.d.ts",
+      "svelte": "./dist/login/pages/LoginOauth2DeviceVerifyUserCode.svelte"
+    },
+    "./login/pages/LoginOauthGrant.svelte": {
+      "types": "./dist/login/pages/LoginOauthGrant.svelte.d.ts",
+      "svelte": "./dist/login/pages/LoginOauthGrant.svelte"
+    },
+    "./login/pages/LoginOtp.svelte": {
+      "types": "./dist/login/pages/LoginOtp.svelte.d.ts",
+      "svelte": "./dist/login/pages/LoginOtp.svelte"
+    },
+    "./login/pages/LoginPageExpired.svelte": {
+      "types": "./dist/login/pages/LoginPageExpired.svelte.d.ts",
+      "svelte": "./dist/login/pages/LoginPageExpired.svelte"
+    },
+    "./login/pages/LoginPasskeysConditionalAuthenticate.svelte": {
+      "types": "./dist/login/pages/LoginPasskeysConditionalAuthenticate.svelte.d.ts",
+      "svelte": "./dist/login/pages/LoginPasskeysConditionalAuthenticate.svelte"
+    },
+    "./login/pages/LoginPasskeysConditionalAuthenticate.useScript": {
+      "types": "./dist/login/pages/LoginPasskeysConditionalAuthenticate.useScript.d.ts",
+      "svelte": "./dist/login/pages/LoginPasskeysConditionalAuthenticate.useScript.js",
+      "default": "./dist/login/pages/LoginPasskeysConditionalAuthenticate.useScript.js"
+    },
+    "./login/pages/LoginPassword.svelte": {
+      "types": "./dist/login/pages/LoginPassword.svelte.d.ts",
+      "svelte": "./dist/login/pages/LoginPassword.svelte"
+    },
+    "./login/pages/LoginRecoveryAuthnCodeConfig.svelte": {
+      "types": "./dist/login/pages/LoginRecoveryAuthnCodeConfig.svelte.d.ts",
+      "svelte": "./dist/login/pages/LoginRecoveryAuthnCodeConfig.svelte"
+    },
+    "./login/pages/LoginRecoveryAuthnCodeConfig.useScript": {
+      "types": "./dist/login/pages/LoginRecoveryAuthnCodeConfig.useScript.d.ts",
+      "svelte": "./dist/login/pages/LoginRecoveryAuthnCodeConfig.useScript.js",
+      "default": "./dist/login/pages/LoginRecoveryAuthnCodeConfig.useScript.js"
+    },
+    "./login/pages/LoginRecoveryAuthnCodeInput.svelte": {
+      "types": "./dist/login/pages/LoginRecoveryAuthnCodeInput.svelte.d.ts",
+      "svelte": "./dist/login/pages/LoginRecoveryAuthnCodeInput.svelte"
+    },
+    "./login/pages/LoginResetOtp.svelte": {
+      "types": "./dist/login/pages/LoginResetOtp.svelte.d.ts",
+      "svelte": "./dist/login/pages/LoginResetOtp.svelte"
+    },
+    "./login/pages/LoginResetPassword.svelte": {
+      "types": "./dist/login/pages/LoginResetPassword.svelte.d.ts",
+      "svelte": "./dist/login/pages/LoginResetPassword.svelte"
+    },
     "./login/pages/Login.svelte": {
       "types": "./dist/login/pages/Login.svelte.d.ts",
       "svelte": "./dist/login/pages/Login.svelte"
+    },
+    "./login/pages/LoginUpdatePassword.svelte": {
+      "types": "./dist/login/pages/LoginUpdatePassword.svelte.d.ts",
+      "svelte": "./dist/login/pages/LoginUpdatePassword.svelte"
+    },
+    "./login/pages/LoginUpdateProfile.svelte": {
+      "types": "./dist/login/pages/LoginUpdateProfile.svelte.d.ts",
+      "svelte": "./dist/login/pages/LoginUpdateProfile.svelte"
+    },
+    "./login/pages/LoginUsername.svelte": {
+      "types": "./dist/login/pages/LoginUsername.svelte.d.ts",
+      "svelte": "./dist/login/pages/LoginUsername.svelte"
+    },
+    "./login/pages/LoginVerifyEmail.svelte": {
+      "types": "./dist/login/pages/LoginVerifyEmail.svelte.d.ts",
+      "svelte": "./dist/login/pages/LoginVerifyEmail.svelte"
+    },
+    "./login/pages/LoginX509Info.svelte": {
+      "types": "./dist/login/pages/LoginX509Info.svelte.d.ts",
+      "svelte": "./dist/login/pages/LoginX509Info.svelte"
+    },
+    "./login/pages/LogoutConfirm.svelte": {
+      "types": "./dist/login/pages/LogoutConfirm.svelte.d.ts",
+      "svelte": "./dist/login/pages/LogoutConfirm.svelte"
     },
     "./login/pages/PageProps": {
       "types": "./dist/login/pages/PageProps.d.ts",
@@ -168,6 +282,44 @@
     "./login/pages/Register.svelte": {
       "types": "./dist/login/pages/Register.svelte.d.ts",
       "svelte": "./dist/login/pages/Register.svelte"
+    },
+    "./login/pages/SamlPostForm.svelte": {
+      "types": "./dist/login/pages/SamlPostForm.svelte.d.ts",
+      "svelte": "./dist/login/pages/SamlPostForm.svelte"
+    },
+    "./login/pages/SelectAuthenticator.svelte": {
+      "types": "./dist/login/pages/SelectAuthenticator.svelte.d.ts",
+      "svelte": "./dist/login/pages/SelectAuthenticator.svelte"
+    },
+    "./login/pages/Terms.svelte": {
+      "types": "./dist/login/pages/Terms.svelte.d.ts",
+      "svelte": "./dist/login/pages/Terms.svelte"
+    },
+    "./login/pages/UpdateEmail.svelte": {
+      "types": "./dist/login/pages/UpdateEmail.svelte.d.ts",
+      "svelte": "./dist/login/pages/UpdateEmail.svelte"
+    },
+    "./login/pages/WebauthnAuthenticate.svelte": {
+      "types": "./dist/login/pages/WebauthnAuthenticate.svelte.d.ts",
+      "svelte": "./dist/login/pages/WebauthnAuthenticate.svelte"
+    },
+    "./login/pages/WebauthnAuthenticate.useScript": {
+      "types": "./dist/login/pages/WebauthnAuthenticate.useScript.d.ts",
+      "svelte": "./dist/login/pages/WebauthnAuthenticate.useScript.js",
+      "default": "./dist/login/pages/WebauthnAuthenticate.useScript.js"
+    },
+    "./login/pages/WebauthnError.svelte": {
+      "types": "./dist/login/pages/WebauthnError.svelte.d.ts",
+      "svelte": "./dist/login/pages/WebauthnError.svelte"
+    },
+    "./login/pages/WebauthnRegister.svelte": {
+      "types": "./dist/login/pages/WebauthnRegister.svelte.d.ts",
+      "svelte": "./dist/login/pages/WebauthnRegister.svelte"
+    },
+    "./login/pages/WebauthnRegister.useScript": {
+      "types": "./dist/login/pages/WebauthnRegister.useScript.d.ts",
+      "svelte": "./dist/login/pages/WebauthnRegister.useScript.js",
+      "default": "./dist/login/pages/WebauthnRegister.useScript.js"
     }
   },
   "files": [
