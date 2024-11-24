@@ -2,9 +2,10 @@
   import FieldErrors from '@keycloakify/svelte/login/components/FieldErrors.svelte';
   import GroupLabel from '@keycloakify/svelte/login/components/GroupLabel.svelte';
   import InputFieldByType from '@keycloakify/svelte/login/components/InputFieldByType.svelte';
-  import { useUserProfileForm } from '@keycloakify/svelte/login/lib/useUserProfileForm';
   import type { UserProfileFormFieldsProps } from '@keycloakify/svelte/login/components/UserProfileFormFieldsProps';
+  import { useUserProfileForm } from '@keycloakify/svelte/login/lib/useUserProfileForm';
   import { onMount } from 'svelte';
+  import { derived } from 'svelte/store';
   import type { I18n } from '../i18n';
   import type { KcContext } from '../KcContext';
 
@@ -34,10 +35,14 @@
   });
 
   const groupNameRef = { current: '' };
+  const formFieldStates = derived(formState, ($formState) => $formState.formFieldStates);
+  const displayableErrors = derived(formFieldStates, ($formFieldStates) =>
+    $formFieldStates.map((f) => f.displayableErrors),
+  );
 </script>
 
-{#each $formState.formFieldStates as formFieldState}
-  {@const { attribute, displayableErrors, valueOrValues } = formFieldState}
+{#each $formFieldStates as formFieldState, i}
+  {@const { attribute, valueOrValues } = formFieldState}
   <GroupLabel
     {attribute}
     {groupNameRef}
@@ -45,7 +50,14 @@
     {kcClsx}
   />
   {#if beforeField}
-    {@render beforeField({ attribute, dispatchFormAction, displayableErrors, valueOrValues, kcClsx, i18n })}
+    {@render beforeField({
+      attribute,
+      dispatchFormAction,
+      displayableErrors: $displayableErrors[i],
+      valueOrValues,
+      kcClsx,
+      i18n,
+    })}
   {/if}
   <div
     class={kcClsx('kcFormGroupClass')}
@@ -75,14 +87,14 @@
       <InputFieldByType
         {attribute}
         {valueOrValues}
-        {displayableErrors}
+        displayableErrors={$displayableErrors[i]}
         {dispatchFormAction}
         {kcClsx}
         {i18n}
       />
       <FieldErrors
         {attribute}
-        {displayableErrors}
+        bind:displayableErrors={$displayableErrors[i]}
         {kcClsx}
       />
       {#if attribute.annotations.inputHelperTextAfter !== undefined}
@@ -96,7 +108,14 @@
       {/if}
 
       {#if afterField}
-        {@render afterField({ attribute, dispatchFormAction, displayableErrors, valueOrValues, kcClsx, i18n })}
+        {@render afterField({
+          attribute,
+          dispatchFormAction,
+          displayableErrors: $displayableErrors[i],
+          valueOrValues,
+          kcClsx,
+          i18n,
+        })}
       {/if}
       <!-- NOTE: Downloading of html5DataAnnotations scripts is done in the useUserProfileForm hook -->
     </div>

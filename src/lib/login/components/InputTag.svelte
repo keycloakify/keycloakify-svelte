@@ -5,8 +5,15 @@
   import { assert } from 'keycloakify/tools/assert';
 
   type InputTagProps = InputFieldByTypeProps & { fieldIndex?: number };
-  const { attribute, fieldIndex, kcClsx, dispatchFormAction, valueOrValues, i18n, displayableErrors }: InputTagProps =
-    $props();
+  let {
+    attribute,
+    fieldIndex,
+    kcClsx,
+    dispatchFormAction,
+    valueOrValues,
+    i18n,
+    displayableErrors = $bindable([]),
+  }: InputTagProps = $props();
 
   const { advancedMsgStr } = i18n;
   const { inputType } = attribute.annotations;
@@ -63,7 +70,7 @@
         if (fieldIndex !== undefined) {
           assert(valueOrValues instanceof Array);
 
-          return valueOrValues.map((value, i) => {
+          return (valueOrValues as string[]).map((value, i) => {
             if (i === fieldIndex) {
               return event.currentTarget.value;
             }
@@ -87,7 +94,7 @@
   <FieldErrors
     {attribute}
     {kcClsx}
-    {displayableErrors}
+    bind:displayableErrors
     {fieldIndex}
   ></FieldErrors>
   <AddRemoveButtonsMultiValuedAttribute

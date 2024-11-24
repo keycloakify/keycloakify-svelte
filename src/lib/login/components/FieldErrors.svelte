@@ -9,20 +9,23 @@
     fieldIndex?: number;
     kcClsx: KcClsx;
   };
-  const { attribute, fieldIndex, kcClsx, displayableErrors: _displayableErrors }: FieldErrorProps = $props();
-  const displayableErrors = _displayableErrors.filter((error) => !fieldIndex || error.fieldIndex === fieldIndex);
+  let { attribute, fieldIndex, kcClsx, displayableErrors = $bindable([]) }: FieldErrorProps = $props();
 </script>
 
-{#if displayableErrors.length !== 0}
-  <span
-    id={`input-error-${attribute.name}${fieldIndex === undefined ? '' : `-${fieldIndex}`}`}
-    class={kcClsx('kcInputErrorMessageClass')}
-    aria-live="polite"
-  >
-    {#each displayableErrors as displayableError, i}
-      {@const { errorMessage } = displayableError}
-      {@render errorMessage()}
-      {#if displayableErrors.length - 1 !== i}<br />{/if}
-    {/each}
-  </span>
-{/if}
+{#snippet fieldErrors()}
+  {@const _displayableErrors = displayableErrors.filter((error) => error.fieldIndex === fieldIndex)}
+  {#if _displayableErrors.length !== 0}
+    <span
+      id={`input-error-${attribute.name}${fieldIndex === undefined ? '' : `-${fieldIndex}`}`}
+      class={kcClsx('kcInputErrorMessageClass')}
+      aria-live="polite"
+    >
+      {#each _displayableErrors as displayableError, i}
+        {@const { errorMessage } = displayableError}
+        {@render errorMessage()}
+        {#if _displayableErrors.length - 1 !== i}<br />{/if}
+      {/each}
+    </span>
+  {/if}
+{/snippet}
+{@render fieldErrors()}

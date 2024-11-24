@@ -26,6 +26,13 @@
           classInput: kcClsx('kcInputClassCheckboxInput'),
           classLabel: kcClsx('kcInputClassCheckboxLabel'),
         };
+      default:
+        return {
+          inputType: '',
+          classDiv: '',
+          classInput: '',
+          classLabel: '',
+        };
     }
   })();
 

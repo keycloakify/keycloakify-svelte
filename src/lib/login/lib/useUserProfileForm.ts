@@ -2,7 +2,7 @@
 import { useState } from '@keycloakify/svelte/tools/useState';
 import type { Attribute, PasswordPolicies, Validators } from 'keycloakify/login/KcContext';
 import * as reactlessApi from 'keycloakify/login/lib/getUserProfileApi';
-import { createRawSnippet, onMount, type EventDispatcher, type Snippet } from 'svelte';
+import { onMount, type EventDispatcher, type Snippet } from 'svelte';
 import { derived, type Readable } from 'svelte/store';
 import { assert, type Equals } from 'tsafe/assert';
 import type { I18n } from '../i18n';
@@ -145,9 +145,7 @@ export function useUserProfileForm(params: ParamsOfUseUserProfileForm): ReturnTy
       attribute: formFieldState_reactless.attribute,
       valueOrValues: formFieldState_reactless.valueOrValues,
       displayableErrors: formFieldState_reactless.displayableErrors.map((formFieldError_reactless) => ({
-        errorMessage: createRawSnippet(() => ({
-          render: () => `${advancedMsg(...formFieldError_reactless.advancedMsgArgs)}`,
-        })),
+        errorMessage: advancedMsg(...formFieldError_reactless.advancedMsgArgs),
         errorMessageStr: advancedMsgStr(...formFieldError_reactless.advancedMsgArgs),
         source: formFieldError_reactless.source,
         fieldIndex: formFieldError_reactless.fieldIndex,

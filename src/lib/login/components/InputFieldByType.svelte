@@ -5,29 +5,43 @@
   import PasswordWrapper from '@keycloakify/svelte/login/components/PasswordWrapper.svelte';
   import SelectTag from '@keycloakify/svelte/login/components/SelectTag.svelte';
   import TextareaTag from '@keycloakify/svelte/login/components/TextareaTag.svelte';
-  const props: InputFieldByTypeProps = $props();
+
+  let { displayableErrors, ...props }: InputFieldByTypeProps = $props();
   const { attribute, valueOrValues } = props;
   const inputType = attribute.annotations.inputType ?? '';
 </script>
 
 {#if inputType === 'textarea'}
-  <TextareaTag {...props} />
+  <TextareaTag
+    {...props}
+    {displayableErrors}
+  />
 {:else if ['select', 'multiselect'].includes(inputType)}
-  <SelectTag {...props} />
+  <SelectTag
+    {...props}
+    {displayableErrors}
+  />
 {:else if ['select-radiobuttons', 'multiselect-checkboxes'].includes(inputType)}
-  <InputTagSelects {...props} />
+  <InputTagSelects
+    {...props}
+    {displayableErrors}
+  />
 {:else}
   <!-- default -->
   {#if valueOrValues instanceof Array}
     {#each valueOrValues as _, i}
       <InputTag
         {...props}
+        bind:displayableErrors
         fieldIndex={i}
       />
     {/each}
   {:else}
     {#snippet inputNode()}
-      <InputTag {...props} />
+      <InputTag
+        {...props}
+        bind:displayableErrors
+      />
     {/snippet}
     {#if ['password', 'password-confirm'].includes(attribute.name)}
       <PasswordWrapper

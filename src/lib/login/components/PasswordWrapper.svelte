@@ -15,10 +15,10 @@
     false,
   );
   onMount(() => {
-    const passwordInputElement: HTMLInputElement = document.getElementById(passwordInputId) as HTMLInputElement;
-
-    assert(passwordInputElement instanceof HTMLInputElement);
     const unsubscribe = isPasswordRevealed.subscribe(($isPasswordRevealed) => {
+      const passwordInputElement: HTMLInputElement = document.getElementById(passwordInputId) as HTMLInputElement;
+
+      assert(passwordInputElement instanceof HTMLInputElement);
       passwordInputElement.type = $isPasswordRevealed ? 'text' : 'password';
     });
     return () => unsubscribe();
