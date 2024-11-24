@@ -187,11 +187,10 @@
     "build": "tsx scripts/build.ts",
     "watch": "tsx scripts/watch.ts",
     "link-in-starter": "tsx scripts/link-in-starter.ts",
-    "package": "svelte-kit sync && rm -rf dist && svelte-package --input src && publint",
-    "prepublishOnly": "npm run package",
     "svelte:check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "svelte:check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "format": "prettier --write '**/*.{ts,html,json,md,svelte}'",
+    "_format": "prettier '**/*.{ts,html,json,md,svelte}'",
+    "format": "yarn _format --write",
     "lint": "yarn format && eslint . --fix"
   },
   "peerDependencies": {
