@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export type StatefulObservable<T> = {
   current: T;
   subscribe: (next: (data: T) => void) => Subscription;
