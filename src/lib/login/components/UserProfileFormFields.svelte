@@ -59,7 +59,8 @@
         {@render advancedMsg(attribute.displayName ?? '')()}
       </label>
       {#if attribute.required}
-        *{/if}
+        *
+      {/if}
     </div>
     <div class={kcClsx('kcInputWrapperClass')}>
       {#if attribute.annotations.inputHelperTextBefore !== undefined}
@@ -83,7 +84,6 @@
         {attribute}
         {displayableErrors}
         {kcClsx}
-        fieldIndex={undefined}
       />
       {#if attribute.annotations.inputHelperTextAfter !== undefined}
         <div

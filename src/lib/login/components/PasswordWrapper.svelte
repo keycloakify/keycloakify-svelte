@@ -2,7 +2,7 @@
   import { useReducer } from '@keycloakify/svelte/tools/useReducer';
   import type { KcClsx } from 'keycloakify/login/lib/kcClsx';
   import { assert } from 'keycloakify/tools/assert';
-  import type { Snippet } from 'svelte';
+  import { onMount, type Snippet } from 'svelte';
   import type { I18n } from '../i18n';
 
   const props: { kcClsx: KcClsx; i18n: I18n; passwordInputId: string; children: Snippet } = $props();
@@ -14,12 +14,14 @@
     (isPasswordRevealed: boolean) => !isPasswordRevealed,
     false,
   );
-  $effect(() => {
+  onMount(() => {
     const passwordInputElement: HTMLInputElement = document.getElementById(passwordInputId) as HTMLInputElement;
 
     assert(passwordInputElement instanceof HTMLInputElement);
-
-    passwordInputElement.type = isPasswordRevealed ? 'text' : 'password';
+    const unsubscribe = isPasswordRevealed.subscribe(($isPasswordRevealed) => {
+      passwordInputElement.type = $isPasswordRevealed ? 'text' : 'password';
+    });
+    return () => unsubscribe();
   });
 </script>
 

@@ -6,11 +6,11 @@
   type FieldErrorProps = {
     attribute: Attribute;
     displayableErrors: FormFieldError[];
-    fieldIndex: number | undefined;
+    fieldIndex?: number;
     kcClsx: KcClsx;
   };
   const { attribute, fieldIndex, kcClsx, displayableErrors: _displayableErrors }: FieldErrorProps = $props();
-  const displayableErrors = _displayableErrors.filter((error) => error.fieldIndex === fieldIndex);
+  const displayableErrors = _displayableErrors.filter((error) => !fieldIndex || error.fieldIndex === fieldIndex);
 </script>
 
 {#if displayableErrors.length !== 0}

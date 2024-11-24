@@ -1,7 +1,7 @@
 type FieldErrorProps = {
     attribute: Attribute;
     displayableErrors: FormFieldError[];
-    fieldIndex: number | undefined;
+    fieldIndex?: number;
     kcClsx: KcClsx;
 };
 import type { FormFieldError } from '../lib/useUserProfileForm';
