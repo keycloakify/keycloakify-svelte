@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { PageProps } from '@keycloakify/svelte/login/pages/PageProps';
+  import { kcSanitize } from 'keycloakify/lib/kcSanitize';
   import { getKcClsx } from 'keycloakify/login/lib/kcClsx';
   import type { KcContext } from '../KcContext';
   import type { I18n } from '../i18n';
@@ -39,7 +40,7 @@
         value={code.code}
       />
     {:else if code.error}
-      <p id="error">{@html code.error}</p>
+      <p id="error">{@html kcSanitize(code.error)}</p>
     {/if}
   </div>
 </Template>

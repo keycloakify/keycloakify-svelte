@@ -2,6 +2,7 @@
   import { useInitialize } from '@keycloakify/svelte/login/Template.useInitialize';
   import type { TemplateProps } from '@keycloakify/svelte/login/TemplateProps';
   import { useSetClassName } from '@keycloakify/svelte/tools/useSetClassName';
+  import { kcSanitize } from 'keycloakify/lib/kcSanitize';
   import { getKcClsx } from 'keycloakify/login/lib/kcClsx';
   import { clsx } from 'keycloakify/tools/clsx';
   import type { I18n } from './i18n';
@@ -171,7 +172,7 @@
                   <span class={kcClsx('kcFeedbackInfoIcon')}></span>
                 {/if}
               </div>
-              <span class={kcClsx('kcAlertTitleClass')}>{@html message.summary}</span>
+              <span class={kcClsx('kcAlertTitleClass')}>{@html kcSanitize(message.summary)}</span>
             </div>
           {/if}
           {@render children?.()}

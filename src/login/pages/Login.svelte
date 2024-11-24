@@ -6,6 +6,7 @@
   import { clsx } from 'keycloakify/tools/clsx';
   import type { I18n } from '../i18n';
   import type { KcContext } from '../KcContext';
+  import { kcSanitize } from 'keycloakify/lib/kcSanitize';
   const {
     kcContext,
     i18n,
@@ -80,7 +81,7 @@
                   ></i>
                 {/if}
                 <span class={clsx(kcClsx('kcFormSocialAccountNameClass'), p.iconClasses && 'kc-social-icon-text')}
-                  >{@html p.displayName}</span
+                  >{@html kcSanitize(p.displayName)}</span
                 >
               </a>
             </li>
@@ -129,7 +130,7 @@
                 <span
                   id="input-error"
                   class={kcClsx('kcInputErrorMessageClass')}
-                  aria-live="polite">{@html messagesPerField.getFirstError('username', 'password')}</span
+                  aria-live="polite">{@html kcSanitize(messagesPerField.getFirstError('username', 'password'))}</span
                 >
               {/if}
             </div>
@@ -161,7 +162,7 @@
               <span
                 id="input-error"
                 class={kcClsx('kcInputErrorMessageClass')}
-                aria-live="polite">{@html messagesPerField.getFirstError('username', 'password')}</span
+                aria-live="polite">{@html kcSanitize(messagesPerField.getFirstError('username', 'password'))}</span
               >
             {/if}
           </div>

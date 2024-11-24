@@ -84,6 +84,10 @@
       "types": "./dist/login/components/InputTagSelects.svelte.d.ts",
       "svelte": "./dist/login/components/InputTagSelects.svelte"
     },
+    "./login/components/LogoutOtherSessions.svelte": {
+      "types": "./dist/login/components/LogoutOtherSessions.svelte.d.ts",
+      "svelte": "./dist/login/components/LogoutOtherSessions.svelte"
+    },
     "./login/components/PasswordWrapper.svelte": {
       "types": "./dist/login/components/PasswordWrapper.svelte.d.ts",
       "svelte": "./dist/login/components/PasswordWrapper.svelte"

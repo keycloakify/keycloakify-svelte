@@ -18,4 +18,8 @@
   {doUseDefaultCss}
   {classes}
   displayMessage={false}
-></Template>
+>
+  {#snippet headerNode()}
+    {@render msg('errorTitle')()}
+  {/snippet}
+</Template>
