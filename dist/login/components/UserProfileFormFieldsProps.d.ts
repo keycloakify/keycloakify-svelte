@@ -1,5 +1,5 @@
+import { type FormAction, type FormFieldError } from '../lib/useUserProfileForm';
 import type { Attribute } from 'keycloakify/login/KcContext';
-import { type FormAction, type FormFieldError } from 'keycloakify/login/lib/getUserProfileApi';
 import type { KcClsx } from 'keycloakify/login/lib/kcClsx';
 import type { EventDispatcher, Snippet } from 'svelte';
 export type UserProfileFormFieldsProps<KcContext = any, I18n = any> = {
@@ -15,7 +15,9 @@ export type UserProfileFormFieldsProps<KcContext = any, I18n = any> = {
 };
 type BeforeAfterFieldProps<I18n> = {
     attribute: Attribute;
-    dispatchFormAction: EventDispatcher<FormAction>;
+    dispatchFormAction: EventDispatcher<{
+        formAction: FormAction;
+    }>;
     displayableErrors: FormFieldError[];
     valueOrValues: string | string[];
     kcClsx: KcClsx;

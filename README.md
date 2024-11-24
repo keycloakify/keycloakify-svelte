@@ -33,7 +33,6 @@
 
 Don't it's not ready yet. Subscribe to alerts on the repo to get notified when it is.
 
-
 ## Contributing
 
 > **Note:**: This is **not** for using the library, but for contributing to it.

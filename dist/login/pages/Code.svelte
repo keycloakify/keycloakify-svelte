@@ -14,7 +14,7 @@
 
   const { code } = kcContext;
 
-  const { msgStr } = i18n;
+  const { msg } = i18n;
 </script>
 
 <Template
@@ -25,14 +25,14 @@
 >
   {#snippet headerNode()}
     {#if code.success}
-      {msgStr('codeSuccessTitle')}
+      {@render msg('codeSuccessTitle')()}
     {:else}
-      {msgStr('codeErrorTitle', code.error)}
+      {@render msg('codeErrorTitle', code.error)()}
     {/if}
   {/snippet}
   <div id="kc-code">
     {#if code.success}
-      <p>{msgStr('copyCodeInstruction')}</p>
+      <p>{@render msg('copyCodeInstruction')()}</p>
       <input
         id="code"
         class={kcClsx('kcTextareaClass')}

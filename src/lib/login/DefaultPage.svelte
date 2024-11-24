@@ -1,12 +1,12 @@
 <script lang="ts">
   import type { PageProps } from '@keycloakify/svelte/login/pages/PageProps';
-  import type { UserProfileFormFieldsProps } from '@keycloakify/svelte/login/UserProfileFormFieldsProps';
+  import type { UserProfileFormFieldsProps } from '@keycloakify/svelte/login/components/UserProfileFormFieldsProps';
   import type { Component } from 'svelte';
   import type { I18n } from './i18n';
   import type { KcContext } from './KcContext';
 
   type DefaultPageProps = PageProps<KcContext, I18n> & {
-    UserProfileFormFields?: Component<UserProfileFormFieldsProps>;
+    UserProfileFormFields: Component<UserProfileFormFieldsProps>;
     doMakeUserConfirmPassword: boolean;
   };
   const props: DefaultPageProps = $props();

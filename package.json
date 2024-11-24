@@ -47,9 +47,64 @@
       "svelte": "./dist/tools/useState.js",
       "default": "./dist/tools/useState.js"
     },
+    "./login/components/AddRemoveButtonsMultiValuedAttribute.svelte": {
+      "types": "./dist/login/components/AddRemoveButtonsMultiValuedAttribute.svelte.d.ts",
+      "svelte": "./dist/login/components/AddRemoveButtonsMultiValuedAttribute.svelte"
+    },
+    "./login/components/FieldErrors.svelte": {
+      "types": "./dist/login/components/FieldErrors.svelte.d.ts",
+      "svelte": "./dist/login/components/FieldErrors.svelte"
+    },
+    "./login/components/GroupLabel.svelte": {
+      "types": "./dist/login/components/GroupLabel.svelte.d.ts",
+      "svelte": "./dist/login/components/GroupLabel.svelte"
+    },
+    "./login/components/InputFieldByType.svelte": {
+      "types": "./dist/login/components/InputFieldByType.svelte.d.ts",
+      "svelte": "./dist/login/components/InputFieldByType.svelte"
+    },
+    "./login/components/InputFieldByTypeProps": {
+      "types": "./dist/login/components/InputFieldByTypeProps.d.ts",
+      "svelte": "./dist/login/components/InputFieldByTypeProps.js",
+      "default": "./dist/login/components/InputFieldByTypeProps.js"
+    },
+    "./login/components/inputLabel": {
+      "types": "./dist/login/components/inputLabel.d.ts",
+      "svelte": "./dist/login/components/inputLabel.js",
+      "default": "./dist/login/components/inputLabel.js"
+    },
+    "./login/components/InputTag.svelte": {
+      "types": "./dist/login/components/InputTag.svelte.d.ts",
+      "svelte": "./dist/login/components/InputTag.svelte"
+    },
+    "./login/components/InputTagSelects.svelte": {
+      "types": "./dist/login/components/InputTagSelects.svelte.d.ts",
+      "svelte": "./dist/login/components/InputTagSelects.svelte"
+    },
     "./login/components/PasswordWrapper.svelte": {
       "types": "./dist/login/components/PasswordWrapper.svelte.d.ts",
       "svelte": "./dist/login/components/PasswordWrapper.svelte"
+    },
+    "./login/components/SelectTag.svelte": {
+      "types": "./dist/login/components/SelectTag.svelte.d.ts",
+      "svelte": "./dist/login/components/SelectTag.svelte"
+    },
+    "./login/components/TermsAcceptance.svelte": {
+      "types": "./dist/login/components/TermsAcceptance.svelte.d.ts",
+      "svelte": "./dist/login/components/TermsAcceptance.svelte"
+    },
+    "./login/components/TextareaTag.svelte": {
+      "types": "./dist/login/components/TextareaTag.svelte.d.ts",
+      "svelte": "./dist/login/components/TextareaTag.svelte"
+    },
+    "./login/components/UserProfileFormFields.svelte": {
+      "types": "./dist/login/components/UserProfileFormFields.svelte.d.ts",
+      "svelte": "./dist/login/components/UserProfileFormFields.svelte"
+    },
+    "./login/components/UserProfileFormFieldsProps": {
+      "types": "./dist/login/components/UserProfileFormFieldsProps.d.ts",
+      "svelte": "./dist/login/components/UserProfileFormFieldsProps.js",
+      "default": "./dist/login/components/UserProfileFormFieldsProps.js"
     },
     "./login/i18n": {
       "types": "./dist/login/i18n/index.d.ts",
@@ -89,10 +144,10 @@
       "svelte": "./dist/login/TemplateProps.js",
       "default": "./dist/login/TemplateProps.js"
     },
-    "./login/UserProfileFormFieldsProps": {
-      "types": "./dist/login/UserProfileFormFieldsProps.d.ts",
-      "svelte": "./dist/login/UserProfileFormFieldsProps.js",
-      "default": "./dist/login/UserProfileFormFieldsProps.js"
+    "./login/lib/useUserProfileForm": {
+      "types": "./dist/login/lib/useUserProfileForm.d.ts",
+      "svelte": "./dist/login/lib/useUserProfileForm.js",
+      "default": "./dist/login/lib/useUserProfileForm.js"
     },
     "./login/pages/Code.svelte": {
       "types": "./dist/login/pages/Code.svelte.d.ts",

@@ -1,12 +1,12 @@
 <script lang="ts">
   import type { PageProps } from './pages/PageProps';
-  import type { UserProfileFormFieldsProps } from './UserProfileFormFieldsProps';
+  import type { UserProfileFormFieldsProps } from './components/UserProfileFormFieldsProps';
   import type { Component } from 'svelte';
   import type { I18n } from './i18n';
   import type { KcContext } from './KcContext';
 
   type DefaultPageProps = PageProps<KcContext, I18n> & {
-    UserProfileFormFields?: Component<UserProfileFormFieldsProps>;
+    UserProfileFormFields: Component<UserProfileFormFieldsProps>;
     doMakeUserConfirmPassword: boolean;
   };
   const props: DefaultPageProps = $props();

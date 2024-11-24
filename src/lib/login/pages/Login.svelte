@@ -20,7 +20,7 @@
 
   const { social, realm, url, usernameHidden, login, auth, registrationDisabled, messagesPerField } = kcContext;
 
-  const { msgStr } = i18n;
+  const { msg, msgStr } = i18n;
 
   const [isLoginButtonDisabled, setIsLoginButtonDisabled] = useState(false);
 </script>
@@ -34,19 +34,19 @@
   displayInfo={realm.password && realm.registrationAllowed && !registrationDisabled}
 >
   {#snippet headerNode()}
-    {msgStr('loginAccountTitle')}
+    {@render msg('loginAccountTitle')()}
   {/snippet}
 
   {#snippet infoNode()}
     <div id="kc-registration-container">
       <div id="kc-registration">
         <span>
-          {msgStr('noAccount')}{' '}
+          {@render msg('noAccount')()}{' '}
           <a
             tabIndex={8}
             href={url.registrationUrl}
           >
-            {msgStr('doRegister')}
+            {@render msg('doRegister')()}
           </a>
         </span>
       </div>
@@ -60,9 +60,9 @@
         class={kcClsx('kcFormSocialAccountSectionClass')}
       >
         <hr />
-        <h2>{msgStr('identity-provider-login-label')}</h2>
+        <h2>{@render msg('identity-provider-login-label')()}</h2>
         <ul class={kcClsx('kcFormSocialAccountListClass', providers.length > 3 && 'kcFormSocialAccountListGridClass')}>
-          {#each providers as p, i}
+          {#each providers as p}
             <li>
               <a
                 id={`social-${p.alias}`}
@@ -107,12 +107,13 @@
                 for="username"
                 class={kcClsx('kcLabelClass')}
               >
-                {!realm.loginWithEmailAllowed
-                  ? msgStr('username')
+                {@render (!realm.loginWithEmailAllowed
+                  ? msg('username')
                   : !realm.registrationEmailAsUsername
-                    ? msgStr('usernameOrEmail')
-                    : msgStr('email')}
+                    ? msg('usernameOrEmail')
+                    : msg('email'))()}
               </label>
+              <!-- svelte-ignore a11y_autofocus -->
               <input
                 tabIndex={2}
                 id="username"
@@ -120,7 +121,7 @@
                 name="username"
                 value={login.username ?? ''}
                 type="text"
-                autoFocus
+                autofocus
                 autoComplete="username"
                 aria-invalid={messagesPerField.existsError('username', 'password')}
               />
@@ -139,7 +140,7 @@
               for="password"
               class={kcClsx('kcLabelClass')}
             >
-              {msgStr('password')}
+              {@render msg('password')()}
             </label>
             <PasswordWrapper
               {kcClsx}
@@ -177,7 +178,7 @@
                       type="checkbox"
                       checked={!!login.rememberMe}
                     />{' '}
-                    {msgStr('rememberMe')}
+                    {@render msg('rememberMe')()}
                   </label>
                 </div>
               {/if}
@@ -189,7 +190,7 @@
                     tabIndex={6}
                     href={url.loginResetCredentialsUrl}
                   >
-                    {msgStr('doForgotPassword')}
+                    {@render msg('doForgotPassword')()}
                   </a>
                 </span>
               {/if}

@@ -81,6 +81,8 @@
                 >
                   {currentLanguage.label}
                 </button>
+                <!-- svelte-ignore a11y_incorrect_aria_attribute_type -->
+                <!-- svelte-ignore a11y_aria_activedescendant_has_tabindex -->
                 <ul
                   role="menu"
                   tabIndex={-1}
@@ -118,6 +120,7 @@
               id="kc-username"
               class={kcClsx('kcFormGroupClass')}
             >
+              <!-- svelte-ignore a11y_label_has_associated_control -->
               <label id="kc-attempted-username">{auth.attemptedUsername}</label>
               <a
                 id="reset-login"
@@ -184,6 +187,7 @@
                   name="tryAnotherWay"
                   value="on"
                 />
+                <!-- svelte-ignore a11y_invalid_attribute -->
                 <a
                   href="#"
                   id="try-another-way"
