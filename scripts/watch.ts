@@ -4,11 +4,13 @@ import chokidar from 'chokidar';
 import { EventEmitter } from 'events';
 import * as fs from 'fs';
 import { join as pathJoin } from 'path';
+import { postBuild as postBuild_base } from './shared/postBuild';
 import { getThisCodebaseRootDirPath } from './tools/getThisCodebaseRootDirPath';
 import { createWaitForThrottle } from './tools/waitForThrottle';
 
 (async () => {
   const postBuild = () => {
+    postBuild_base();
     {
       const packageJsonFilePath = pathJoin(getThisCodebaseRootDirPath(), 'package.json');
 
@@ -28,13 +30,13 @@ import { createWaitForThrottle } from './tools/waitForThrottle';
   const eeBuildComplete = new EventEmitter();
 
   {
-    const child = child_process.spawn('npx', ['svelte-package', '--watch'], {
+    const child = child_process.spawn('npx', ['svelte-package', '--input src', '--watch'], {
       shell: true,
       cwd: getThisCodebaseRootDirPath(),
     });
 
     child.stdout.on('data', (data) => {
-      if (data.toString('utf8').includes('Watching for file changes')) {
+      if (data.toString('utf8').includes('Watching src for changes...')) {
         eeBuildComplete.emit('');
         return;
       }

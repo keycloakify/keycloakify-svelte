@@ -1,0 +1,6 @@
+src/bin
+src/tools
+src/**/*.test.*
+src/**/*.spec.*
+dist/**/*.test.*
+dist/**/*.spec.*

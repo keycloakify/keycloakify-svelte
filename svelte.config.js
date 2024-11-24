@@ -12,8 +12,8 @@ const config = {
     // See https://svelte.dev/docs/kit/adapters for more information about adapters.
     adapter: adapter(),
     alias: {
-      '@keycloakify/svelte/*': 'src/lib/*',
-      '@keycloakify/svelte': 'src/lib',
+      '@keycloakify/svelte/*': 'src/*',
+      '@keycloakify/svelte': 'src',
     },
   },
 };

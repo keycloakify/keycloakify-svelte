@@ -72,7 +72,7 @@ import { removeNodeModules } from './tools/removeNodeModules';
       cwd: getThisCodebaseRootDirPath(),
     });
 
-    const SVELTE_BUILD_WATCHING_FOR_FILE_CHANGES = 'Watching src/lib for changes...';
+    const SVELTE_BUILD_WATCHING_FOR_FILE_CHANGES = 'Watching src for changes...';
 
     const onData = (data: Buffer) => {
       if (!data.toString('utf8').includes(SVELTE_BUILD_WATCHING_FOR_FILE_CHANGES)) {
