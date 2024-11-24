@@ -16,7 +16,6 @@
   };
   const { attribute, values, fieldIndex, dispatchFormAction, i18n }: AddRemoveButtonsMultiValuedAttributeProps =
     $props();
-  console.log('pippo');
   const { msg } = i18n;
 
   const { hasAdd, hasRemove } = getButtonToDisplayForMultivaluedAttributeField({ attribute, values, fieldIndex });
