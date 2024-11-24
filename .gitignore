@@ -5,6 +5,7 @@ node_modules
 .vercel
 /.svelte-kit
 /build
+/dist
 
 # OS
 .DS_Store
@@ -31,6 +32,7 @@ jspm_packages
 
 .DS_Store
 
+/dist
 /.yarn_home/
 
 .idea
