@@ -14,7 +14,7 @@
 
   const { url } = kcContext;
 
-  const { msg, msgStr } = i18n;
+  const { msg, msgStr } = $i18n;
 
   const { kcClsx } = getKcClsx({
     doUseDefaultCss,
@@ -52,7 +52,7 @@
         <input
           id="device-user-code"
           name="device_user_code"
-          autoComplete="off"
+          autocomplete="off"
           type="text"
           class={kcClsx('kcInputClass')}
           autofocus

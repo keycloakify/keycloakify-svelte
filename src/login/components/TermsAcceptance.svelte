@@ -3,9 +3,10 @@
   import type { KcClsx } from 'keycloakify/login/lib/kcClsx';
   import type { KcContext } from '../KcContext';
   import type { I18n } from '../i18n';
+  import type { Readable } from 'svelte/store';
 
   type TermsAcceptanceProps = {
-    i18n: I18n;
+    i18n: Readable<I18n>;
     kcClsx: KcClsx;
     messagesPerField: Pick<KcContext['messagesPerField'], 'existsError' | 'get'>;
     areTermsAccepted: boolean;
@@ -14,7 +15,7 @@
   const { i18n, kcClsx, messagesPerField, areTermsAccepted, onAreTermsAcceptedValueChange }: TermsAcceptanceProps =
     $props();
 
-  const { msg } = i18n;
+  const { msg } = $i18n;
 </script>
 
 <div class="form-group">

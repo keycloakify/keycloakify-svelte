@@ -21,7 +21,7 @@
 
   const { url, isAppInitiatedAction, totp, mode, messagesPerField } = kcContext;
 
-  const { msg, msgStr, advancedMsg } = i18n;
+  const { msg, msgStr, advancedMsg } = $i18n;
 </script>
 
 <Template
@@ -127,7 +127,7 @@
           type="text"
           id="totp"
           name="totp"
-          autoComplete="off"
+          autocomplete="off"
           class={kcClsx('kcInputClass')}
           aria-invalid={messagesPerField.existsError('totp')}
         />
@@ -168,7 +168,7 @@
           type="text"
           id="userLabel"
           name="userLabel"
-          autoComplete="off"
+          autocomplete="off"
           class={kcClsx('kcInputClass')}
           aria-invalid={messagesPerField.existsError('userLabel')}
         />

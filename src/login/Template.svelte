@@ -25,7 +25,7 @@
   }: TemplateProps<KcContext, I18n> = $props();
   const { kcClsx } = getKcClsx({ doUseDefaultCss, classes });
 
-  const { msgStr, currentLanguage, enabledLanguages } = i18n;
+  const { msgStr, currentLanguage, enabledLanguages } = $i18n;
 
   const { realm, auth, url, message, isAppInitiatedAction } = kcContext;
   $effect(() => {
@@ -73,7 +73,7 @@
                 class={clsx('menu-button-links', kcClsx('kcLocaleDropDownClass'))}
               >
                 <button
-                  tabIndex={1}
+                  tabindex={1}
                   id="kc-current-locale-link"
                   aria-label={msgStr('languages')}
                   aria-haspopup="true"
@@ -83,10 +83,9 @@
                   {currentLanguage.label}
                 </button>
                 <!-- svelte-ignore a11y_incorrect_aria_attribute_type -->
-                <!-- svelte-ignore a11y_aria_activedescendant_has_tabindex -->
                 <ul
                   role="menu"
-                  tabIndex={-1}
+                  tabindex={-1}
                   aria-labelledby="kc-current-locale-link"
                   aria-activedescendant=""
                   id="language-switch1"

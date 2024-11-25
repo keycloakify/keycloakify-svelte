@@ -20,7 +20,7 @@
 
   const { otpLogin, url, messagesPerField } = kcContext;
 
-  const { msg, msgStr } = i18n;
+  const { msg, msgStr } = $i18n;
 </script>
 
 <Template
@@ -51,10 +51,11 @@
               value={otpCredential.id}
               checked={otpCredential.id === otpLogin.selectedCredentialId}
             />
+            <!-- svelte-ignore a11y_no_noninteractive_tabindex -->
             <label
               for={`kc-otp-credential-${index}`}
               class={kcClsx('kcLoginOTPListClass')}
-              tabIndex={index}
+              tabindex={index}
             >
               <span class={kcClsx('kcLoginOTPListItemHeaderClass')}>
                 <span class={kcClsx('kcLoginOTPListItemIconBodyClass')}>
@@ -85,7 +86,7 @@
         <input
           id="otp"
           name="otp"
-          autoComplete="off"
+          autocomplete="off"
           type="text"
           class={kcClsx('kcInputClass')}
           autofocus

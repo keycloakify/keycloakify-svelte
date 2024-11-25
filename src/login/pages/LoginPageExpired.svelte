@@ -10,6 +10,10 @@
     doUseDefaultCss,
     classes,
   }: PageProps<Extract<KcContext, { pageId: 'login-page-expired.ftl' }>, I18n> = $props();
+
+  const { url } = kcContext;
+
+  const { msg } = $i18n;
 </script>
 
 <Template
@@ -17,9 +21,30 @@
   {i18n}
   {doUseDefaultCss}
   {classes}
-  displayMessage={false}
 >
   {#snippet headerNode()}
-    {@render msg('errorTitle')()}
+    {@render msg('pageExpiredTitle')()}
   {/snippet}
+
+  <p
+    id="instruction1"
+    class="instruction"
+  >
+    {@render msg('pageExpiredMsg1')()}
+    <a
+      id="loginRestartLink"
+      href={url.loginRestartFlowUrl}
+    >
+      {@render msg('doClickHere')()}
+    </a>{' '}
+    .<br />
+    {@render msg('pageExpiredMsg2')()}{' '}
+    <a
+      id="loginContinueLink"
+      href={url.loginAction}
+    >
+      {@render msg('doClickHere')()}
+    </a>{' '}
+    .
+  </p>
 </Template>

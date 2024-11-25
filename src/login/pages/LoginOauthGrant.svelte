@@ -14,7 +14,7 @@
 
   const { url, oauth, client } = kcContext;
 
-  const { msg, msgStr, advancedMsg, advancedMsgStr } = i18n;
+  const { msg, msgStr, advancedMsg, advancedMsgStr } = $i18n;
 
   const { kcClsx } = getKcClsx({
     doUseDefaultCss,

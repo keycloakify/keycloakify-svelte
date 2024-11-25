@@ -12,7 +12,7 @@
     classes,
   }: PageProps<Extract<KcContext, { pageId: 'delete-credential.ftl' }>, I18n> = $props();
 
-  const { msgStr, msg } = i18n;
+  const { msgStr, msg } = $i18n;
 
   const { kcClsx } = getKcClsx({
     doUseDefaultCss,

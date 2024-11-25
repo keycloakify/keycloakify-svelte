@@ -3,10 +3,11 @@ import { type FormAction, type FormFieldError } from '@keycloakify/svelte/login/
 import type { Attribute } from 'keycloakify/login/KcContext';
 import type { KcClsx } from 'keycloakify/login/lib/kcClsx';
 import type { EventDispatcher, Snippet } from 'svelte';
+import type { Readable } from 'svelte/store';
 
 export type UserProfileFormFieldsProps<KcContext = any, I18n = any> = {
   kcContext: Extract<KcContext, { profile: unknown }>;
-  i18n: I18n;
+  i18n: Readable<I18n>;
   kcClsx: KcClsx;
   onIsFormSubmittableValueChange: (isFormSubmittable: boolean) => void;
   doMakeUserConfirmPassword: boolean;
@@ -20,5 +21,5 @@ type BeforeAfterFieldProps<I18n> = {
   displayableErrors: FormFieldError[];
   valueOrValues: string | string[];
   kcClsx: KcClsx;
-  i18n: I18n;
+  i18n: Readable<I18n>;
 };

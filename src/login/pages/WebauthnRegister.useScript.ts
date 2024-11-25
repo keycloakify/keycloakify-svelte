@@ -2,6 +2,7 @@ import { useInsertScriptTags } from '@keycloakify/svelte/tools/useInsertScriptTa
 import { assert } from 'keycloakify/tools/assert';
 import { waitForElementMountedOnDom } from 'keycloakify/tools/waitForElementMountedOnDom';
 import { onMount } from 'svelte';
+import type { Readable } from 'svelte/store';
 import type { KcContext } from '../KcContext';
 
 type KcContextLike = {
@@ -35,7 +36,7 @@ type I18nLike = {
   isFetchingTranslations: boolean;
 };
 
-export function useScript(params: { authButtonId: string; kcContext: KcContextLike; i18n: I18nLike }) {
+export function useScript(params: { authButtonId: string; kcContext: KcContextLike; i18n: Readable<I18nLike> }) {
   const { authButtonId, kcContext, i18n } = params;
 
   const {
@@ -54,14 +55,16 @@ export function useScript(params: { authButtonId: string; kcContext: KcContextLi
     excludeCredentialIds,
   } = kcContext;
 
-  const { msgStr, isFetchingTranslations } = i18n;
+  onMount(() => {
+    const unsubscribe = i18n.subscribe(($i18n) => {
+      const { msgStr, isFetchingTranslations } = $i18n;
 
-  const { insertScriptTags } = useInsertScriptTags({
-    componentOrHookName: 'LoginRecoveryAuthnCodeConfig',
-    scriptTags: [
-      {
-        type: 'module',
-        textContent: () => `
+      const { insertScriptTags } = useInsertScriptTags({
+        componentOrHookName: 'LoginRecoveryAuthnCodeConfig',
+        scriptTags: [
+          {
+            type: 'module',
+            textContent: () => `
                     import { registerByWebAuthn } from "${url.resourcesPath}/js/webauthnRegister.js";
                     const registerButton = document.getElementById('${authButtonId}');
                     registerButton.addEventListener("click", function() {
@@ -85,22 +88,20 @@ export function useScript(params: { authButtonId: string; kcContext: KcContextLi
                         registerByWebAuthn(input);
                     });
                 `,
-      },
-    ],
-  });
-
-  onMount(() => {
-    // TODO: check reactivity
-    if (isFetchingTranslations) {
-      return;
-    }
-
-    (async () => {
-      await waitForElementMountedOnDom({
-        elementId: authButtonId,
+          },
+        ],
       });
+      if (isFetchingTranslations) {
+        return;
+      }
+      (async () => {
+        await waitForElementMountedOnDom({
+          elementId: authButtonId,
+        });
 
-      insertScriptTags();
-    })();
+        insertScriptTags();
+      })();
+    });
+    return () => unsubscribe();
   });
 }

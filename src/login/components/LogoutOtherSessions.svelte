@@ -1,10 +1,11 @@
 <script lang="ts">
   import type { KcClsx } from 'keycloakify/login/lib/kcClsx';
   import type { I18n } from '../i18n';
+  import type { Readable } from 'svelte/store';
 
-  const { kcClsx, i18n }: { kcClsx: KcClsx; i18n: I18n } = $props();
+  const { kcClsx, i18n }: { kcClsx: KcClsx; i18n: Readable<I18n> } = $props();
 
-  const { msg } = i18n;
+  const { msg } = $i18n;
 </script>
 
 <div

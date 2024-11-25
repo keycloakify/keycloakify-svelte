@@ -13,7 +13,7 @@
 
   const { url, realm, brokerContext, idpAlias } = kcContext;
 
-  const { msg } = i18n;
+  const { msg } = $i18n;
 </script>
 
 <Template

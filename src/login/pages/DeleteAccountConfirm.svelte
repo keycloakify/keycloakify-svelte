@@ -19,7 +19,7 @@
 
   const { url, triggered_from_aia } = kcContext;
 
-  const { msg, msgStr } = i18n;
+  const { msg, msgStr } = $i18n;
 </script>
 
 <Template

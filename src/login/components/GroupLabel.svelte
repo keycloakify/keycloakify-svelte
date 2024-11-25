@@ -4,17 +4,18 @@
   import { assert } from 'keycloakify/tools/assert';
   import { createRawSnippet } from 'svelte';
   import type { I18n } from '../i18n';
+  import type { Readable } from 'svelte/store';
 
   type GroupLabelProps = {
     attribute: Attribute;
     groupNameRef: {
       current: string;
     };
-    i18n: I18n;
+    i18n: Readable<I18n>;
     kcClsx: KcClsx;
   };
   const { attribute, groupNameRef, i18n, kcClsx }: GroupLabelProps = $props();
-  const { advancedMsg } = i18n;
+  const { advancedMsg } = $i18n;
 
   let isGrouplabel = $state<boolean>(false);
   if (attribute.group?.name !== groupNameRef.current) {

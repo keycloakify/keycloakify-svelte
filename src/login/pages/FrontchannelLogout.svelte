@@ -14,7 +14,7 @@
 
   const { logout } = kcContext;
 
-  const { msg, msgStr } = i18n;
+  const { msg, msgStr } = $i18n;
 
   onMount(() => {
     if (logout.logoutRedirectUri) {

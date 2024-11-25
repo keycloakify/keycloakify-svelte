@@ -6,17 +6,18 @@
   import type { Attribute } from 'keycloakify/login/KcContext';
   import type { EventDispatcher } from 'svelte';
   import type { I18n } from '../i18n';
+  import type { Readable } from 'svelte/store';
 
   type AddRemoveButtonsMultiValuedAttributeProps = {
     attribute: Attribute;
     values: string[];
     fieldIndex: number;
     dispatchFormAction: EventDispatcher<{ formAction: Extract<FormAction, { action: 'update' }> }>;
-    i18n: I18n;
+    i18n: Readable<I18n>;
   };
   const { attribute, values, fieldIndex, dispatchFormAction, i18n }: AddRemoveButtonsMultiValuedAttributeProps =
     $props();
-  const { msg } = i18n;
+  const { msg } = $i18n;
 
   const { hasAdd, hasRemove } = getButtonToDisplayForMultivaluedAttributeField({ attribute, values, fieldIndex });
 

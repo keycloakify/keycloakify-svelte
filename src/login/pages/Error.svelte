@@ -14,7 +14,7 @@
 
   const { message, client, skipLink } = kcContext;
 
-  const { msg } = i18n;
+  const { msg } = $i18n;
 </script>
 
 <Template

@@ -12,7 +12,7 @@
     classes,
   }: PageProps<Extract<KcContext, { pageId: 'info.ftl' }>, I18n> = $props();
 
-  const { advancedMsgStr, msg } = i18n;
+  const { advancedMsgStr, msg } = $i18n;
 
   const { messageHeader, message, requiredActions, skipLink, pageRedirectUri, actionUri, client } = kcContext;
 </script>

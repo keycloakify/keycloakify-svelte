@@ -105,7 +105,7 @@
       for={`${attribute.name}-${option}`}
       class={`${classLabel}${attribute.readOnly ? ` ${kcClsx('kcInputClassRadioCheckboxLabelDisabled')}` : ''}`}
     >
-      {@render inputLabel(i18n, attribute, option)()}
+      {@render inputLabel($i18n, attribute, option)()}
     </label>
   </div>
 {/each}

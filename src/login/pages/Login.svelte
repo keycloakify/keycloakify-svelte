@@ -2,11 +2,11 @@
   import PasswordWrapper from '@keycloakify/svelte/login/components/PasswordWrapper.svelte';
   import type { PageProps } from '@keycloakify/svelte/login/pages/PageProps';
   import { useState } from '@keycloakify/svelte/tools/useState';
+  import { kcSanitize } from 'keycloakify/lib/kcSanitize';
   import { getKcClsx } from 'keycloakify/login/lib/kcClsx';
   import { clsx } from 'keycloakify/tools/clsx';
   import type { I18n } from '../i18n';
   import type { KcContext } from '../KcContext';
-  import { kcSanitize } from 'keycloakify/lib/kcSanitize';
   const {
     kcContext,
     i18n,
@@ -21,7 +21,7 @@
 
   const { social, realm, url, usernameHidden, login, auth, registrationDisabled, messagesPerField } = kcContext;
 
-  const { msg, msgStr } = i18n;
+  const { msg, msgStr } = $i18n;
 
   const [isLoginButtonDisabled, setIsLoginButtonDisabled] = useState(false);
 </script>
@@ -44,7 +44,7 @@
         <span>
           {@render msg('noAccount')()}{' '}
           <a
-            tabIndex={8}
+            tabindex={8}
             href={url.registrationUrl}
           >
             {@render msg('doRegister')()}
@@ -116,14 +116,14 @@
               </label>
               <!-- svelte-ignore a11y_autofocus -->
               <input
-                tabIndex={2}
+                tabindex={2}
                 id="username"
                 class={kcClsx('kcInputClass')}
                 name="username"
                 value={login.username ?? ''}
                 type="text"
                 autofocus
-                autoComplete="username"
+                autocomplete="username"
                 aria-invalid={messagesPerField.existsError('username', 'password')}
               />
               {#if messagesPerField.existsError('username', 'password')}
@@ -149,12 +149,12 @@
               passwordInputId="password"
             >
               <input
-                tabIndex={3}
+                tabindex={3}
                 id="password"
                 class={kcClsx('kcInputClass')}
                 name="password"
                 type="password"
-                autoComplete="current-password"
+                autocomplete="current-password"
                 aria-invalid={messagesPerField.existsError('username', 'password')}
               />
             </PasswordWrapper>
@@ -173,7 +173,7 @@
                 <div class="checkbox">
                   <label>
                     <input
-                      tabIndex={5}
+                      tabindex={5}
                       id="rememberMe"
                       name="rememberMe"
                       type="checkbox"
@@ -188,7 +188,7 @@
               {#if realm.resetPasswordAllowed}
                 <span>
                   <a
-                    tabIndex={6}
+                    tabindex={6}
                     href={url.loginResetCredentialsUrl}
                   >
                     {@render msg('doForgotPassword')()}
@@ -209,7 +209,7 @@
               value={auth.selectedCredential}
             />
             <input
-              tabIndex={7}
+              tabindex={7}
               disabled={$isLoginButtonDisabled}
               class={kcClsx('kcButtonClass', 'kcButtonPrimaryClass', 'kcButtonBlockClass', 'kcButtonLargeClass')}
               name="login"

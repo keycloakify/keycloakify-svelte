@@ -4,11 +4,12 @@
   import { assert } from 'keycloakify/tools/assert';
   import { onMount, type Snippet } from 'svelte';
   import type { I18n } from '../i18n';
+  import type { Readable } from 'svelte/store';
 
-  const props: { kcClsx: KcClsx; i18n: I18n; passwordInputId: string; children: Snippet } = $props();
+  const props: { kcClsx: KcClsx; i18n: Readable<I18n>; passwordInputId: string; children: Snippet } = $props();
   const { kcClsx, i18n, passwordInputId, children } = props;
 
-  const { msgStr } = i18n;
+  const { msgStr } = $i18n;
 
   const [isPasswordRevealed, toggleIsPasswordRevealed] = useReducer<boolean, boolean>(
     (isPasswordRevealed: boolean) => !isPasswordRevealed,

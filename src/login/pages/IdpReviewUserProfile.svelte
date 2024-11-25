@@ -26,7 +26,7 @@
     classes,
   });
 
-  const { msg, msgStr } = i18n;
+  const { msg, msgStr } = $i18n;
 
   const { url, messagesPerField } = kcContext;
 
@@ -72,7 +72,7 @@
           class={kcClsx('kcButtonClass', 'kcButtonPrimaryClass', 'kcButtonBlockClass', 'kcButtonLargeClass')}
           type="submit"
           value={msgStr('doSubmit')}
-          disabled={!isFomSubmittable}
+          disabled={!$isFomSubmittable}
         />
       </div>
     </div>

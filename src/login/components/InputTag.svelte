@@ -15,7 +15,7 @@
     displayableErrors = $bindable([]),
   }: InputTagProps = $props();
 
-  const { advancedMsgStr } = i18n;
+  const { advancedMsgStr } = $i18n;
   const { inputType } = attribute.annotations;
   let value = $state(
     (() => {

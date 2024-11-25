@@ -19,7 +19,7 @@
 
   const { url, idpDisplayName } = kcContext;
 
-  const { msg } = i18n;
+  const { msg } = $i18n;
 </script>
 
 <Template

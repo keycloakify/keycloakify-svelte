@@ -32,7 +32,7 @@
     termsAcceptanceRequired,
   } = kcContext;
 
-  const { msg, msgStr, advancedMsg } = i18n;
+  const { msg, msgStr, advancedMsg } = $i18n;
 
   const [isFormSubmittable, setIsFormSubmittable] = useState(false);
   const [areTermsAccepted, setAreTermsAccepted] = useState(false);
@@ -124,7 +124,7 @@
           class={kcClsx('kcFormButtonsClass')}
         >
           <input
-            disabled={!isFormSubmittable || (termsAcceptanceRequired && !areTermsAccepted)}
+            disabled={!$isFormSubmittable || (termsAcceptanceRequired && !$areTermsAccepted)}
             class={kcClsx('kcButtonClass', 'kcButtonPrimaryClass', 'kcButtonBlockClass', 'kcButtonLargeClass')}
             type="submit"
             value={msgStr('doRegister')}
