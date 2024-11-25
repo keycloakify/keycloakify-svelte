@@ -454,7 +454,6 @@
     "prettier": "^3.3.3",
     "prettier-plugin-svelte": "^3.3.2",
     "publint": "^0.2.12",
-    "storybook": "^8.4.5",
     "svelte": "^5.2.8",
     "svelte-check": "^4.1.0",
     "tsx": "^4.19.2",
