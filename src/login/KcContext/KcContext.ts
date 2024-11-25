@@ -1,1 +1,1 @@
-export type { KcContext } from 'keycloakify/login/KcContext';
+export type { ExtendKcContext, KcContext } from 'keycloakify/login/KcContext';
