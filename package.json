@@ -324,6 +324,77 @@
       "types": "./dist/login/pages/WebauthnRegister.useScript.d.ts",
       "svelte": "./dist/login/pages/WebauthnRegister.useScript.js",
       "default": "./dist/login/pages/WebauthnRegister.useScript.js"
+    },
+    "./account/i18n": {
+      "types": "./dist/account/i18n/index.d.ts",
+      "svelte": "./dist/account/i18n/index.js",
+      "default": "./dist/account/i18n/index.js"
+    },
+    "./account/i18n/i18nBuilder": {
+      "types": "./dist/account/i18n/i18nBuilder.d.ts",
+      "svelte": "./dist/account/i18n/i18nBuilder.js",
+      "default": "./dist/account/i18n/i18nBuilder.js"
+    },
+    "./account/i18n/useI18n": {
+      "types": "./dist/account/i18n/useI18n.d.ts",
+      "svelte": "./dist/account/i18n/useI18n.js",
+      "default": "./dist/account/i18n/useI18n.js"
+    },
+    "./account/KcContext": {
+      "types": "./dist/account/KcContext/index.d.ts",
+      "svelte": "./dist/account/KcContext/index.js",
+      "default": "./dist/account/KcContext/index.js"
+    },
+    "./account/DefaultPage.svelte": {
+      "types": "./dist/account/DefaultPage.svelte.d.ts",
+      "svelte": "./dist/account/DefaultPage.svelte"
+    },
+    "./account/Template.svelte": {
+      "types": "./dist/account/Template.svelte.d.ts",
+      "svelte": "./dist/account/Template.svelte"
+    },
+    "./account/Template.useInitialize": {
+      "types": "./dist/account/Template.useInitialize.d.ts",
+      "svelte": "./dist/account/Template.useInitialize.js",
+      "default": "./dist/account/Template.useInitialize.js"
+    },
+    "./account/TemplateProps": {
+      "types": "./dist/account/TemplateProps.d.ts",
+      "svelte": "./dist/account/TemplateProps.js",
+      "default": "./dist/account/TemplateProps.js"
+    },
+    "./account/pages/Account.svelte": {
+      "types": "./dist/account/pages/Account.svelte.d.ts",
+      "svelte": "./dist/account/pages/Account.svelte"
+    },
+    "./account/pages/Applications.svelte": {
+      "types": "./dist/account/pages/Applications.svelte.d.ts",
+      "svelte": "./dist/account/pages/Applications.svelte"
+    },
+    "./account/pages/FederatedIdentity.svelte": {
+      "types": "./dist/account/pages/FederatedIdentity.svelte.d.ts",
+      "svelte": "./dist/account/pages/FederatedIdentity.svelte"
+    },
+    "./account/pages/Log.svelte": {
+      "types": "./dist/account/pages/Log.svelte.d.ts",
+      "svelte": "./dist/account/pages/Log.svelte"
+    },
+    "./account/pages/PageProps": {
+      "types": "./dist/account/pages/PageProps.d.ts",
+      "svelte": "./dist/account/pages/PageProps.js",
+      "default": "./dist/account/pages/PageProps.js"
+    },
+    "./account/pages/Password.svelte": {
+      "types": "./dist/account/pages/Password.svelte.d.ts",
+      "svelte": "./dist/account/pages/Password.svelte"
+    },
+    "./account/pages/Sessions.svelte": {
+      "types": "./dist/account/pages/Sessions.svelte.d.ts",
+      "svelte": "./dist/account/pages/Sessions.svelte"
+    },
+    "./account/pages/Totp.svelte": {
+      "types": "./dist/account/pages/Totp.svelte.d.ts",
+      "svelte": "./dist/account/pages/Totp.svelte"
     }
   },
   "files": [
