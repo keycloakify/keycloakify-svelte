@@ -5,6 +5,7 @@
   import { kcSanitize } from 'keycloakify/lib/kcSanitize';
   import { getKcClsx } from 'keycloakify/login/lib/kcClsx';
   import { clsx } from 'keycloakify/tools/clsx';
+  import { onMount } from 'svelte';
   import type { I18n } from './i18n';
   import type { KcContext } from './KcContext';
 
@@ -28,7 +29,7 @@
   const { msgStr, currentLanguage, enabledLanguages } = $i18n;
 
   const { realm, auth, url, message, isAppInitiatedAction } = kcContext;
-  $effect(() => {
+  onMount(() => {
     document.title = documentTitle ?? msgStr('loginTitle', kcContext.realm.displayName);
   });
   useSetClassName({
