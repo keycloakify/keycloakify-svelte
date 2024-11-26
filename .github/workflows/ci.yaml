@@ -96,7 +96,6 @@ jobs:
     - run: npm run build
     - name: Publishing on NPM
       run: |
-        cd dist
 
         if [ "$(npm show . version)" = "$VERSION" ]; then
           echo "This version is already published"
