@@ -15,13 +15,13 @@ function buildBin() {
   const binDirPath = pathJoin(getThisCodebaseRootDirPath(), 'src', 'bin');
   const distDirPath_bin = pathJoin(distDirPath, 'bin');
 
-  run(`npx tsc -p ${binDirPath} --outDir ${distDirPath_bin}`);
+  fs.cpSync(binDirPath, distDirPath_bin, { recursive: true });
 
   const nccOutDirPath = pathJoin(distDirPath_bin, 'ncc_out');
 
-  const entrypointFilePath = pathJoin(distDirPath_bin, 'main.js');
+  const entrypointFilePath = pathJoin(distDirPath_bin, 'main.ts');
 
-  run(`npx ncc build ${entrypointFilePath} --external prettier -o ${nccOutDirPath}`);
+  run(`npx ncc build ${entrypointFilePath} --external prettier -t -o ${nccOutDirPath}`);
 
   transformCodebase({
     srcDirPath: distDirPath_bin,
@@ -35,9 +35,11 @@ function buildBin() {
     },
   });
 
+  const newEntrypointFilePath = entrypointFilePath.replace('main.ts', 'index.js');
+
   fs.readdirSync(nccOutDirPath).forEach((basename) => {
     const destFilePath =
-      basename === 'index.js' ? entrypointFilePath : pathJoin(pathDirname(entrypointFilePath), basename);
+      basename === 'index.js' ? newEntrypointFilePath : pathJoin(pathDirname(newEntrypointFilePath), basename);
     const srcFilePath = pathJoin(nccOutDirPath, basename);
 
     fs.cpSync(srcFilePath, destFilePath);
@@ -46,13 +48,13 @@ function buildBin() {
   fs.rmSync(nccOutDirPath, { recursive: true });
 
   fs.chmodSync(
-    entrypointFilePath,
-    fs.statSync(entrypointFilePath).mode | fs.constants.S_IXUSR | fs.constants.S_IXGRP | fs.constants.S_IXOTH,
+    newEntrypointFilePath,
+    fs.statSync(newEntrypointFilePath).mode | fs.constants.S_IXUSR | fs.constants.S_IXGRP | fs.constants.S_IXOTH,
   );
 
   return {
     packageJsonBinProperty: {
-      [BIN_NAME]: pathRelative(distDirPath, entrypointFilePath).replaceAll(pathSep, '/'),
+      [BIN_NAME]: pathRelative(distDirPath, newEntrypointFilePath).replaceAll(pathSep, '/'),
     },
   };
 }
