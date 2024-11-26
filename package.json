@@ -464,8 +464,5 @@
   },
   "bin": {
     "_keycloakify-custom-handler": "dist/bin/main.js"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }
