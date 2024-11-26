@@ -463,6 +463,6 @@
     "zod": "^3.23.8"
   },
   "bin": {
-    "_keycloakify-custom-handler": "dist/bin/main.js"
+    "_keycloakify-custom-handler": "dist/bin/index.js"
   }
 }
