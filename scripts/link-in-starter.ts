@@ -63,6 +63,7 @@ import { removeNodeModules } from './tools/removeNodeModules';
   });
 
   run('yarn install');
+  run('yarn run build');
 
   const dInitialCompilationCompleted = new Deferred<void>();
 
@@ -72,7 +73,7 @@ import { removeNodeModules } from './tools/removeNodeModules';
       cwd: getThisCodebaseRootDirPath(),
     });
 
-    const SVELTE_BUILD_WATCHING_FOR_FILE_CHANGES = 'Watching src for changes...';
+    const SVELTE_BUILD_WATCHING_FOR_FILE_CHANGES = 'Watching for file changes';
 
     const onData = (data: Buffer) => {
       if (!data.toString('utf8').includes(SVELTE_BUILD_WATCHING_FOR_FILE_CHANGES)) {

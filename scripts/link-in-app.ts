@@ -161,7 +161,7 @@ commonThirdPartyDeps.forEach((commonThirdPartyDep) =>
 
 console.log('=== Linking in house dependencies ===');
 
-execYarnLink({ cwd: pathJoin(rootDirPath) });
+execYarnLink({ cwd: pathJoin(rootDirPath, 'dist') });
 
 testAppPaths.forEach((testAppPath) =>
   execYarnLink({

@@ -21,396 +21,396 @@
   },
   "exports": {
     "./tools/useConst": {
-      "types": "./dist/tools/useConst.d.ts",
-      "svelte": "./dist/tools/useConst.js",
-      "default": "./dist/tools/useConst.js"
+      "types": "./keycloakify-svelte/tools/useConst.d.ts",
+      "svelte": "./keycloakify-svelte/tools/useConst.js",
+      "default": "./keycloakify-svelte/tools/useConst.js"
     },
     "./tools/useInsertLinkTags": {
-      "types": "./dist/tools/useInsertLinkTags.d.ts",
-      "svelte": "./dist/tools/useInsertLinkTags.js",
-      "default": "./dist/tools/useInsertLinkTags.js"
+      "types": "./keycloakify-svelte/tools/useInsertLinkTags.d.ts",
+      "svelte": "./keycloakify-svelte/tools/useInsertLinkTags.js",
+      "default": "./keycloakify-svelte/tools/useInsertLinkTags.js"
     },
     "./tools/useInsertScriptTags": {
-      "types": "./dist/tools/useInsertScriptTags.d.ts",
-      "svelte": "./dist/tools/useInsertScriptTags.js",
-      "default": "./dist/tools/useInsertScriptTags.js"
+      "types": "./keycloakify-svelte/tools/useInsertScriptTags.d.ts",
+      "svelte": "./keycloakify-svelte/tools/useInsertScriptTags.js",
+      "default": "./keycloakify-svelte/tools/useInsertScriptTags.js"
     },
     "./tools/useReducer": {
-      "types": "./dist/tools/useReducer.d.ts",
-      "svelte": "./dist/tools/useReducer.js",
-      "default": "./dist/tools/useReducer.js"
+      "types": "./keycloakify-svelte/tools/useReducer.d.ts",
+      "svelte": "./keycloakify-svelte/tools/useReducer.js",
+      "default": "./keycloakify-svelte/tools/useReducer.js"
     },
     "./tools/useSetClassName": {
-      "types": "./dist/tools/useSetClassName.d.ts",
-      "svelte": "./dist/tools/useSetClassName.js",
-      "default": "./dist/tools/useSetClassName.js"
+      "types": "./keycloakify-svelte/tools/useSetClassName.d.ts",
+      "svelte": "./keycloakify-svelte/tools/useSetClassName.js",
+      "default": "./keycloakify-svelte/tools/useSetClassName.js"
     },
     "./tools/useState": {
-      "types": "./dist/tools/useState.d.ts",
-      "svelte": "./dist/tools/useState.js",
-      "default": "./dist/tools/useState.js"
+      "types": "./keycloakify-svelte/tools/useState.d.ts",
+      "svelte": "./keycloakify-svelte/tools/useState.js",
+      "default": "./keycloakify-svelte/tools/useState.js"
     },
     "./login/components/AddRemoveButtonsMultiValuedAttribute.svelte": {
-      "types": "./dist/login/components/AddRemoveButtonsMultiValuedAttribute.svelte.d.ts",
-      "svelte": "./dist/login/components/AddRemoveButtonsMultiValuedAttribute.svelte"
+      "types": "./keycloakify-svelte/login/components/AddRemoveButtonsMultiValuedAttribute.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/components/AddRemoveButtonsMultiValuedAttribute.svelte"
     },
     "./login/components/FieldErrors.svelte": {
-      "types": "./dist/login/components/FieldErrors.svelte.d.ts",
-      "svelte": "./dist/login/components/FieldErrors.svelte"
+      "types": "./keycloakify-svelte/login/components/FieldErrors.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/components/FieldErrors.svelte"
     },
     "./login/components/GroupLabel.svelte": {
-      "types": "./dist/login/components/GroupLabel.svelte.d.ts",
-      "svelte": "./dist/login/components/GroupLabel.svelte"
+      "types": "./keycloakify-svelte/login/components/GroupLabel.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/components/GroupLabel.svelte"
     },
     "./login/components/InputFieldByType.svelte": {
-      "types": "./dist/login/components/InputFieldByType.svelte.d.ts",
-      "svelte": "./dist/login/components/InputFieldByType.svelte"
+      "types": "./keycloakify-svelte/login/components/InputFieldByType.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/components/InputFieldByType.svelte"
     },
     "./login/components/InputFieldByTypeProps": {
-      "types": "./dist/login/components/InputFieldByTypeProps.d.ts",
-      "svelte": "./dist/login/components/InputFieldByTypeProps.js",
-      "default": "./dist/login/components/InputFieldByTypeProps.js"
+      "types": "./keycloakify-svelte/login/components/InputFieldByTypeProps.d.ts",
+      "svelte": "./keycloakify-svelte/login/components/InputFieldByTypeProps.js",
+      "default": "./keycloakify-svelte/login/components/InputFieldByTypeProps.js"
     },
     "./login/components/inputLabel": {
-      "types": "./dist/login/components/inputLabel.d.ts",
-      "svelte": "./dist/login/components/inputLabel.js",
-      "default": "./dist/login/components/inputLabel.js"
+      "types": "./keycloakify-svelte/login/components/inputLabel.d.ts",
+      "svelte": "./keycloakify-svelte/login/components/inputLabel.js",
+      "default": "./keycloakify-svelte/login/components/inputLabel.js"
     },
     "./login/components/InputTag.svelte": {
-      "types": "./dist/login/components/InputTag.svelte.d.ts",
-      "svelte": "./dist/login/components/InputTag.svelte"
+      "types": "./keycloakify-svelte/login/components/InputTag.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/components/InputTag.svelte"
     },
     "./login/components/InputTagSelects.svelte": {
-      "types": "./dist/login/components/InputTagSelects.svelte.d.ts",
-      "svelte": "./dist/login/components/InputTagSelects.svelte"
+      "types": "./keycloakify-svelte/login/components/InputTagSelects.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/components/InputTagSelects.svelte"
     },
     "./login/components/LogoutOtherSessions.svelte": {
-      "types": "./dist/login/components/LogoutOtherSessions.svelte.d.ts",
-      "svelte": "./dist/login/components/LogoutOtherSessions.svelte"
+      "types": "./keycloakify-svelte/login/components/LogoutOtherSessions.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/components/LogoutOtherSessions.svelte"
     },
     "./login/components/PasswordWrapper.svelte": {
-      "types": "./dist/login/components/PasswordWrapper.svelte.d.ts",
-      "svelte": "./dist/login/components/PasswordWrapper.svelte"
+      "types": "./keycloakify-svelte/login/components/PasswordWrapper.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/components/PasswordWrapper.svelte"
     },
     "./login/components/SelectTag.svelte": {
-      "types": "./dist/login/components/SelectTag.svelte.d.ts",
-      "svelte": "./dist/login/components/SelectTag.svelte"
+      "types": "./keycloakify-svelte/login/components/SelectTag.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/components/SelectTag.svelte"
     },
     "./login/components/TermsAcceptance.svelte": {
-      "types": "./dist/login/components/TermsAcceptance.svelte.d.ts",
-      "svelte": "./dist/login/components/TermsAcceptance.svelte"
+      "types": "./keycloakify-svelte/login/components/TermsAcceptance.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/components/TermsAcceptance.svelte"
     },
     "./login/components/TextareaTag.svelte": {
-      "types": "./dist/login/components/TextareaTag.svelte.d.ts",
-      "svelte": "./dist/login/components/TextareaTag.svelte"
+      "types": "./keycloakify-svelte/login/components/TextareaTag.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/components/TextareaTag.svelte"
     },
     "./login/components/UserProfileFormFields.svelte": {
-      "types": "./dist/login/components/UserProfileFormFields.svelte.d.ts",
-      "svelte": "./dist/login/components/UserProfileFormFields.svelte"
+      "types": "./keycloakify-svelte/login/components/UserProfileFormFields.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/components/UserProfileFormFields.svelte"
     },
     "./login/components/UserProfileFormFieldsProps": {
-      "types": "./dist/login/components/UserProfileFormFieldsProps.d.ts",
-      "svelte": "./dist/login/components/UserProfileFormFieldsProps.js",
-      "default": "./dist/login/components/UserProfileFormFieldsProps.js"
+      "types": "./keycloakify-svelte/login/components/UserProfileFormFieldsProps.d.ts",
+      "svelte": "./keycloakify-svelte/login/components/UserProfileFormFieldsProps.js",
+      "default": "./keycloakify-svelte/login/components/UserProfileFormFieldsProps.js"
     },
     "./login": {
-      "types": "./dist/login/index.d.ts",
-      "svelte": "./dist/login/index.js",
-      "default": "./dist/login/index.js"
+      "types": "./keycloakify-svelte/login/index.d.ts",
+      "svelte": "./keycloakify-svelte/login/index.js",
+      "default": "./keycloakify-svelte/login/index.js"
     },
     "./login/i18n": {
-      "types": "./dist/login/i18n/index.d.ts",
-      "svelte": "./dist/login/i18n/index.js",
-      "default": "./dist/login/i18n/index.js"
+      "types": "./keycloakify-svelte/login/i18n/index.d.ts",
+      "svelte": "./keycloakify-svelte/login/i18n/index.js",
+      "default": "./keycloakify-svelte/login/i18n/index.js"
     },
     "./login/i18n/i18nBuilder": {
-      "types": "./dist/login/i18n/i18nBuilder.d.ts",
-      "svelte": "./dist/login/i18n/i18nBuilder.js",
-      "default": "./dist/login/i18n/i18nBuilder.js"
+      "types": "./keycloakify-svelte/login/i18n/i18nBuilder.d.ts",
+      "svelte": "./keycloakify-svelte/login/i18n/i18nBuilder.js",
+      "default": "./keycloakify-svelte/login/i18n/i18nBuilder.js"
     },
     "./login/i18n/useI18n": {
-      "types": "./dist/login/i18n/useI18n.d.ts",
-      "svelte": "./dist/login/i18n/useI18n.js",
-      "default": "./dist/login/i18n/useI18n.js"
+      "types": "./keycloakify-svelte/login/i18n/useI18n.d.ts",
+      "svelte": "./keycloakify-svelte/login/i18n/useI18n.js",
+      "default": "./keycloakify-svelte/login/i18n/useI18n.js"
     },
     "./login/KcContext": {
-      "types": "./dist/login/KcContext/index.d.ts",
-      "svelte": "./dist/login/KcContext/index.js",
-      "default": "./dist/login/KcContext/index.js"
+      "types": "./keycloakify-svelte/login/KcContext/index.d.ts",
+      "svelte": "./keycloakify-svelte/login/KcContext/index.js",
+      "default": "./keycloakify-svelte/login/KcContext/index.js"
     },
     "./login/DefaultPage.svelte": {
-      "types": "./dist/login/DefaultPage.svelte.d.ts",
-      "svelte": "./dist/login/DefaultPage.svelte"
+      "types": "./keycloakify-svelte/login/DefaultPage.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/DefaultPage.svelte"
     },
     "./login/Template.svelte": {
-      "types": "./dist/login/Template.svelte.d.ts",
-      "svelte": "./dist/login/Template.svelte"
+      "types": "./keycloakify-svelte/login/Template.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/Template.svelte"
     },
     "./login/Template.useInitialize": {
-      "types": "./dist/login/Template.useInitialize.d.ts",
-      "svelte": "./dist/login/Template.useInitialize.js",
-      "default": "./dist/login/Template.useInitialize.js"
+      "types": "./keycloakify-svelte/login/Template.useInitialize.d.ts",
+      "svelte": "./keycloakify-svelte/login/Template.useInitialize.js",
+      "default": "./keycloakify-svelte/login/Template.useInitialize.js"
     },
     "./login/TemplateProps": {
-      "types": "./dist/login/TemplateProps.d.ts",
-      "svelte": "./dist/login/TemplateProps.js",
-      "default": "./dist/login/TemplateProps.js"
+      "types": "./keycloakify-svelte/login/TemplateProps.d.ts",
+      "svelte": "./keycloakify-svelte/login/TemplateProps.js",
+      "default": "./keycloakify-svelte/login/TemplateProps.js"
     },
     "./login/lib/useUserProfileForm": {
-      "types": "./dist/login/lib/useUserProfileForm.d.ts",
-      "svelte": "./dist/login/lib/useUserProfileForm.js",
-      "default": "./dist/login/lib/useUserProfileForm.js"
+      "types": "./keycloakify-svelte/login/lib/useUserProfileForm.d.ts",
+      "svelte": "./keycloakify-svelte/login/lib/useUserProfileForm.js",
+      "default": "./keycloakify-svelte/login/lib/useUserProfileForm.js"
     },
     "./login/pages/Code.svelte": {
-      "types": "./dist/login/pages/Code.svelte.d.ts",
-      "svelte": "./dist/login/pages/Code.svelte"
+      "types": "./keycloakify-svelte/login/pages/Code.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/Code.svelte"
     },
     "./login/pages/DeleteAccountConfirm.svelte": {
-      "types": "./dist/login/pages/DeleteAccountConfirm.svelte.d.ts",
-      "svelte": "./dist/login/pages/DeleteAccountConfirm.svelte"
+      "types": "./keycloakify-svelte/login/pages/DeleteAccountConfirm.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/DeleteAccountConfirm.svelte"
     },
     "./login/pages/DeleteCredential.svelte": {
-      "types": "./dist/login/pages/DeleteCredential.svelte.d.ts",
-      "svelte": "./dist/login/pages/DeleteCredential.svelte"
+      "types": "./keycloakify-svelte/login/pages/DeleteCredential.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/DeleteCredential.svelte"
     },
     "./login/pages/Error.svelte": {
-      "types": "./dist/login/pages/Error.svelte.d.ts",
-      "svelte": "./dist/login/pages/Error.svelte"
+      "types": "./keycloakify-svelte/login/pages/Error.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/Error.svelte"
     },
     "./login/pages/FrontchannelLogout.svelte": {
-      "types": "./dist/login/pages/FrontchannelLogout.svelte.d.ts",
-      "svelte": "./dist/login/pages/FrontchannelLogout.svelte"
+      "types": "./keycloakify-svelte/login/pages/FrontchannelLogout.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/FrontchannelLogout.svelte"
     },
     "./login/pages/IdpReviewUserProfile.svelte": {
-      "types": "./dist/login/pages/IdpReviewUserProfile.svelte.d.ts",
-      "svelte": "./dist/login/pages/IdpReviewUserProfile.svelte"
+      "types": "./keycloakify-svelte/login/pages/IdpReviewUserProfile.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/IdpReviewUserProfile.svelte"
     },
     "./login/pages/Info.svelte": {
-      "types": "./dist/login/pages/Info.svelte.d.ts",
-      "svelte": "./dist/login/pages/Info.svelte"
+      "types": "./keycloakify-svelte/login/pages/Info.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/Info.svelte"
     },
     "./login/pages/LoginConfigTotp.svelte": {
-      "types": "./dist/login/pages/LoginConfigTotp.svelte.d.ts",
-      "svelte": "./dist/login/pages/LoginConfigTotp.svelte"
+      "types": "./keycloakify-svelte/login/pages/LoginConfigTotp.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/LoginConfigTotp.svelte"
     },
     "./login/pages/LoginIdpLinkConfirmOverride.svelte": {
-      "types": "./dist/login/pages/LoginIdpLinkConfirmOverride.svelte.d.ts",
-      "svelte": "./dist/login/pages/LoginIdpLinkConfirmOverride.svelte"
+      "types": "./keycloakify-svelte/login/pages/LoginIdpLinkConfirmOverride.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/LoginIdpLinkConfirmOverride.svelte"
     },
     "./login/pages/LoginIdpLinkConfirm.svelte": {
-      "types": "./dist/login/pages/LoginIdpLinkConfirm.svelte.d.ts",
-      "svelte": "./dist/login/pages/LoginIdpLinkConfirm.svelte"
+      "types": "./keycloakify-svelte/login/pages/LoginIdpLinkConfirm.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/LoginIdpLinkConfirm.svelte"
     },
     "./login/pages/LoginIdpLinkEmail.svelte": {
-      "types": "./dist/login/pages/LoginIdpLinkEmail.svelte.d.ts",
-      "svelte": "./dist/login/pages/LoginIdpLinkEmail.svelte"
+      "types": "./keycloakify-svelte/login/pages/LoginIdpLinkEmail.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/LoginIdpLinkEmail.svelte"
     },
     "./login/pages/LoginOauth2DeviceVerifyUserCode.svelte": {
-      "types": "./dist/login/pages/LoginOauth2DeviceVerifyUserCode.svelte.d.ts",
-      "svelte": "./dist/login/pages/LoginOauth2DeviceVerifyUserCode.svelte"
+      "types": "./keycloakify-svelte/login/pages/LoginOauth2DeviceVerifyUserCode.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/LoginOauth2DeviceVerifyUserCode.svelte"
     },
     "./login/pages/LoginOauthGrant.svelte": {
-      "types": "./dist/login/pages/LoginOauthGrant.svelte.d.ts",
-      "svelte": "./dist/login/pages/LoginOauthGrant.svelte"
+      "types": "./keycloakify-svelte/login/pages/LoginOauthGrant.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/LoginOauthGrant.svelte"
     },
     "./login/pages/LoginOtp.svelte": {
-      "types": "./dist/login/pages/LoginOtp.svelte.d.ts",
-      "svelte": "./dist/login/pages/LoginOtp.svelte"
+      "types": "./keycloakify-svelte/login/pages/LoginOtp.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/LoginOtp.svelte"
     },
     "./login/pages/LoginPageExpired.svelte": {
-      "types": "./dist/login/pages/LoginPageExpired.svelte.d.ts",
-      "svelte": "./dist/login/pages/LoginPageExpired.svelte"
+      "types": "./keycloakify-svelte/login/pages/LoginPageExpired.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/LoginPageExpired.svelte"
     },
     "./login/pages/LoginPasskeysConditionalAuthenticate.svelte": {
-      "types": "./dist/login/pages/LoginPasskeysConditionalAuthenticate.svelte.d.ts",
-      "svelte": "./dist/login/pages/LoginPasskeysConditionalAuthenticate.svelte"
+      "types": "./keycloakify-svelte/login/pages/LoginPasskeysConditionalAuthenticate.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/LoginPasskeysConditionalAuthenticate.svelte"
     },
     "./login/pages/LoginPasskeysConditionalAuthenticate.useScript": {
-      "types": "./dist/login/pages/LoginPasskeysConditionalAuthenticate.useScript.d.ts",
-      "svelte": "./dist/login/pages/LoginPasskeysConditionalAuthenticate.useScript.js",
-      "default": "./dist/login/pages/LoginPasskeysConditionalAuthenticate.useScript.js"
+      "types": "./keycloakify-svelte/login/pages/LoginPasskeysConditionalAuthenticate.useScript.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/LoginPasskeysConditionalAuthenticate.useScript.js",
+      "default": "./keycloakify-svelte/login/pages/LoginPasskeysConditionalAuthenticate.useScript.js"
     },
     "./login/pages/LoginPassword.svelte": {
-      "types": "./dist/login/pages/LoginPassword.svelte.d.ts",
-      "svelte": "./dist/login/pages/LoginPassword.svelte"
+      "types": "./keycloakify-svelte/login/pages/LoginPassword.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/LoginPassword.svelte"
     },
     "./login/pages/LoginRecoveryAuthnCodeConfig.svelte": {
-      "types": "./dist/login/pages/LoginRecoveryAuthnCodeConfig.svelte.d.ts",
-      "svelte": "./dist/login/pages/LoginRecoveryAuthnCodeConfig.svelte"
+      "types": "./keycloakify-svelte/login/pages/LoginRecoveryAuthnCodeConfig.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/LoginRecoveryAuthnCodeConfig.svelte"
     },
     "./login/pages/LoginRecoveryAuthnCodeConfig.useScript": {
-      "types": "./dist/login/pages/LoginRecoveryAuthnCodeConfig.useScript.d.ts",
-      "svelte": "./dist/login/pages/LoginRecoveryAuthnCodeConfig.useScript.js",
-      "default": "./dist/login/pages/LoginRecoveryAuthnCodeConfig.useScript.js"
+      "types": "./keycloakify-svelte/login/pages/LoginRecoveryAuthnCodeConfig.useScript.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/LoginRecoveryAuthnCodeConfig.useScript.js",
+      "default": "./keycloakify-svelte/login/pages/LoginRecoveryAuthnCodeConfig.useScript.js"
     },
     "./login/pages/LoginRecoveryAuthnCodeInput.svelte": {
-      "types": "./dist/login/pages/LoginRecoveryAuthnCodeInput.svelte.d.ts",
-      "svelte": "./dist/login/pages/LoginRecoveryAuthnCodeInput.svelte"
+      "types": "./keycloakify-svelte/login/pages/LoginRecoveryAuthnCodeInput.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/LoginRecoveryAuthnCodeInput.svelte"
     },
     "./login/pages/LoginResetOtp.svelte": {
-      "types": "./dist/login/pages/LoginResetOtp.svelte.d.ts",
-      "svelte": "./dist/login/pages/LoginResetOtp.svelte"
+      "types": "./keycloakify-svelte/login/pages/LoginResetOtp.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/LoginResetOtp.svelte"
     },
     "./login/pages/LoginResetPassword.svelte": {
-      "types": "./dist/login/pages/LoginResetPassword.svelte.d.ts",
-      "svelte": "./dist/login/pages/LoginResetPassword.svelte"
+      "types": "./keycloakify-svelte/login/pages/LoginResetPassword.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/LoginResetPassword.svelte"
     },
     "./login/pages/Login.svelte": {
-      "types": "./dist/login/pages/Login.svelte.d.ts",
-      "svelte": "./dist/login/pages/Login.svelte"
+      "types": "./keycloakify-svelte/login/pages/Login.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/Login.svelte"
     },
     "./login/pages/LoginUpdatePassword.svelte": {
-      "types": "./dist/login/pages/LoginUpdatePassword.svelte.d.ts",
-      "svelte": "./dist/login/pages/LoginUpdatePassword.svelte"
+      "types": "./keycloakify-svelte/login/pages/LoginUpdatePassword.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/LoginUpdatePassword.svelte"
     },
     "./login/pages/LoginUpdateProfile.svelte": {
-      "types": "./dist/login/pages/LoginUpdateProfile.svelte.d.ts",
-      "svelte": "./dist/login/pages/LoginUpdateProfile.svelte"
+      "types": "./keycloakify-svelte/login/pages/LoginUpdateProfile.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/LoginUpdateProfile.svelte"
     },
     "./login/pages/LoginUsername.svelte": {
-      "types": "./dist/login/pages/LoginUsername.svelte.d.ts",
-      "svelte": "./dist/login/pages/LoginUsername.svelte"
+      "types": "./keycloakify-svelte/login/pages/LoginUsername.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/LoginUsername.svelte"
     },
     "./login/pages/LoginVerifyEmail.svelte": {
-      "types": "./dist/login/pages/LoginVerifyEmail.svelte.d.ts",
-      "svelte": "./dist/login/pages/LoginVerifyEmail.svelte"
+      "types": "./keycloakify-svelte/login/pages/LoginVerifyEmail.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/LoginVerifyEmail.svelte"
     },
     "./login/pages/LoginX509Info.svelte": {
-      "types": "./dist/login/pages/LoginX509Info.svelte.d.ts",
-      "svelte": "./dist/login/pages/LoginX509Info.svelte"
+      "types": "./keycloakify-svelte/login/pages/LoginX509Info.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/LoginX509Info.svelte"
     },
     "./login/pages/LogoutConfirm.svelte": {
-      "types": "./dist/login/pages/LogoutConfirm.svelte.d.ts",
-      "svelte": "./dist/login/pages/LogoutConfirm.svelte"
+      "types": "./keycloakify-svelte/login/pages/LogoutConfirm.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/LogoutConfirm.svelte"
     },
     "./login/pages/PageProps": {
-      "types": "./dist/login/pages/PageProps.d.ts",
-      "svelte": "./dist/login/pages/PageProps.js",
-      "default": "./dist/login/pages/PageProps.js"
+      "types": "./keycloakify-svelte/login/pages/PageProps.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/PageProps.js",
+      "default": "./keycloakify-svelte/login/pages/PageProps.js"
     },
     "./login/pages/Register.svelte": {
-      "types": "./dist/login/pages/Register.svelte.d.ts",
-      "svelte": "./dist/login/pages/Register.svelte"
+      "types": "./keycloakify-svelte/login/pages/Register.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/Register.svelte"
     },
     "./login/pages/SamlPostForm.svelte": {
-      "types": "./dist/login/pages/SamlPostForm.svelte.d.ts",
-      "svelte": "./dist/login/pages/SamlPostForm.svelte"
+      "types": "./keycloakify-svelte/login/pages/SamlPostForm.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/SamlPostForm.svelte"
     },
     "./login/pages/SelectAuthenticator.svelte": {
-      "types": "./dist/login/pages/SelectAuthenticator.svelte.d.ts",
-      "svelte": "./dist/login/pages/SelectAuthenticator.svelte"
+      "types": "./keycloakify-svelte/login/pages/SelectAuthenticator.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/SelectAuthenticator.svelte"
     },
     "./login/pages/Terms.svelte": {
-      "types": "./dist/login/pages/Terms.svelte.d.ts",
-      "svelte": "./dist/login/pages/Terms.svelte"
+      "types": "./keycloakify-svelte/login/pages/Terms.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/Terms.svelte"
     },
     "./login/pages/UpdateEmail.svelte": {
-      "types": "./dist/login/pages/UpdateEmail.svelte.d.ts",
-      "svelte": "./dist/login/pages/UpdateEmail.svelte"
+      "types": "./keycloakify-svelte/login/pages/UpdateEmail.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/UpdateEmail.svelte"
     },
     "./login/pages/WebauthnAuthenticate.svelte": {
-      "types": "./dist/login/pages/WebauthnAuthenticate.svelte.d.ts",
-      "svelte": "./dist/login/pages/WebauthnAuthenticate.svelte"
+      "types": "./keycloakify-svelte/login/pages/WebauthnAuthenticate.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/WebauthnAuthenticate.svelte"
     },
     "./login/pages/WebauthnAuthenticate.useScript": {
-      "types": "./dist/login/pages/WebauthnAuthenticate.useScript.d.ts",
-      "svelte": "./dist/login/pages/WebauthnAuthenticate.useScript.js",
-      "default": "./dist/login/pages/WebauthnAuthenticate.useScript.js"
+      "types": "./keycloakify-svelte/login/pages/WebauthnAuthenticate.useScript.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/WebauthnAuthenticate.useScript.js",
+      "default": "./keycloakify-svelte/login/pages/WebauthnAuthenticate.useScript.js"
     },
     "./login/pages/WebauthnError.svelte": {
-      "types": "./dist/login/pages/WebauthnError.svelte.d.ts",
-      "svelte": "./dist/login/pages/WebauthnError.svelte"
+      "types": "./keycloakify-svelte/login/pages/WebauthnError.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/WebauthnError.svelte"
     },
     "./login/pages/WebauthnRegister.svelte": {
-      "types": "./dist/login/pages/WebauthnRegister.svelte.d.ts",
-      "svelte": "./dist/login/pages/WebauthnRegister.svelte"
+      "types": "./keycloakify-svelte/login/pages/WebauthnRegister.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/WebauthnRegister.svelte"
     },
     "./login/pages/WebauthnRegister.useScript": {
-      "types": "./dist/login/pages/WebauthnRegister.useScript.d.ts",
-      "svelte": "./dist/login/pages/WebauthnRegister.useScript.js",
-      "default": "./dist/login/pages/WebauthnRegister.useScript.js"
+      "types": "./keycloakify-svelte/login/pages/WebauthnRegister.useScript.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/WebauthnRegister.useScript.js",
+      "default": "./keycloakify-svelte/login/pages/WebauthnRegister.useScript.js"
     },
     "./account": {
-      "types": "./dist/account/index.d.ts",
-      "svelte": "./dist/account/index.js",
-      "default": "./dist/account/index.js"
+      "types": "./keycloakify-svelte/account/index.d.ts",
+      "svelte": "./keycloakify-svelte/account/index.js",
+      "default": "./keycloakify-svelte/account/index.js"
     },
     "./account/i18n": {
-      "types": "./dist/account/i18n/index.d.ts",
-      "svelte": "./dist/account/i18n/index.js",
-      "default": "./dist/account/i18n/index.js"
+      "types": "./keycloakify-svelte/account/i18n/index.d.ts",
+      "svelte": "./keycloakify-svelte/account/i18n/index.js",
+      "default": "./keycloakify-svelte/account/i18n/index.js"
     },
     "./account/i18n/i18nBuilder": {
-      "types": "./dist/account/i18n/i18nBuilder.d.ts",
-      "svelte": "./dist/account/i18n/i18nBuilder.js",
-      "default": "./dist/account/i18n/i18nBuilder.js"
+      "types": "./keycloakify-svelte/account/i18n/i18nBuilder.d.ts",
+      "svelte": "./keycloakify-svelte/account/i18n/i18nBuilder.js",
+      "default": "./keycloakify-svelte/account/i18n/i18nBuilder.js"
     },
     "./account/i18n/useI18n": {
-      "types": "./dist/account/i18n/useI18n.d.ts",
-      "svelte": "./dist/account/i18n/useI18n.js",
-      "default": "./dist/account/i18n/useI18n.js"
+      "types": "./keycloakify-svelte/account/i18n/useI18n.d.ts",
+      "svelte": "./keycloakify-svelte/account/i18n/useI18n.js",
+      "default": "./keycloakify-svelte/account/i18n/useI18n.js"
     },
     "./account/KcContext": {
-      "types": "./dist/account/KcContext/index.d.ts",
-      "svelte": "./dist/account/KcContext/index.js",
-      "default": "./dist/account/KcContext/index.js"
+      "types": "./keycloakify-svelte/account/KcContext/index.d.ts",
+      "svelte": "./keycloakify-svelte/account/KcContext/index.js",
+      "default": "./keycloakify-svelte/account/KcContext/index.js"
     },
     "./account/DefaultPage.svelte": {
-      "types": "./dist/account/DefaultPage.svelte.d.ts",
-      "svelte": "./dist/account/DefaultPage.svelte"
+      "types": "./keycloakify-svelte/account/DefaultPage.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/account/DefaultPage.svelte"
     },
     "./account/Template.svelte": {
-      "types": "./dist/account/Template.svelte.d.ts",
-      "svelte": "./dist/account/Template.svelte"
+      "types": "./keycloakify-svelte/account/Template.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/account/Template.svelte"
     },
     "./account/Template.useInitialize": {
-      "types": "./dist/account/Template.useInitialize.d.ts",
-      "svelte": "./dist/account/Template.useInitialize.js",
-      "default": "./dist/account/Template.useInitialize.js"
+      "types": "./keycloakify-svelte/account/Template.useInitialize.d.ts",
+      "svelte": "./keycloakify-svelte/account/Template.useInitialize.js",
+      "default": "./keycloakify-svelte/account/Template.useInitialize.js"
     },
     "./account/TemplateProps": {
-      "types": "./dist/account/TemplateProps.d.ts",
-      "svelte": "./dist/account/TemplateProps.js",
-      "default": "./dist/account/TemplateProps.js"
+      "types": "./keycloakify-svelte/account/TemplateProps.d.ts",
+      "svelte": "./keycloakify-svelte/account/TemplateProps.js",
+      "default": "./keycloakify-svelte/account/TemplateProps.js"
     },
     "./account/pages/Account.svelte": {
-      "types": "./dist/account/pages/Account.svelte.d.ts",
-      "svelte": "./dist/account/pages/Account.svelte"
+      "types": "./keycloakify-svelte/account/pages/Account.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/account/pages/Account.svelte"
     },
     "./account/pages/Applications.svelte": {
-      "types": "./dist/account/pages/Applications.svelte.d.ts",
-      "svelte": "./dist/account/pages/Applications.svelte"
+      "types": "./keycloakify-svelte/account/pages/Applications.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/account/pages/Applications.svelte"
     },
     "./account/pages/FederatedIdentity.svelte": {
-      "types": "./dist/account/pages/FederatedIdentity.svelte.d.ts",
-      "svelte": "./dist/account/pages/FederatedIdentity.svelte"
+      "types": "./keycloakify-svelte/account/pages/FederatedIdentity.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/account/pages/FederatedIdentity.svelte"
     },
     "./account/pages/Log.svelte": {
-      "types": "./dist/account/pages/Log.svelte.d.ts",
-      "svelte": "./dist/account/pages/Log.svelte"
+      "types": "./keycloakify-svelte/account/pages/Log.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/account/pages/Log.svelte"
     },
     "./account/pages/PageProps": {
-      "types": "./dist/account/pages/PageProps.d.ts",
-      "svelte": "./dist/account/pages/PageProps.js",
-      "default": "./dist/account/pages/PageProps.js"
+      "types": "./keycloakify-svelte/account/pages/PageProps.d.ts",
+      "svelte": "./keycloakify-svelte/account/pages/PageProps.js",
+      "default": "./keycloakify-svelte/account/pages/PageProps.js"
     },
     "./account/pages/Password.svelte": {
-      "types": "./dist/account/pages/Password.svelte.d.ts",
-      "svelte": "./dist/account/pages/Password.svelte"
+      "types": "./keycloakify-svelte/account/pages/Password.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/account/pages/Password.svelte"
     },
     "./account/pages/Sessions.svelte": {
-      "types": "./dist/account/pages/Sessions.svelte.d.ts",
-      "svelte": "./dist/account/pages/Sessions.svelte"
+      "types": "./keycloakify-svelte/account/pages/Sessions.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/account/pages/Sessions.svelte"
     },
     "./account/pages/Totp.svelte": {
-      "types": "./dist/account/pages/Totp.svelte.d.ts",
-      "svelte": "./dist/account/pages/Totp.svelte"
+      "types": "./keycloakify-svelte/account/pages/Totp.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/account/pages/Totp.svelte"
     }
   },
   "files": [
-    "dist",
-    "!dist/**/*.test.*",
-    "!dist/**/*.spec.*",
+    "keycloakify-svelte",
+    "!keycloakify-svelte/**/*.test.*",
+    "!keycloakify-svelte/**/*.spec.*",
     "src",
     "!src/**/*.test.*",
     "!src/**/*.spec.*",
@@ -461,8 +461,5 @@
     "typescript-eslint": "^8.15.0",
     "vite": "^5.4.11",
     "zod": "^3.23.8"
-  },
-  "bin": {
-    "_keycloakify-custom-handler": "dist/bin/index.js"
   }
 }

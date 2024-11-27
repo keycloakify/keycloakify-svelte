@@ -1,4 +1,5 @@
 import chalk from 'chalk';
+import { join } from 'path';
 import { postBuild } from './shared/postBuild';
 import { run } from './shared/run';
 import { getThisCodebaseRootDirPath } from './tools/getThisCodebaseRootDirPath';
@@ -7,10 +8,22 @@ console.log(chalk.cyan(`Building @keycloakify/svelte...`));
 
 const startTime = Date.now();
 
-run('npx svelte-kit sync && rm -rf dist && npx svelte-package --input src && npx publint', {
+run('npx svelte-kit sync && rm -rf dist', {
   cwd: getThisCodebaseRootDirPath(),
 });
-run('rm -rf dist/bin', {
+run('npx svelte-package --input src --output dist/keycloakify-svelte', {
+  cwd: getThisCodebaseRootDirPath(),
+});
+run('cp package.json dist/package.json && cp LICENSE dist/LICENSE && cp README.md dist/README.md', {
+  cwd: getThisCodebaseRootDirPath(),
+});
+run('cp -r src dist/src', {
+  cwd: getThisCodebaseRootDirPath(),
+});
+run('npx publint', {
+  cwd: join(getThisCodebaseRootDirPath(), 'dist'),
+});
+run('rm -rf dist/keycloakify-svelte/bin', {
   cwd: getThisCodebaseRootDirPath(),
 });
 

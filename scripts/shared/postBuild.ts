@@ -5,10 +5,12 @@ import { transformCodebase } from '../../src/bin/tools/transformCodebase';
 import { getThisCodebaseRootDirPath } from '../tools/getThisCodebaseRootDirPath';
 import { run } from './run';
 
-const distDirPath = pathJoin(getThisCodebaseRootDirPath(), 'dist');
+const distDirPath = pathJoin(getThisCodebaseRootDirPath(), 'dist', 'keycloakify-svelte');
 
 export function postBuild() {
-  buildBin();
+  const { packageJsonBinProperty } = buildBin();
+
+  preparePackageJson({ packageJsonBinProperty });
 }
 
 function buildBin() {
@@ -54,7 +56,17 @@ function buildBin() {
 
   return {
     packageJsonBinProperty: {
-      [BIN_NAME]: pathRelative(distDirPath, newEntrypointFilePath).replaceAll(pathSep, '/'),
+      [BIN_NAME]: pathRelative(pathJoin(distDirPath, '..'), newEntrypointFilePath).replaceAll(pathSep, '/'),
     },
   };
+}
+
+function preparePackageJson(params: { packageJsonBinProperty: { '_keycloakify-custom-handler': string } }) {
+  const { packageJsonBinProperty } = params;
+
+  const packageJsonParsed = JSON.parse(fs.readFileSync(pathJoin(distDirPath, '..', 'package.json')).toString('utf8'));
+
+  packageJsonParsed.bin = packageJsonBinProperty;
+
+  fs.writeFileSync(pathJoin(distDirPath, '..', 'package.json'), JSON.stringify(packageJsonParsed, null, 2));
 }

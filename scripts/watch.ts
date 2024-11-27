@@ -12,7 +12,7 @@ import { createWaitForThrottle } from './tools/waitForThrottle';
   const postBuild = () => {
     postBuild_base();
     {
-      const packageJsonFilePath = pathJoin(getThisCodebaseRootDirPath(), 'package.json');
+      const packageJsonFilePath = pathJoin(getThisCodebaseRootDirPath(), 'dist', 'package.json');
 
       const parsedPackageJson = JSON.parse(fs.readFileSync(packageJsonFilePath).toString('utf8')) as {
         version: string;
@@ -30,10 +30,14 @@ import { createWaitForThrottle } from './tools/waitForThrottle';
   const eeBuildComplete = new EventEmitter();
 
   {
-    const child = child_process.spawn('npx', ['svelte-package', '--input src', '--watch'], {
-      shell: true,
-      cwd: getThisCodebaseRootDirPath(),
-    });
+    const child = child_process.spawn(
+      'npx',
+      ['svelte-package', '--input src', '--output dist/keycloakify-svelte', '--watch'],
+      {
+        shell: true,
+        cwd: getThisCodebaseRootDirPath(),
+      },
+    );
 
     child.stdout.on('data', (data) => {
       if (data.toString('utf8').includes('Watching src for changes...')) {
