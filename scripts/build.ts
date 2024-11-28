@@ -20,6 +20,9 @@ run('cp package.json dist/package.json && cp LICENSE dist/LICENSE && cp README.m
 run('cp -r src dist/src', {
   cwd: getThisCodebaseRootDirPath(),
 });
+run('cp -r stories dist/stories', {
+  cwd: getThisCodebaseRootDirPath(),
+});
 run('npx publint', {
   cwd: join(getThisCodebaseRootDirPath(), 'dist'),
 });

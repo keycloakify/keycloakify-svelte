@@ -411,6 +411,7 @@
     "keycloakify-svelte",
     "!keycloakify-svelte/**/*.test.*",
     "!keycloakify-svelte/**/*.spec.*",
+    "stories",
     "src",
     "!src/**/*.test.*",
     "!src/**/*.spec.*",

@@ -1,9 +1,9 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import chalk from 'chalk';
 import cliSelect from 'cli-select';
 import * as fs from 'fs';
 import { dirname as pathDirname, join as pathJoin, relative as pathRelative } from 'path';
 import { assert, Equals } from 'tsafe/assert';
+import { capitalize } from 'tsafe/capitalize';
 import {
   ACCOUNT_THEME_PAGE_IDS,
   type AccountThemePageId,
@@ -27,8 +27,9 @@ export async function command(params: { buildContext: BuildContext }) {
           return buildContext.implementedThemeTypes.account.isImplemented;
         case 'login':
           return buildContext.implementedThemeTypes.login.isImplemented;
+        case 'admin':
+          return false;
       }
-      // @ts-ignore
       assert<Equals<typeof themeType, never>>(false);
     });
 
@@ -58,8 +59,9 @@ export async function command(params: { buildContext: BuildContext }) {
           return [...LOGIN_THEME_PAGE_IDS];
         case 'account':
           return [...ACCOUNT_THEME_PAGE_IDS];
+        case 'admin':
+          return [];
       }
-      // @ts-ignore
       assert<Equals<typeof themeType, never>>(false);
     })(),
   }).catch(() => {
@@ -68,15 +70,9 @@ export async function command(params: { buildContext: BuildContext }) {
 
   console.log(`→ ${pageId}`);
 
-  const componentBasename = pageId.replace(/ftl$/, 'stories.ts');
+  const componentBasename = capitalize(pageId.replace(/ftl$/, '')) + 'stories.svelte';
 
-  const targetFilePath = pathJoin(
-    buildContext.themeSrcDirPath,
-    themeType,
-    'pages',
-    pageId.replace(/\.ftl$/, ''),
-    componentBasename,
-  );
+  const targetFilePath = pathJoin(buildContext.themeSrcDirPath, themeType, 'pages', componentBasename);
 
   if (fs.existsSync(targetFilePath)) {
     console.log(`${pathRelative(process.cwd(), targetFilePath)} already exists`);
@@ -86,8 +82,7 @@ export async function command(params: { buildContext: BuildContext }) {
 
   let sourceCode = fs
     .readFileSync(pathJoin(getThisCodebaseRootDirPath(), 'stories', themeType, 'pages', componentBasename))
-    .toString('utf8')
-    .replace(/["']\.\.\/KcPageStory["']/, "'../../KcPageStory'");
+    .toString('utf8');
 
   run_prettier: {
     if (!(await getIsPrettierAvailable())) {
@@ -115,7 +110,7 @@ export async function command(params: { buildContext: BuildContext }) {
       `${chalk.green('✓')} ${chalk.bold(
         pathJoin('.', pathRelative(process.cwd(), targetFilePath)),
       )} copy pasted from the Keycloakify source code into your project`,
-      `You can start storybook with ${chalk.bold('npm run storybook')}`,
+      `You can start storybook with ${chalk.bold('yarn run storybook')}`,
     ].join('\n'),
   );
 }
