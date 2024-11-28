@@ -7,4 +7,4 @@ export {
   type LoginThemePageId,
   type ThemeType,
 } from 'keycloakify/bin/shared/constants';
-export { readParams } from 'keycloakify/bin/shared/customHandler';
+export { NOT_IMPLEMENTED_EXIT_CODE, readParams } from 'keycloakify/bin/shared/customHandler';

@@ -5,7 +5,7 @@ import * as url from 'url';
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 
 function getThisCodebaseRootDirPath_rec(dirPath: string): string {
-  if (fs.existsSync(path.join(dirPath, 'package.json'))) {
+  if (!dirPath.includes('/bin') && fs.existsSync(path.join(dirPath, 'package.json'))) {
     return dirPath;
   }
   return getThisCodebaseRootDirPath_rec(path.join(dirPath, '..'));

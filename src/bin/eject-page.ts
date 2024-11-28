@@ -1,17 +1,9 @@
 #!/usr/bin/env node
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 
 import chalk from 'chalk';
 import cliSelect from 'cli-select';
 import * as fs from 'fs';
-import {
-  basename as pathBase,
-  dirname as pathDirname,
-  join as pathJoin,
-  posix as pathPosix,
-  relative as pathRelative,
-  sep as pathSep,
-} from 'path';
+import { dirname as pathDirname, join as pathJoin, relative as pathRelative } from 'path';
 import { assert, Equals } from 'tsafe/assert';
 import { capitalize } from 'tsafe/capitalize';
 import {
@@ -21,12 +13,10 @@ import {
   LOGIN_THEME_PAGE_IDS,
   type LoginThemePageId,
   THEME_TYPES,
-  type ThemeType,
 } from './core';
 import { getThisCodebaseRootDirPath } from './tools/getThisCodebaseRootDirPath';
+import { kebabCaseToCamelCase } from './tools/kebabCaseToSnakeCase';
 import { getIsPrettierAvailable, runPrettier } from './tools/runPrettier';
-import { replaceAll } from './tools/String.prototype.replaceAll';
-import { transformCodebase } from './tools/transformCodebase_async';
 
 export async function command(params: { buildContext: BuildContext }) {
   const { buildContext } = params;
@@ -40,8 +30,9 @@ export async function command(params: { buildContext: BuildContext }) {
           return buildContext.implementedThemeTypes.account.isImplemented;
         case 'login':
           return buildContext.implementedThemeTypes.login.isImplemented;
+        case 'admin':
+          return buildContext.implementedThemeTypes.admin.isImplemented;
       }
-      // @ts-ignore
       assert<Equals<typeof themeType, never>>(false);
     });
 
@@ -51,7 +42,7 @@ export async function command(params: { buildContext: BuildContext }) {
       return values[0];
     }
 
-    const { value } = await cliSelect<ThemeType>({
+    const { value } = await cliSelect({
       values,
     }).catch(() => {
       process.exit(-1);
@@ -64,9 +55,9 @@ export async function command(params: { buildContext: BuildContext }) {
 
   console.log(chalk.cyan('Select the page you want to customize:'));
 
-  const templateValue = 'template.ftl (Layout common to every page)';
+  const templateValue = 'Template.svelte (Layout common to every page)';
   const userProfileFormFieldsValue =
-    'user-profile-commons.ftl (Renders the form of the register.ftl, login-update-profile.ftl, update-email.ftl and idp-review-user-profile.ftl)';
+    'UserProfileFormFields.svelte (Renders the form of the register.ftl, login-update-profile.ftl, update-email.ftl and idp-review-user-profile.ftl)';
 
   const { value: pageIdOrComponent } = await cliSelect<
     LoginThemePageId | AccountThemePageId | typeof templateValue | typeof userProfileFormFieldsValue
@@ -77,8 +68,9 @@ export async function command(params: { buildContext: BuildContext }) {
           return [templateValue, userProfileFormFieldsValue, ...LOGIN_THEME_PAGE_IDS];
         case 'account':
           return [templateValue, ...ACCOUNT_THEME_PAGE_IDS];
+        case 'admin':
+          return [];
       }
-      // @ts-ignore
       assert<Equals<typeof themeType, never>>(false);
     })(),
   }).catch(() => {
@@ -87,198 +79,99 @@ export async function command(params: { buildContext: BuildContext }) {
 
   console.log(`→ ${pageIdOrComponent}`);
 
-  const componentRelativeDirPath_posix_to_componentRelativeFilePath_posix = (params: {
-    componentRelativeDirPath_posix: string;
-  }) => {
-    const { componentRelativeDirPath_posix } = params;
-    return `${componentRelativeDirPath_posix}/${pathPosix.basename(componentRelativeDirPath_posix)}.component`;
-  };
-
-  const componentDirRelativeToThemeTypePath = (() => {
+  const componentBasename = (() => {
     if (pageIdOrComponent === templateValue) {
-      return pathJoin('Template');
+      return 'Template.svelte';
     }
 
     if (pageIdOrComponent === userProfileFormFieldsValue) {
-      return pathJoin('components', 'UserProfileFormFields');
+      return 'UserProfileFormFields.svelte';
     }
 
-    return pathJoin('pages', capitalize(pageIdOrComponent.replace(/\.ftl$/, '')));
+    return capitalize(kebabCaseToCamelCase(pageIdOrComponent)).replace(/ftl$/, 'svelte');
   })();
 
+  const pagesOrDot = (() => {
+    if (pageIdOrComponent === templateValue || pageIdOrComponent === userProfileFormFieldsValue) {
+      return '.';
+    }
+
+    return 'pages';
+  })();
+
+  const targetFilePath = pathJoin(buildContext.themeSrcDirPath, themeType, pagesOrDot, componentBasename);
+
+  if (fs.existsSync(targetFilePath)) {
+    console.log(
+      `${pageIdOrComponent} is already ejected, ${pathRelative(process.cwd(), targetFilePath)} already exists`,
+    );
+
+    process.exit(-1);
+  }
+
+  let componentCode = fs
+    .readFileSync(pathJoin(getThisCodebaseRootDirPath(), 'src', themeType, pagesOrDot, componentBasename))
+    .toString('utf8');
+
+  run_prettier: {
+    if (!(await getIsPrettierAvailable())) {
+      break run_prettier;
+    }
+
+    componentCode = await runPrettier({
+      filePath: targetFilePath,
+      sourceCode: componentCode,
+    });
+  }
+
   {
-    const componentDirRelativeToThemeTypePaths = [componentDirRelativeToThemeTypePath];
+    const targetDirPath = pathDirname(targetFilePath);
 
-    while (componentDirRelativeToThemeTypePaths.length !== 0) {
-      const componentDirRelativeToThemeTypePath_i = componentDirRelativeToThemeTypePaths.pop();
-
-      assert(componentDirRelativeToThemeTypePath_i !== undefined);
-
-      const destDirPath = pathJoin(buildContext.themeSrcDirPath, themeType, componentDirRelativeToThemeTypePath_i);
-
-      const dirName = pathBase(destDirPath);
-      const tsFilePath = pathJoin(destDirPath, `${dirName}.svelte`);
-      if (fs.existsSync(destDirPath) && fs.readdirSync(destDirPath).length !== 0) {
-        // Check if the directory contains a .ts file with the same name as the directory
-        if (fs.existsSync(tsFilePath)) {
-          if (componentDirRelativeToThemeTypePath_i === componentDirRelativeToThemeTypePath) {
-            console.log(
-              `${pageIdOrComponent.split('.ftl')[0]} is already ejected, ${pathRelative(
-                process.cwd(),
-                destDirPath,
-              )} already exists and contains ${dirName}.svelte`,
-            );
-            process.exit(-1);
-          }
-          continue;
-        }
-      }
-
-      const localThemeTypeDirPath = pathJoin(getThisCodebaseRootDirPath(), 'src', themeType);
-
-      await transformCodebase({
-        srcDirPath: pathJoin(localThemeTypeDirPath, componentDirRelativeToThemeTypePath_i),
-        destDirPath,
-        transformSourceCode: async ({ filePath, fileRelativePath, sourceCode }) => {
-          if (filePath.endsWith('index.ts')) {
-            return undefined;
-          }
-          if (filePath.endsWith('.ts')) {
-            let modifiedSourceCode_str = sourceCode.toString('utf8');
-
-            run_prettier: {
-              if (!(await getIsPrettierAvailable())) {
-                break run_prettier;
-              }
-
-              modifiedSourceCode_str = await runPrettier({
-                filePath: pathJoin(destDirPath, fileRelativePath),
-                sourceCode: modifiedSourceCode_str,
-              });
-            }
-
-            return {
-              modifiedSourceCode: Buffer.from(modifiedSourceCode_str, 'utf8'),
-            };
-          }
-          const fileRelativeToThemeTypePath = pathRelative(localThemeTypeDirPath, filePath);
-
-          let modifiedSourceCode_str = sourceCode.toString();
-
-          const getPosixPathRelativeToFile = (params: { pathRelativeToThemeType: string }) => {
-            const { pathRelativeToThemeType } = params;
-
-            const path = pathRelative(pathDirname(fileRelativeToThemeTypePath), pathRelativeToThemeType)
-              .split(pathSep)
-              .join('/');
-
-            return path.startsWith('.') ? path : `./${path}`;
-          };
-
-          modifiedSourceCode_str = replaceAll(
-            modifiedSourceCode_str,
-            `@keycloakify/svelte/${themeType}/i18n`,
-            getPosixPathRelativeToFile({
-              pathRelativeToThemeType: 'i18n',
-            }),
-          );
-
-          modifiedSourceCode_str = replaceAll(
-            modifiedSourceCode_str,
-            `@keycloakify/svelte/${themeType}/KcContext`,
-            getPosixPathRelativeToFile({
-              pathRelativeToThemeType: 'KcContext',
-            }),
-          );
-
-          modifiedSourceCode_str = modifiedSourceCode_str.replace(
-            new RegExp(`@keycloakify/svelte/${themeType}/components/([^'"]+)`, 'g'),
-            (...[, componentDirRelativeToComponentsPath]) => {
-              const componentDirRelativeToThemeTypePath = pathJoin('components', componentDirRelativeToComponentsPath);
-
-              componentDirRelativeToThemeTypePaths.push(componentDirRelativeToThemeTypePath);
-
-              return componentRelativeDirPath_posix_to_componentRelativeFilePath_posix({
-                componentRelativeDirPath_posix: getPosixPathRelativeToFile({
-                  pathRelativeToThemeType: componentDirRelativeToThemeTypePath,
-                }),
-              });
-            },
-          );
-
-          run_prettier: {
-            if (!(await getIsPrettierAvailable())) {
-              break run_prettier;
-            }
-
-            modifiedSourceCode_str = await runPrettier({
-              filePath: pathJoin(destDirPath, fileRelativePath),
-              sourceCode: modifiedSourceCode_str,
-            });
-          }
-
-          return {
-            modifiedSourceCode: Buffer.from(modifiedSourceCode_str, 'utf8'),
-          };
-        },
-      });
-
-      console.log(
-        `${chalk.green('✓')} ${chalk.bold(
-          `.${pathSep}` + pathRelative(process.cwd(), destDirPath),
-        )} moved from the @keycloakify/svelte to your project`,
-      );
+    if (!fs.existsSync(targetDirPath)) {
+      fs.mkdirSync(targetDirPath, { recursive: true });
     }
   }
+
+  fs.writeFileSync(targetFilePath, Buffer.from(componentCode, 'utf8'));
+
+  console.log(
+    `${chalk.green('✓')} ${chalk.bold(
+      pathJoin('.', pathRelative(process.cwd(), targetFilePath)),
+    )} copy pasted from the Keycloakify source code into your project`,
+  );
 
   edit_KcPage: {
     if (pageIdOrComponent !== templateValue && pageIdOrComponent !== userProfileFormFieldsValue) {
       break edit_KcPage;
     }
 
-    const kcAppTsFilePath = pathJoin(buildContext.themeSrcDirPath, themeType, 'KcPage.svelte');
+    const kcAppSveltePath = pathJoin(buildContext.themeSrcDirPath, themeType, 'KcPage.svelte');
 
-    const kcAppTsCode = fs.readFileSync(kcAppTsFilePath).toString('utf8');
+    const kcAppSvelteCode = fs.readFileSync(kcAppSveltePath).toString('utf8');
 
-    const modifiedKcAppTsCode = await (async () => {
-      const componentRelativeDirPath_posix = componentDirRelativeToThemeTypePath.split(pathSep).join('/');
-
-      let sourceCode = kcAppTsCode.replace(
-        `@keycloakify/svelte/${themeType}/${componentRelativeDirPath_posix}`,
-        componentRelativeDirPath_posix_to_componentRelativeFilePath_posix({
-          componentRelativeDirPath_posix: `./${componentRelativeDirPath_posix}`,
-        }),
-      );
-
-      run_prettier: {
-        if (!(await getIsPrettierAvailable())) {
-          break run_prettier;
-        }
-
-        sourceCode = await runPrettier({
-          filePath: kcAppTsFilePath,
-          sourceCode,
-        });
+    const modifiedKcAppSvelteCode = (() => {
+      switch (pageIdOrComponent) {
+        case templateValue:
+          return kcAppSvelteCode.replace(`@keycloakify/svelte/${themeType}/Template`, './Template');
+        case userProfileFormFieldsValue:
+          return kcAppSvelteCode.replace(`@keycloakify/svelte/login/UserProfileFormFields`, './UserProfileFormFields');
       }
-
-      return sourceCode;
+      assert<Equals<typeof pageIdOrComponent, never>>(false);
     })();
 
-    if (modifiedKcAppTsCode === kcAppTsCode) {
+    if (kcAppSvelteCode === modifiedKcAppSvelteCode) {
       console.log(chalk.red('Unable to automatically update KcPage.svelte, please update it manually'));
       return;
     }
 
-    fs.writeFileSync(kcAppTsFilePath, Buffer.from(modifiedKcAppTsCode, 'utf8'));
+    fs.writeFileSync(kcAppSveltePath, Buffer.from(modifiedKcAppSvelteCode, 'utf8'));
 
     console.log(
-      `${chalk.green('✓')} ${chalk.bold(`.${pathSep}` + pathRelative(process.cwd(), kcAppTsFilePath))} Updated`,
+      `${chalk.green('✓')} ${chalk.bold(pathJoin('.', pathRelative(process.cwd(), kcAppSveltePath)))} Updated`,
     );
 
     return;
   }
-
-  const pageId = pageIdOrComponent;
 
   console.log(
     [
@@ -297,10 +190,8 @@ export async function command(params: { buildContext: BuildContext }) {
           ` const page = async () => {`,
           `   switch (kcContext.pageId) {`,
           `+`,
-          `    case '${pageId}':`,
-          `      return import('${componentRelativeDirPath_posix_to_componentRelativeFilePath_posix({
-            componentRelativeDirPath_posix: `./${componentDirRelativeToThemeTypePath.split(pathSep).join('/')}`,
-          })}');`,
+          `    case '${pageIdOrComponent}':`,
+          `      return import('./pages/${componentBasename}"');`,
           `+`,
           `     //...`,
           `     default:`,
