@@ -1,4 +1,4 @@
-import { createGetKcContextMock } from 'keycloakify/account/KcContext';
+import { createGetKcContextMock } from 'keycloakify/login/KcContext';
 import type { DeepPartial } from 'keycloakify/tools/DeepPartial';
 import { kcEnvDefaults, themeNames } from '../kc.gen';
 import type { KcContext, KcContextExtension, KcContextExtensionPerPage } from './KcContext';
