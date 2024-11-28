@@ -1,5 +1,5 @@
 import * as fs from 'fs';
-import { BIN_NAME } from 'keycloakify/bin/shared/customHandler';
+import { BIN_NAME } from '../../src/bin/core';
 import { dirname as pathDirname, join as pathJoin, relative as pathRelative, sep as pathSep } from 'path';
 import { transformCodebase } from '../../src/bin/tools/transformCodebase';
 import { getThisCodebaseRootDirPath } from '../tools/getThisCodebaseRootDirPath';
