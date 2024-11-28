@@ -13,6 +13,7 @@ import {
   THEME_TYPES,
 } from './core';
 import { getThisCodebaseRootDirPath } from './tools/getThisCodebaseRootDirPath';
+import { kebabCaseToCamelCase } from './tools/kebabCaseToSnakeCase';
 import { getIsPrettierAvailable, runPrettier } from './tools/runPrettier';
 
 export async function command(params: { buildContext: BuildContext }) {
@@ -70,7 +71,7 @@ export async function command(params: { buildContext: BuildContext }) {
 
   console.log(`→ ${pageId}`);
 
-  const componentBasename = capitalize(pageId.replace(/ftl$/, '')) + 'stories.svelte';
+  const componentBasename = capitalize(kebabCaseToCamelCase(pageId.replace(/ftl$/, ''))) + 'stories.svelte';
 
   const targetFilePath = pathJoin(buildContext.themeSrcDirPath, themeType, 'pages', componentBasename);
 
