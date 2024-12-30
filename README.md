@@ -31,7 +31,7 @@
 
 ## Using the library
 
-Don't it's not ready yet. Subscribe to alerts on the repo to get notified when it is.
+See [Getting Started](https://docs.keycloakify.dev/)
 
 ## Contributing
 

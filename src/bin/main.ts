@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import chalk from 'chalk';
 import { NOT_IMPLEMENTED_EXIT_CODE, readParams } from './core';
 
 const { buildContext, commandName } = readParams({ apiVersion: 'v1' });
@@ -28,6 +29,12 @@ const { buildContext, commandName } = readParams({ apiVersion: 'v1' });
       {
         const { command } = await import('./initialize-account-theme');
         command({ buildContext });
+      }
+      return;
+    case 'initialize-admin-theme':
+      {
+        console.log(chalk.red('Cannot create an admin theme when using Svelte.'));
+        process.exit(1);
       }
       return;
     default:
