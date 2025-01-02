@@ -64,7 +64,20 @@ export function createUseI18n<
     function renderHtmlString(params: { htmlString: string; msgKey: string }): Snippet {
       const { htmlString, msgKey } = params;
       return createRawSnippet(() => ({
-        render: () => `<div data-kc-msg="${msgKey}">${htmlString}</div>`,
+        render: () => {
+          const elementName = (() => {
+            if (htmlString.includes('<') && htmlString.includes('>')) {
+              for (const tagName of ['div', 'section', 'article', 'ul', 'ol']) {
+                if (htmlString.includes(`<${tagName}`)) {
+                  return 'div';
+                }
+              }
+            }
+            return 'span';
+          })();
+
+          return `<${elementName} data-kc-msg="${msgKey}">${htmlString}</${elementName}>`;
+        },
       }));
     }
 
@@ -104,7 +117,7 @@ export function createUseI18n<
 
     const styleElement = document.createElement('style');
     styleElement.attributes.setNamedItem(document.createAttribute(attributeName));
-    styleElement.textContent = `[data-kc-msg] { display: inline-block; }`;
+    styleElement.textContent = `div[${attributeName}] { display: inline-block; }`;
     document.head.prepend(styleElement);
   }
 
