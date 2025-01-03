@@ -58,16 +58,21 @@ export async function command(params: { buildContext: BuildContext }) {
   const templateValue = 'Template.svelte (Layout common to every page)';
   const userProfileFormFieldsValue =
     'UserProfileFormFields.svelte (Renders the form of the register.ftl, login-update-profile.ftl, update-email.ftl and idp-review-user-profile.ftl)';
+  const otherPageValue = "The page you're looking for isn't listed here";
 
   const { value: pageIdOrComponent } = await cliSelect<
-    LoginThemePageId | AccountThemePageId | typeof templateValue | typeof userProfileFormFieldsValue
+    | LoginThemePageId
+    | AccountThemePageId
+    | typeof templateValue
+    | typeof userProfileFormFieldsValue
+    | typeof otherPageValue
   >({
     values: (() => {
       switch (themeType) {
         case 'login':
-          return [templateValue, userProfileFormFieldsValue, ...LOGIN_THEME_PAGE_IDS];
+          return [templateValue, userProfileFormFieldsValue, ...LOGIN_THEME_PAGE_IDS, otherPageValue];
         case 'account':
-          return [templateValue, ...ACCOUNT_THEME_PAGE_IDS];
+          return [templateValue, ...ACCOUNT_THEME_PAGE_IDS, otherPageValue];
         case 'admin':
           return [];
       }
@@ -76,6 +81,17 @@ export async function command(params: { buildContext: BuildContext }) {
   }).catch(() => {
     process.exit(-1);
   });
+
+  if (pageIdOrComponent === otherPageValue) {
+    console.log(
+      [
+        'To style a page not included in the base Keycloak, such as one added by a third-party Keycloak extension,',
+        'refer to the documentation: https://docs.keycloakify.dev/features/styling-a-custom-page-not-included-in-base-keycloak',
+      ].join(' '),
+    );
+
+    process.exit(0);
+  }
 
   console.log(`→ ${pageIdOrComponent}`);
 
