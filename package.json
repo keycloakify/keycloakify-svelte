@@ -427,7 +427,9 @@
     "svelte:check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "_format": "prettier '**/*.{ts,html,json,md,svelte}'",
     "format": "yarn _format --write",
-    "lint": "yarn format && eslint . --fix"
+    "lint": "yarn format && eslint . --fix",
+    "changelog": "npx conventional-changelog -t -p angular -i CHANGELOG.md -s -r 0",
+    "release": "sh scripts/release.sh"
   },
   "peerDependencies": {
     "keycloakify": "^11.7.0",
@@ -441,6 +443,8 @@
     "@types/eslint": "^9.6.1",
     "@types/node": "^22.10.7",
     "@vercel/ncc": "^0.38.3",
+    "conventional-changelog-cli": "^5.0.0",
+    "cz-conventional-changelog": "^3.3.0",
     "cli-select": "^1.1.2",
     "eslint": "9.18.0",
     "eslint-config-prettier": "^10.0.1",
