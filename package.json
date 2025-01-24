@@ -1,6 +1,6 @@
 {
   "name": "@keycloakify/svelte",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Svelte Components for Keycloakify",
   "keywords": [
     "keycloak",
