@@ -1,3 +1,16 @@
+## [0.1.6](https://github.com/keycloakify/keycloakify-svelte/compare/v0.1.5...v0.1.6) (2025-03-10)
+
+
+### Features
+
+* update dependencies ([c89c710](https://github.com/keycloakify/keycloakify-svelte/commit/c89c7107a2c0aa764f7eb594274c7c2adacd56c8))
+
+
+
+## [0.1.5](https://github.com/keycloakify/keycloakify-svelte/compare/v0.1.4...v0.1.5) (2025-02-18)
+
+
+
 ## [0.1.4](https://github.com/keycloakify/keycloakify-svelte/compare/v0.1.3...v0.1.4) (2025-01-24)
 
 
