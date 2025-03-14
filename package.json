@@ -1,6 +1,6 @@
 {
   "name": "@keycloakify/svelte",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Svelte Components for Keycloakify",
   "keywords": [
     "keycloak",
@@ -452,17 +452,17 @@
     "eslint-plugin-svelte": "^3.1.0",
     "eslint-plugin-unused-imports": "^4.1.4",
     "globals": "^16.0.0",
-    "keycloakify": "^11.8.17",
+    "keycloakify": "^11.8.21",
     "npm-check-updates": "^17.1.15",
     "prettier": "^3.5.3",
     "prettier-plugin-svelte": "^3.3.3",
     "publint": "0.2.12",
-    "svelte": "^5.22.6",
+    "svelte": "^5.23.0",
     "svelte-check": "^4.1.5",
     "tsx": "^4.19.3",
     "typescript": "~5.8.2",
-    "typescript-eslint": "^8.26.0",
-    "vite": "^6.2.1",
+    "typescript-eslint": "^8.26.1",
+    "vite": "^6.2.2",
     "zod": "^3.24.2"
   }
 }

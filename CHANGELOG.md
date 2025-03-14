@@ -1,3 +1,12 @@
+## [0.1.7](https://github.com/keycloakify/keycloakify-svelte/compare/v0.1.6...v0.1.7) (2025-03-14)
+
+
+### Bug Fixes
+
+* issue 38029 ([13a1ba0](https://github.com/keycloakify/keycloakify-svelte/commit/13a1ba0e844e2b6d773b8799ef44ac9d11d80996))
+
+
+
 ## [0.1.6](https://github.com/keycloakify/keycloakify-svelte/compare/v0.1.5...v0.1.6) (2025-03-10)
 
 
