@@ -29,10 +29,7 @@ export async function getIsPrettierAvailable(): Promise<boolean> {
   return isPrettierAvailable;
 }
 
-type PrettierAndConfigHash = {
-  prettier: typeof import('prettier');
-  configHash: string;
-};
+type PrettierAndConfigHash = { prettier: typeof import('prettier'); configHash: string };
 
 getPrettier.cache = id<PrettierAndConfigHash | undefined>(undefined);
 
@@ -51,9 +48,20 @@ export async function getPrettier(): Promise<PrettierAndConfigHash> {
     // So we do a sketchy eval to bypass ncc.
     // We make sure to only do that when linking, otherwise we import properly.
     if (readThisNpmPackageVersion().startsWith('0.0.0')) {
-      eval(
-        `${symToStr({ prettier })} = require("${pathResolve(pathJoin(getNodeModulesBinDirPath(), '..', 'prettier'))}")`,
-      );
+      const prettierDirPath = pathResolve(pathJoin(getNodeModulesBinDirPath(), '..', 'prettier'));
+
+      const isCJS = typeof module !== 'undefined' && module.exports;
+
+      if (isCJS) {
+        eval(`${symToStr({ prettier })} = require("${prettierDirPath}")`);
+      } else {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        prettier = await new Promise((_resolve) => {
+          eval(
+            `import("file:///${pathJoin(prettierDirPath, 'index.mjs').replace(/\\/g, '/')}").then(prettier => _resolve(prettier))`,
+          );
+        });
+      }
 
       assert(!is<undefined>(prettier));
 
@@ -75,10 +83,7 @@ export async function getPrettier(): Promise<PrettierAndConfigHash> {
     return crypto.createHash('sha256').update(data).digest('hex');
   })();
 
-  const prettierAndConfig: PrettierAndConfigHash = {
-    prettier,
-    configHash,
-  };
+  const prettierAndConfig: PrettierAndConfigHash = { prettier, configHash };
 
   getPrettier.cache = prettierAndConfig;
 
@@ -93,9 +98,7 @@ export async function runPrettier(params: { sourceCode: string; filePath: string
   try {
     const { prettier } = await getPrettier();
 
-    const { ignored, inferredParser } = await prettier.getFileInfo(filePath, {
-      resolveConfig: true,
-    });
+    const { ignored, inferredParser } = await prettier.getFileInfo(filePath, { resolveConfig: true });
 
     if (ignored) {
       return sourceCode;
