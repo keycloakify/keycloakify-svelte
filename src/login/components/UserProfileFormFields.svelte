@@ -61,7 +61,10 @@
   {/if}
   <div
     class={kcClsx('kcFormGroupClass')}
-    style:display={attribute.name === 'password-confirm' && !doMakeUserConfirmPassword ? 'none' : undefined}
+    style:display={attribute.annotations.inputType === 'hidden' ||
+    (attribute.name === 'password-confirm' && !doMakeUserConfirmPassword)
+      ? 'none'
+      : undefined}
   >
     <div class={kcClsx('kcLabelWrapperClass')}>
       <label
@@ -121,11 +124,3 @@
     </div>
   </div>
 {/each}
-<!-- See: https://github.com/keycloak/keycloak/issues/38029 -->
-{#if kcContext.locale !== undefined && $formFieldStates.find((x) => x.attribute.name === 'locale') === undefined}
-  <input
-    type="hidden"
-    name="locale"
-    value={$i18n.currentLanguage.languageTag}
-  />
-{/if}

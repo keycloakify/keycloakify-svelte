@@ -11,7 +11,13 @@
   const inputType = attribute.annotations.inputType ?? '';
 </script>
 
-{#if inputType === 'textarea'}
+{#if inputType === 'hidden'}
+  <input
+    type="hidden"
+    name={attribute.name}
+    value={valueOrValues}
+  />
+{:else if inputType === 'textarea'}
   <TextareaTag
     {...props}
     {displayableErrors}
