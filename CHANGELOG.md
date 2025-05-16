@@ -1,3 +1,12 @@
+## [0.1.8](https://github.com/keycloakify/keycloakify-svelte/compare/v0.1.7...v0.1.8) (2025-05-16)
+
+
+### Bug Fixes
+
+* input type hidden ([8223e65](https://github.com/keycloakify/keycloakify-svelte/commit/8223e65bb4d030f7a296c4df5d087676d0465db2))
+
+
+
 ## [0.1.7](https://github.com/keycloakify/keycloakify-svelte/compare/v0.1.6...v0.1.7) (2025-03-14)
 
 
