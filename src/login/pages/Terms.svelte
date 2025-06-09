@@ -32,7 +32,7 @@
   {#snippet headerNode()}
     {@render msg('termsTitle')()}
   {/snippet}
-  <div id="kc-terms-text">{msg('termsText')}</div>
+  <div id="kc-terms-text">{@render msg('termsText')()}</div>
   <form
     class="form-actions"
     action={url.loginAction}
