@@ -207,7 +207,7 @@ export async function command(params: { buildContext: BuildContext }) {
           `   switch (kcContext.pageId) {`,
           `+`,
           `    case '${pageIdOrComponent}':`,
-          `      return import('./pages/${componentBasename}"');`,
+          `      return import('./pages/${componentBasename}');`,
           `+`,
           `     //...`,
           `     default:`,
