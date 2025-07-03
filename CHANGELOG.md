@@ -1,3 +1,13 @@
+## [0.1.9](https://github.com/keycloakify/keycloakify-svelte/compare/v0.1.8...v0.1.9) (2025-07-03)
+
+
+### Bug Fixes
+
+* removed extra double-quote in page router code snippet ([0f72025](https://github.com/keycloakify/keycloakify-svelte/commit/0f72025c6ace358d0420367c0077965671b4444f))
+* Update Terms.svelte ([c233a11](https://github.com/keycloakify/keycloakify-svelte/commit/c233a11e06bdd3d83fb4ddecac39626836761f1f))
+
+
+
 ## [0.1.8](https://github.com/keycloakify/keycloakify-svelte/compare/v0.1.7...v0.1.8) (2025-05-16)
 
 
