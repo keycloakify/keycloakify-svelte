@@ -1,3 +1,12 @@
+## [0.1.11](https://github.com/keycloakify/keycloakify-svelte/compare/v0.1.10...v0.1.11) (2025-07-13)
+
+
+### Bug Fixes
+
+* eject also props ([108a22c](https://github.com/keycloakify/keycloakify-svelte/commit/108a22cac0296910f81946713ea8a06b3325cdd4))
+
+
+
 ## [0.1.10](https://github.com/keycloakify/keycloakify-svelte/compare/v0.1.9...v0.1.10) (2025-07-13)
 
 
