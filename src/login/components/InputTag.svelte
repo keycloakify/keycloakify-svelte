@@ -3,8 +3,9 @@
   import FieldErrors from '@keycloakify/svelte/login/components/FieldErrors.svelte';
   import type { InputFieldByTypeProps } from '@keycloakify/svelte/login/components/InputFieldByTypeProps';
   import { assert } from 'keycloakify/tools/assert';
+  import type { I18n } from '../i18n';
 
-  type InputTagProps = InputFieldByTypeProps & { fieldIndex?: number };
+  type InputTagProps = InputFieldByTypeProps<I18n> & { fieldIndex?: number };
   let {
     attribute,
     fieldIndex,

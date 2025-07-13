@@ -2,10 +2,9 @@ import type { FormAction, FormFieldError } from '@keycloakify/svelte/login/lib/u
 import type { Attribute } from 'keycloakify/login/KcContext';
 import type { KcClsx } from 'keycloakify/login/lib/kcClsx';
 import type { EventDispatcher } from 'svelte';
-import type { I18n } from '../i18n';
 import type { Readable } from 'svelte/store';
 
-export type InputFieldByTypeProps = {
+export type InputFieldByTypeProps<I18n> = {
   attribute: Attribute;
   valueOrValues: string | string[];
   displayableErrors: FormFieldError[];

@@ -2,7 +2,9 @@
   import type { InputFieldByTypeProps } from '@keycloakify/svelte/login/components/InputFieldByTypeProps';
   import { inputLabel } from '@keycloakify/svelte/login/components/inputLabel';
   import { assert } from 'keycloakify/tools/assert';
-  const { attribute, dispatchFormAction, kcClsx, displayableErrors, i18n, valueOrValues }: InputFieldByTypeProps =
+  import type { I18n } from '../i18n';
+
+  const { attribute, dispatchFormAction, kcClsx, displayableErrors, i18n, valueOrValues }: InputFieldByTypeProps<I18n> =
     $props();
 
   const isMultiple = attribute.annotations.inputType === 'multiselect';

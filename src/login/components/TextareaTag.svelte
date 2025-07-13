@@ -1,8 +1,10 @@
 <script lang="ts">
-  import { assert } from 'keycloakify/tools/assert';
   import type { InputFieldByTypeProps } from '@keycloakify/svelte/login/components/InputFieldByTypeProps';
+  import { assert } from 'keycloakify/tools/assert';
+  import type { I18n } from '../i18n';
 
-  const { attribute, dispatchFormAction, kcClsx, displayableErrors, valueOrValues }: InputFieldByTypeProps = $props();
+  const { attribute, dispatchFormAction, kcClsx, displayableErrors, valueOrValues }: InputFieldByTypeProps<I18n> =
+    $props();
 
   assert(typeof valueOrValues === 'string');
 

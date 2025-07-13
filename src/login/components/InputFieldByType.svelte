@@ -5,8 +5,9 @@
   import PasswordWrapper from '@keycloakify/svelte/login/components/PasswordWrapper.svelte';
   import SelectTag from '@keycloakify/svelte/login/components/SelectTag.svelte';
   import TextareaTag from '@keycloakify/svelte/login/components/TextareaTag.svelte';
+  import type { I18n } from '../i18n';
 
-  let { displayableErrors, ...props }: InputFieldByTypeProps = $props();
+  let { displayableErrors, ...props }: InputFieldByTypeProps<I18n> = $props();
   const { attribute, valueOrValues } = props;
   const inputType = attribute.annotations.inputType ?? '';
 </script>
