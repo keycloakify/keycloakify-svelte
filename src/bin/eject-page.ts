@@ -95,66 +95,89 @@ export async function command(params: { buildContext: BuildContext }) {
 
   console.log(`→ ${pageIdOrComponent}`);
 
-  const componentBasename = (() => {
+  const componentBasenames = (() => {
     if (pageIdOrComponent === templateValue) {
-      return 'Template.svelte';
+      return ['Template.svelte'];
     }
 
     if (pageIdOrComponent === userProfileFormFieldsValue) {
-      return 'UserProfileFormFields.svelte';
+      return [
+        'UserProfileFormFields.svelte',
+        'InputFieldByType.svelte',
+        'LogoutOtherSessions.svelte',
+        'PasswordWrapper.svelte',
+        'AddRemoveButtonsMultiValuedAttribute.svelte',
+        'SelectTag.svelte',
+        'FieldErrors.svelte',
+        'InputTag.svelte',
+        'TermsAcceptance.svelte',
+        'GroupLabel.svelte',
+        'InputTagSelects.svelte',
+        'TextareaTag.svelte',
+      ];
     }
 
-    return capitalize(kebabCaseToCamelCase(pageIdOrComponent)).replace(/ftl$/, 'svelte');
+    return [capitalize(kebabCaseToCamelCase(pageIdOrComponent)).replace(/ftl$/, 'svelte')];
   })();
 
   const pagesOrDot = (() => {
-    if (pageIdOrComponent === templateValue || pageIdOrComponent === userProfileFormFieldsValue) {
+    if (pageIdOrComponent === templateValue) {
       return '.';
+    } else if (pageIdOrComponent === userProfileFormFieldsValue) {
+      return 'components';
     }
 
     return 'pages';
   })();
 
-  const targetFilePath = pathJoin(buildContext.themeSrcDirPath, themeType, pagesOrDot, componentBasename);
+  for (const componentBasename of componentBasenames) {
+    const targetFilePath = pathJoin(buildContext.themeSrcDirPath, themeType, pagesOrDot, componentBasename);
 
-  if (fs.existsSync(targetFilePath)) {
+    if (fs.existsSync(targetFilePath)) {
+      console.log(
+        `${pageIdOrComponent} is already ejected, ${pathRelative(process.cwd(), targetFilePath)} already exists`,
+      );
+
+      process.exit(-1);
+    }
+
+    let componentCode = fs
+      .readFileSync(pathJoin(getThisCodebaseRootDirPath(), 'src', themeType, pagesOrDot, componentBasename))
+      .toString('utf8');
+    if (userProfileFormFieldsValue) {
+      componentCode = componentCode.replace(
+        new RegExp(`from '@keycloakify/svelte/login/components/(${componentBasenames.join('|')})`, 'g'),
+        `from './$1`,
+      );
+    }
+
+    run_prettier: {
+      if (!(await getIsPrettierAvailable())) {
+        break run_prettier;
+      }
+
+      componentCode = await runPrettier({
+        filePath: targetFilePath,
+        sourceCode: componentCode,
+      });
+    }
+
+    {
+      const targetDirPath = pathDirname(targetFilePath);
+
+      if (!fs.existsSync(targetDirPath)) {
+        fs.mkdirSync(targetDirPath, { recursive: true });
+      }
+    }
+
+    fs.writeFileSync(targetFilePath, Buffer.from(componentCode, 'utf8'));
+
     console.log(
-      `${pageIdOrComponent} is already ejected, ${pathRelative(process.cwd(), targetFilePath)} already exists`,
+      `${chalk.green('✓')} ${chalk.bold(
+        pathJoin('.', pathRelative(process.cwd(), targetFilePath)),
+      )} copy pasted from the Keycloakify source code into your project`,
     );
-
-    process.exit(-1);
   }
-
-  let componentCode = fs
-    .readFileSync(pathJoin(getThisCodebaseRootDirPath(), 'src', themeType, pagesOrDot, componentBasename))
-    .toString('utf8');
-
-  run_prettier: {
-    if (!(await getIsPrettierAvailable())) {
-      break run_prettier;
-    }
-
-    componentCode = await runPrettier({
-      filePath: targetFilePath,
-      sourceCode: componentCode,
-    });
-  }
-
-  {
-    const targetDirPath = pathDirname(targetFilePath);
-
-    if (!fs.existsSync(targetDirPath)) {
-      fs.mkdirSync(targetDirPath, { recursive: true });
-    }
-  }
-
-  fs.writeFileSync(targetFilePath, Buffer.from(componentCode, 'utf8'));
-
-  console.log(
-    `${chalk.green('✓')} ${chalk.bold(
-      pathJoin('.', pathRelative(process.cwd(), targetFilePath)),
-    )} copy pasted from the Keycloakify source code into your project`,
-  );
 
   edit_KcPage: {
     if (pageIdOrComponent !== templateValue && pageIdOrComponent !== userProfileFormFieldsValue) {
@@ -170,7 +193,10 @@ export async function command(params: { buildContext: BuildContext }) {
         case templateValue:
           return kcAppSvelteCode.replace(`@keycloakify/svelte/${themeType}/Template`, './Template');
         case userProfileFormFieldsValue:
-          return kcAppSvelteCode.replace(`@keycloakify/svelte/login/UserProfileFormFields`, './UserProfileFormFields');
+          return kcAppSvelteCode.replace(
+            `@keycloakify/svelte/login/components/UserProfileFormFields`,
+            './components/UserProfileFormFields',
+          );
       }
       assert<Equals<typeof pageIdOrComponent, never>>(false);
     })();
@@ -207,7 +233,7 @@ export async function command(params: { buildContext: BuildContext }) {
           `   switch (kcContext.pageId) {`,
           `+`,
           `    case '${pageIdOrComponent}':`,
-          `      return import('./pages/${componentBasename}');`,
+          `      return import('./pages/${componentBasenames[0]}');`,
           `+`,
           `     //...`,
           `     default:`,
