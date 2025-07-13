@@ -1,3 +1,12 @@
+## [0.1.10](https://github.com/keycloakify/keycloakify-svelte/compare/v0.1.9...v0.1.10) (2025-07-13)
+
+
+### Bug Fixes
+
+* wrong path on ejecting UserProfileFormFields nad complete components ejection ([7bbed58](https://github.com/keycloakify/keycloakify-svelte/commit/7bbed583af44f9e24d6ed93c24f1e681a27bcf1a)), closes [#6](https://github.com/keycloakify/keycloakify-svelte/issues/6)
+
+
+
 ## [0.1.9](https://github.com/keycloakify/keycloakify-svelte/compare/v0.1.8...v0.1.9) (2025-07-03)
 
 
