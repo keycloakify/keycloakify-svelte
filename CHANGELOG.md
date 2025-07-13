@@ -1,3 +1,12 @@
+## [0.1.12](https://github.com/keycloakify/keycloakify-svelte/compare/v0.1.11...v0.1.12) (2025-07-13)
+
+
+### Bug Fixes
+
+* not needed to export props if passing paramteric I18n ([837c7d1](https://github.com/keycloakify/keycloakify-svelte/commit/837c7d1b49ee45aed31c0f277e0cc4b79075044b))
+
+
+
 ## [0.1.11](https://github.com/keycloakify/keycloakify-svelte/compare/v0.1.10...v0.1.11) (2025-07-13)
 
 
