@@ -114,6 +114,8 @@ export async function command(params: { buildContext: BuildContext }) {
         'GroupLabel.svelte',
         'InputTagSelects.svelte',
         'TextareaTag.svelte',
+        'InputFieldByTypeProps.ts',
+        'UserProfileFormFieldsProps.ts',
       ];
     }
 
@@ -146,7 +148,10 @@ export async function command(params: { buildContext: BuildContext }) {
       .toString('utf8');
     if (userProfileFormFieldsValue) {
       componentCode = componentCode.replace(
-        new RegExp(`from '@keycloakify/svelte/login/components/(${componentBasenames.join('|')})`, 'g'),
+        new RegExp(
+          `from '@keycloakify/svelte/login/components/(${componentBasenames.join('|').replace(/\.ts/g, '')})`,
+          'g',
+        ),
         `from './$1`,
       );
     }
