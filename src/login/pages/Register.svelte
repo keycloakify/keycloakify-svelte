@@ -110,7 +110,7 @@
             )}
             data-sitekey={recaptchaSiteKey}
             data-callback={() => {
-              (document.getElementById('kc-register-form') as HTMLFormElement).submit();
+              (document.getElementById('kc-register-form') as HTMLFormElement).requestSubmit();
             }}
             data-action={recaptchaAction}
             type="submit"

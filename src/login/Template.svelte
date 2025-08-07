@@ -193,7 +193,7 @@
                   href="#"
                   id="try-another-way"
                   onclick={() => {
-                    document.forms['kc-select-try-another-way-form' as never].submit();
+                    document.forms['kc-select-try-another-way-form' as never].requestSubmit();
                     return false;
                   }}
                 >

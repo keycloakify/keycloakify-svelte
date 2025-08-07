@@ -11,6 +11,9 @@ export type KcContextLike = {
     ssoLoginInOtherTabsUrl: string;
   };
   scripts?: string[];
+  authenticationSession?: {
+    authSessionIdHash: string;
+  };
 };
 
 assert<keyof KcContextLike extends keyof KcContext ? true : false>();
@@ -50,11 +53,14 @@ export function useInitialize(params: { kcContext: KcContextLike; doUseDefaultCs
           }))),
       {
         type: 'module',
-        textContent: `
-                    import { checkCookiesAndSetTimer } from "${url.resourcesPath}/js/authChecker.js";
-
-                    checkCookiesAndSetTimer("${url.ssoLoginInOtherTabsUrl}");
-                `,
+        textContent: [
+          `import { startSessionPolling, checkAuthSession } from "${url.resourcesPath}/js/authChecker.js";`,
+          ``,
+          `startSessionPolling("${kcContext.url.ssoLoginInOtherTabsUrl}");`,
+          kcContext.authenticationSession === undefined
+            ? ''
+            : `checkAuthSession("${kcContext.authenticationSession.authSessionIdHash}");`,
+        ].join('\n'),
       },
     ],
   });

@@ -28,7 +28,7 @@
       return;
     }
 
-    htmlFormElement.submit();
+    htmlFormElement.requestSubmit();
   });
 </script>
 
