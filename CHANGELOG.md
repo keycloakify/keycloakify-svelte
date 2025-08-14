@@ -1,3 +1,14 @@
+## [0.2.2](https://github.com/keycloakify/keycloakify-svelte/compare/v0.2.1...v0.2.2) (2025-08-14)
+
+
+### Bug Fixes
+
+* https://github.com/keycloakify/keycloakify/issues/903 ([7b2c723](https://github.com/keycloakify/keycloakify-svelte/commit/7b2c723568423c39fac9367fde21836e02246af8))
+* lint ([e3778ef](https://github.com/keycloakify/keycloakify-svelte/commit/e3778ef42c794f1ef28d8665dea8b197fa330102))
+* publint yarn v1 error ([e28213d](https://github.com/keycloakify/keycloakify-svelte/commit/e28213d735fdee84256c295c959339dd075ea39a))
+
+
+
 # [0.2.0](https://github.com/keycloakify/keycloakify-svelte/compare/v0.1.12...v0.2.0) (2025-08-07)
 
 
