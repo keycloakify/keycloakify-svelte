@@ -23,7 +23,7 @@ run('cp -r src dist/src', {
 run('cp -r stories dist/stories', {
   cwd: getThisCodebaseRootDirPath(),
 });
-run('npx publint', {
+run('npx publint --pack npm', {
   cwd: join(getThisCodebaseRootDirPath(), 'dist'),
 });
 run('rm -rf dist/keycloakify-svelte/bin', {
