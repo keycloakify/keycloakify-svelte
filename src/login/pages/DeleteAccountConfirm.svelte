@@ -39,17 +39,17 @@
   >
     <div
       class="alert alert-warning"
-      style:margin-top={'0'}
-      style:margin-bottom={'30px'}
+      style:margin-top="0"
+      style:margin-bottom="30px"
     >
       <span class="pficon pficon-warning-triangle-o"></span>
       {@render msg('irreversibleAction')()}
     </div>
     <p>{@render msg('deletingImplies')()}</p>
     <ul
-      style:color={'#72767b'}
-      style:list-style={'disc'}
-      style:list-style-position={'inside'}
+      style:color="#72767b"
+      style:list-style="disc"
+      style:list-style-position="inside"
     >
       <li>{@render msg('loggingOutImmediately')()}</li>
       <li>{@render msg('errasingData')()}</li>
@@ -64,7 +64,7 @@
       {#if triggered_from_aia}
         <button
           class={kcClsx('kcButtonClass', 'kcButtonDefaultClass', 'kcButtonLargeClass')}
-          style:margin-left={'calc(100% - 220px)'}
+          style:margin-left="calc(100% - 220px)"
           type="submit"
           name="cancel-aia"
           value="true"

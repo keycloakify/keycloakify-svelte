@@ -48,14 +48,14 @@
 
     <!-- svelte-ignore a11y_no_redundant_roles -->
     <tbody role="rowgroup">
-      {#each sessions.sessions as session}
+      {#each sessions.sessions as session (session.id)}
         <tr>
           <td>{session.ipAddress}</td>
           <td>{session?.started}</td>
           <td>{session?.lastAccess}</td>
           <td>{session?.expires}</td>
           <td>
-            {#each session.clients as client}
+            {#each session.clients as client (client)}
               <div>
                 {client}
                 <br />

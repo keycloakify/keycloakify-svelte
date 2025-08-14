@@ -34,7 +34,7 @@
     method="post"
   >
     <div class={kcClsx('kcSelectAuthListClass')}>
-      {#each auth.authenticationSelections as authenticationSelection}
+      {#each auth.authenticationSelections as authenticationSelection (authenticationSelection.authExecId)}
         <button
           class={kcClsx('kcSelectAuthListItemClass')}
           type="submit"

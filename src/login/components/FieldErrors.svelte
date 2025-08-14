@@ -20,7 +20,7 @@
       class={kcClsx('kcInputErrorMessageClass')}
       aria-live="polite"
     >
-      {#each _displayableErrors as displayableError, i}
+      {#each _displayableErrors as displayableError, i (i)}
         {@const { errorMessage } = displayableError}
         {@render errorMessage()}
         {#if _displayableErrors.length - 1 !== i}<br />{/if}

@@ -56,7 +56,7 @@
         {/if}
       </thead>
       <tbody>
-        {#each totp.otpCredentials as credential, index}
+        {#each totp.otpCredentials as credential, index (credential.id)}
           <tr>
             <td class="provider">{@render msg('mobile')()}</td>
             {#if totp.otpCredentials.length > 1}<td class="provider">{credential.id}</td>{/if}
@@ -107,7 +107,7 @@
           <p>{@render msg('totpStep1')()}</p>
 
           <ul id="kc-totp-supported-apps">
-            {#each totp.supportedApplications as app}
+            {#each totp.supportedApplications as app (app)}
               <li>{@render advancedMsg(app)()}</li>
             {/each}
           </ul>

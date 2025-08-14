@@ -92,7 +92,7 @@
                   id="language-switch1"
                   class={kcClsx('kcLocaleListClass')}
                 >
-                  {#each enabledLanguages as enabledLanguage, i}
+                  {#each enabledLanguages as enabledLanguage, i (enabledLanguage.languageTag)}
                     {@const { label, href } = enabledLanguage}
                     <li
                       class={kcClsx('kcLocaleListItemClass')}

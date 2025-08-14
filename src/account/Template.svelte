@@ -62,7 +62,7 @@
                     {currentLanguage.label}
                   </a>
                   <ul>
-                    {#each enabledLanguages as { label, href }}
+                    {#each enabledLanguages as { label, href, languageTag } (languageTag)}
                       <li class="kc-dropdown-item">
                         <a {href}>{label}</a>
                       </li>

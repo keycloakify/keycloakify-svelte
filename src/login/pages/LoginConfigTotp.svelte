@@ -39,7 +39,7 @@
       <p>{@render msg('loginTotpStep1')()}</p>
 
       <ul id="kc-totp-supported-apps">
-        {#each totp.supportedApplications as app}
+        {#each totp.supportedApplications as app (app)}
           <li>{@render advancedMsg(app)()}</li>
         {/each}
       </ul>
@@ -119,7 +119,7 @@
           class={kcClsx('kcLabelClass')}
         >
           {@render msg('authenticatorCode')()}
-        </label>{' '}
+        </label>&nbsp;
         <span class="required">*</span>
       </div>
       <div class={kcClsx('kcInputWrapperClass')}>
@@ -160,7 +160,7 @@
           class={kcClsx('kcLabelClass')}
         >
           {@render msg('loginTotpDeviceName')()}
-        </label>{' '}
+        </label>&nbsp;
         {#if totp.otpCredentials.length >= 1}<span class="required">*</span>{/if}
       </div>
       <div class={kcClsx('kcInputWrapperClass')}>

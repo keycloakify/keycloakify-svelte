@@ -46,14 +46,14 @@
       </thead>
 
       <tbody>
-        {#each log.events as event}
+        {#each log.events as event (event.event)}
           <tr>
             <td>{event.date ? new Date(event.date).toLocaleString() : ''}</td>
             <td>{event.event}</td>
             <td>{event.ipAddress}</td>
             <td>{event.client || ''}</td>
             <td>
-              {#each event.details as detail, detailIndex}
+              {#each event.details as detail, detailIndex (detail.key)}
                 <span>
                   {`${detail.key} = ${detail.value}`}
                   {#if detailIndex < event.details.length - 1},&nbsp;{/if}

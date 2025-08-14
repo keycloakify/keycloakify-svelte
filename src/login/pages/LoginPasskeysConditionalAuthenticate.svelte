@@ -101,14 +101,14 @@
   <div
     class={kcClsx('kcFormGroupClass')}
     no-bottom-margin={true}
-    style:margin-bottom={'0'}
+    style:margin-bottom="0"
   >
     {#if authenticators !== undefined && Object.keys(authenticators).length !== 0}
       <form
         id="authn_select"
         class={kcClsx('kcFormClass')}
       >
-        {#each authenticators.authenticators as authenticator}
+        {#each authenticators.authenticators as authenticator (authenticator.credentialId)}
           <input
             type="hidden"
             name="authn_use_chk"
@@ -122,7 +122,7 @@
           <p class={kcClsx('kcSelectAuthListItemTitle')}>{msg('passkey-available-authenticators')}</p>
         {/if}
         <div class={kcClsx('kcFormClass')}>
-          {#each authenticators.authenticators as authenticator, i}
+          {#each authenticators.authenticators as authenticator, i (authenticator.credentialId)}
             <div
               id={`kc-webauthn-authenticator-item-${i}`}
               class={kcClsx('kcSelectAuthListItemClass')}
@@ -151,7 +151,7 @@
                     id={`kc-webauthn-authenticator-transport-${i}`}
                     class={kcClsx('kcSelectAuthListItemDescriptionClass')}
                   >
-                    {#each authenticator.transports.displayNameProperties as nameProperty, i}
+                    {#each authenticator.transports.displayNameProperties as nameProperty, i (nameProperty)}
                       <span> {advancedMsg(nameProperty)} </span>
                       {#if i !== authenticator.transports.displayNameProperties.length - 1}
                         <span>, </span>{/if}
@@ -176,7 +176,7 @@
             id="kc-form-login"
             action={url.loginAction}
             method="post"
-            style:display={'none'}
+            style:display="none"
             onsubmit={(event) => {
               try {
                 event.currentTarget.login.disabled = true;
@@ -223,7 +223,7 @@
         <div
           id="kc-form-passkey-button"
           class={kcClsx('kcFormButtonsClass')}
-          style:display={'none'}
+          style:display="none"
         >
           <!-- svelte-ignore a11y_autofocus -->
           <input

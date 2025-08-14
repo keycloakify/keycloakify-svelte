@@ -1,3 +1,7 @@
+# [0.2.0](https://github.com/keycloakify/keycloakify-svelte/compare/v0.1.12...v0.2.0) (2025-08-07)
+
+
+
 ## [0.1.12](https://github.com/keycloakify/keycloakify-svelte/compare/v0.1.11...v0.1.12) (2025-07-13)
 
 

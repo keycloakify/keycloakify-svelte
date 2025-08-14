@@ -76,7 +76,7 @@
         </thead>
 
         <tbody>
-          {#each applications as application}
+          {#each applications as application, i (i)}
             <tr>
               <td>
                 {#if application.effectiveUrl}
@@ -97,22 +97,22 @@
 
               <td>
                 {#if !isArrayWithEmptyObject(application.realmRolesAvailable)}
-                  {#each application.realmRolesAvailable as role, index}
+                  {#each application.realmRolesAvailable as role, index (role.name)}
                     <span>
                       {@render (role.description ? advancedMsg(role.description) : advancedMsg(role.name))()}
                       {#if index < application.realmRolesAvailable.length - 1},&nbsp;{/if}
                     </span>
                   {/each}
                   {#if application.resourceRolesAvailable}
-                    {#each Object.keys(application.resourceRolesAvailable) as resource}
+                    {#each Object.keys(application.resourceRolesAvailable) as resource (resource)}
                       <span>
                         {#if !isArrayWithEmptyObject(application.realmRolesAvailable)},&nbsp;{/if}
-                        {#each application.resourceRolesAvailable[resource] as clientRole}
+                        {#each application.resourceRolesAvailable[resource] as clientRole (clientRole.roleName)}
                           <span>
                             {@render (clientRole.roleDescription
                               ? advancedMsg(clientRole.roleDescription)
-                              : advancedMsg(clientRole.roleName))()}{' '}
-                            {@render msg('inResource')()}{' '}
+                              : advancedMsg(clientRole.roleName))()}&nbsp:
+                            {@render msg('inResource')()}&nbsp:
                             <strong>
                               {#if clientRole.clientName}
                                 {@render advancedMsg(clientRole.clientName)()}
@@ -131,7 +131,7 @@
 
               <td>
                 {#if application.client.consentRequired}
-                  {#each application.clientScopesGranted as claim}
+                  {#each application.clientScopesGranted as claim (claim)}
                     <span>
                       {@render advancedMsg(claim)()}
                       {#if claim !== application.clientScopesGranted[application.clientScopesGranted.length - 1]},&nbsp;{/if}
@@ -143,7 +143,7 @@
               </td>
 
               <td>
-                {#each application.additionalGrants as grant}
+                {#each application.additionalGrants as grant (grant)}
                   <span>
                     {@render advancedMsg(grant)()}
                     {#if grant !== application.additionalGrants[application.additionalGrants.length - 1]},&nbsp;{/if}

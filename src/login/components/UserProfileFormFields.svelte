@@ -41,7 +41,7 @@
   );
 </script>
 
-{#each $formFieldStates as formFieldState, i}
+{#each $formFieldStates as formFieldState, i (i)}
   {@const { attribute, valueOrValues } = formFieldState}
   <GroupLabel
     {attribute}

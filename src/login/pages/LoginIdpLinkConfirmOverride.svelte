@@ -37,7 +37,7 @@
     action={url.loginAction}
     method="post"
   >
-    {@render msg('pageExpiredMsg1')()}{' '}
+    {@render msg('pageExpiredMsg1')()}&nbsp;
     <a
       id="loginRestartLink"
       href={url.loginRestartFlowUrl}

@@ -36,7 +36,7 @@
 {:else}
   <!-- default -->
   {#if valueOrValues instanceof Array}
-    {#each valueOrValues as _, i}
+    {#each valueOrValues as _, i (i)}
       <InputTag
         {...props}
         bind:displayableErrors

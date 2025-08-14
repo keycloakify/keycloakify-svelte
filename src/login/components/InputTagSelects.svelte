@@ -62,7 +62,7 @@
   })();
 </script>
 
-{#each options as option}
+{#each options as option (option)}
   <div class={classDiv}>
     <input
       type={inputType}

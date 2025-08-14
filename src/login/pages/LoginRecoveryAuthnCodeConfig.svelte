@@ -61,7 +61,7 @@
     id={olRecoveryCodesListId}
     class={kcClsx('kcRecoveryCodesList')}
   >
-    {#each recoveryAuthnCodesConfigBean.generatedRecoveryAuthnCodesList as code, index}
+    {#each recoveryAuthnCodesConfigBean.generatedRecoveryAuthnCodesList as code, index (code)}
       <li>
         <span>{index + 1}:</span>
         {code.slice(0, 4)}-{code.slice(4, 8)}-{code.slice(8)}

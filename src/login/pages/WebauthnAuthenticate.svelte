@@ -43,7 +43,7 @@
   {#snippet infoNode()}
     <div id="kc-registration">
       <span>
-        {@render msg('noAccount')()}{' '}
+        {@render msg('noAccount')()}&nbsp;
         <a
           tabindex={6}
           href={url.registrationUrl}
@@ -99,7 +99,7 @@
           id="authn_select"
           class={kcClsx('kcFormClass')}
         >
-          {#each authenticators.authenticators as authenticator}
+          {#each authenticators.authenticators as authenticator (authenticator.credentialId)}
             <input
               type="hidden"
               name="authn_use_chk"
@@ -113,7 +113,7 @@
             <p class={kcClsx('kcSelectAuthListItemTitle')}>{@render msg('webauthn-available-authenticators')()}</p>
           {/if}
           <div class={kcClsx('kcFormOptionsClass')}>
-            {#each authenticators.authenticators as authenticator, i}
+            {#each authenticators.authenticators as authenticator, i (authenticator.credentialId)}
               <div
                 id={`kc-webauthn-authenticator-item-${i}`}
                 class={kcClsx('kcSelectAuthListItemClass')}
@@ -144,7 +144,7 @@
                       id={`kc-webauthn-authenticator-transport-${i}`}
                       class={kcClsx('kcSelectAuthListItemDescriptionClass')}
                     >
-                      {#each authenticator.transports.displayNameProperties as displayNameProperty, i}
+                      {#each authenticator.transports.displayNameProperties as displayNameProperty, i (displayNameProperty)}
                         {@const hasNext = i !== authenticator.transports.displayNameProperties.length - 1}
                         {@render advancedMsg(displayNameProperty)()}
                         {#if hasNext}<span>, </span>{/if}

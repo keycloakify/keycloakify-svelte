@@ -1,6 +1,7 @@
 {
   "eslint.format.enable": true,
   "eslint.useFlatConfig": true,
+  "eslint.validate": ["javascript", "typescript", "svelte"],
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.codeActionsOnSave": {
@@ -41,5 +42,6 @@
     "**/dist/**": true,
     "**/node_modules/*/**": true
   },
-  "tailwindCSS.classAttributes": ["class", "className", ".*Class", ".*Styles"]
+  "tailwindCSS.classAttributes": ["class", "className", ".*Class", ".*Styles"],
+  "svelte.plugin.svelte.defaultScriptLanguage": "ts"
 }

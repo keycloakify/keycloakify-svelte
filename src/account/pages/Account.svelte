@@ -91,7 +91,7 @@
           class="control-label"
         >
           {@render msg('email')()}
-        </label>{' '}
+        </label>&nbsp;
         <span class="required">*</span>
       </div>
 
@@ -115,7 +115,7 @@
           class="control-label"
         >
           {@render msg('firstName')()}
-        </label>{' '}
+        </label>&nbsp;
         <span class="required">*</span>
       </div>
 
@@ -137,7 +137,7 @@
           class="control-label"
         >
           {@render msg('lastName')()}
-        </label>{' '}
+        </label>&nbsp;
         <span class="required">*</span>
       </div>
 

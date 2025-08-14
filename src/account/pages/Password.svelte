@@ -108,7 +108,7 @@
       value={account.username ?? ''}
       autocomplete="username"
       readonly
-      style:display={'none'}
+      style:display="none"
     />
 
     {#if password.passwordSet}

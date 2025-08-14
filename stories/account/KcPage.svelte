@@ -11,6 +11,7 @@
 
   const classes = {} satisfies { [key in ClassKey]?: string };
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const page = async (): Promise<{ default?: Component<any> }> => {
     switch (kcContext.pageId) {
       default:

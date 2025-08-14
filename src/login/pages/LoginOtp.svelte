@@ -42,7 +42,7 @@
     {#if otpLogin.userOtpCredentials.length > 1}
       <div class={kcClsx('kcFormGroupClass')}>
         <div class={kcClsx('kcInputWrapperClass')}>
-          {#each otpLogin.userOtpCredentials as otpCredential, index}
+          {#each otpLogin.userOtpCredentials as otpCredential, index (otpCredential.id)}
             <input
               id={`kc-otp-credential-${index}`}
               class={kcClsx('kcLoginOTPListInputClass')}

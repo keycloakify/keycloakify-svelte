@@ -36,15 +36,13 @@
       href={url.loginRestartFlowUrl}
     >
       {@render msg('doClickHere')()}
-    </a>{' '}
-    .<br />
-    {@render msg('pageExpiredMsg2')()}{' '}
+    </a>&nbsp;.<br />
+    {@render msg('pageExpiredMsg2')()}&nbsp;
     <a
       id="loginContinueLink"
       href={url.loginAction}
     >
       {@render msg('doClickHere')()}
-    </a>{' '}
-    .
+    </a>&nbsp;.
   </p>
 </Template>

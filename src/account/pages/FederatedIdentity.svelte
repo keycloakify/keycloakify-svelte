@@ -29,7 +29,7 @@
       </div>
     </div>
     <div id="federated-identities">
-      {#each federatedIdentity.identities as identity}
+      {#each federatedIdentity.identities as identity (identity.providerId)}
         <div class="row margin-bottom">
           <div class="col-sm-2 col-md-2">
             <label
