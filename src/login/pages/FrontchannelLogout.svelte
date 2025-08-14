@@ -1,6 +1,5 @@
 <script lang="ts">
   import type { PageProps } from '@keycloakify/svelte/login/pages/PageProps';
-  import { onMount } from 'svelte';
   import type { KcContext } from '../KcContext';
   import type { I18n } from '../i18n';
 
@@ -15,11 +14,15 @@
   const { logout } = kcContext;
 
   const { msg, msgStr } = $i18n;
-
-  onMount(() => {
-    if (logout.logoutRedirectUri) {
-      window.location.replace(logout.logoutRedirectUri);
+  let iframeLoadCount = $state(0);
+  $effect(() => {
+    if (!kcContext.logout.logoutRedirectUri) {
+      return;
     }
+    if (iframeLoadCount !== kcContext.logout.clients.length) {
+      return;
+    }
+    window.location.replace(kcContext.logout.logoutRedirectUri);
   });
 </script>
 
@@ -35,13 +38,14 @@
   {/snippet}
   <p>{@render msg('frontchannel-logout.message')()}</p>
   <ul>
-    {#each logout.clients as client}
+    {#each logout.clients as client (client.name)}
       <li>
         {client.name}
         <!-- svelte-ignore a11y_missing_attribute -->
         <iframe
           src={client.frontChannelLogoutUrl}
-          style:display={'none'}
+          style:display="none"
+          onload={() => iframeLoadCount++}
         ></iframe>
       </li>{/each}
   </ul>

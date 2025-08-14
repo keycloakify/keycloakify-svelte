@@ -36,6 +36,23 @@
 
   const [isFormSubmittable, setIsFormSubmittable] = useState(false);
   const [areTermsAccepted, setAreTermsAccepted] = useState(false);
+  let htmlFormElement: HTMLFormElement | null = $state(null);
+
+  $effect(() => {
+    if (htmlFormElement === null) {
+      return;
+    }
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (window as any)['onSubmitRecaptcha'] = () => {
+      // @ts-expect-error; form not null
+      htmlFormElement.requestSubmit();
+    };
+
+    return () => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      delete (window as any)['onSubmitRecaptcha'];
+    };
+  });
 </script>
 
 <Template
@@ -58,6 +75,7 @@
     class={kcClsx('kcFormClass')}
     action={url.registrationAction}
     method="post"
+    bind:this={htmlFormElement}
   >
     <UserProfileFormFields
       {kcContext}
@@ -109,9 +127,7 @@
               'g-recaptcha',
             )}
             data-sitekey={recaptchaSiteKey}
-            data-callback={() => {
-              (document.getElementById('kc-register-form') as HTMLFormElement).requestSubmit();
-            }}
+            data-callback="onSubmitRecaptcha"
             data-action={recaptchaAction}
             type="submit"
           >
