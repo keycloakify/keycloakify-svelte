@@ -6,7 +6,7 @@
     <br>
     <br>
     <a href="https://github.com/keycloakify/keycloakify-svelte/actions">
-      <img src="https://github.com/keycloakify/keycloakify-svelte/workflows/ci/badge.svg?branch=main">
+      <img src="https://github.com/keycloakify/keycloakify-svelte/actions/workflows/ci.yaml/badge.svg">
     </a>
     <a href="https://www.npmjs.com/package/@keycloakify/svelte">
       <img src="https://img.shields.io/npm/dm/@keycloakify/svelte">
