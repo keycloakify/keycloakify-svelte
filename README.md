@@ -15,7 +15,7 @@
       <img src="https://img.shields.io/npm/l/@keycloakify/svelte">
     </a>
     <a href="#contributors">
-      <img src="https://img.shields.io/github/all-contributors/keycloakify/keycloakify-svelte?color=ee8449&style=flat-square">
+      <img src="https://img.shields.io/github/all-contributors/keycloakify/keycloakify-svelte?color=ee8449">
     </a>
     <p align="center">
       Check out our discord server!<br/>
