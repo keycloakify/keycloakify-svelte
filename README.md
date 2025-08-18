@@ -14,9 +14,9 @@
     <a href="https://github.com/keycloakify/keycloakify-svelte/blob/main/LICENSE">
       <img src="https://img.shields.io/npm/l/@keycloakify/svelte">
     </a>
-    <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-      [![All Contributors](https://img.shields.io/github/all-contributors/keycloakify/keycloakify-svelte?color=ee8449&style=flat-square)](#contributors-)
-    <!-- ALL-CONTRIBUTORS-BADGE:END -->
+    <a href="#contributors">
+      <img src="https://img.shields.io/github/all-contributors/keycloakify/keycloakify-svelte?color=ee8449&style=flat-square">
+    </a>
     <p align="center">
       Check out our discord server!<br/>
       <a href="https://discord.gg/mJdYJSdcm4">
