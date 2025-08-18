@@ -48,3 +48,14 @@ yarn link-in-starter # When prompted select the starter you want to link into
 # At this point you can navigate to the starter you've picked.
 # The changes in the library will be reflected live in the starter.
 ```
+
+## Contributors
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
