@@ -6,14 +6,17 @@
     <br>
     <br>
     <a href="https://github.com/keycloakify/keycloakify-svelte/actions">
-      <img src="https://github.com/keycloakify/keycloakify/workflows/ci/badge.svg?branch=main">
+      <img src="https://github.com/keycloakify/keycloakify-svelte/workflows/ci/badge.svg?branch=main">
     </a>
     <a href="https://www.npmjs.com/package/@keycloakify/svelte">
       <img src="https://img.shields.io/npm/dm/@keycloakify/svelte">
     </a>
-    <a href="https://github.com/keycloakify/keycloakify/blob/main/LICENSE">
+    <a href="https://github.com/keycloakify/keycloakify-svelte/blob/main/LICENSE">
       <img src="https://img.shields.io/npm/l/@keycloakify/svelte">
     </a>
+    <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+      [![All Contributors](https://img.shields.io/github/all-contributors/keycloakify/keycloakify-svelte?color=ee8449&style=flat-square)](#contributors-)
+    <!-- ALL-CONTRIBUTORS-BADGE:END -->
     <p align="center">
       Check out our discord server!<br/>
       <a href="https://discord.gg/mJdYJSdcm4">
@@ -51,9 +54,20 @@ yarn link-in-starter # When prompted select the starter you want to link into
 
 ## Contributors
 
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/luca-peruzzo"><img src="https://avatars.githubusercontent.com/u/69015314?v=4?s=100" width="100px;" alt="Luca Peruzzo"/><br /><sub><b>Luca Peruzzo</b></sub></a><br /><a href="https://github.com/keycloakify/keycloakify-svelte/commits?author=luca-peruzzo" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/garronej"><img src="https://avatars.githubusercontent.com/u/6702424?v=4?s=100" width="100px;" alt="Joseph Garrone"/><br /><sub><b>Joseph Garrone</b></sub></a><br /><a href="https://github.com/keycloakify/keycloakify-svelte/commits?author=garronej" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/hyvong-iclic"><img src="https://avatars.githubusercontent.com/u/99980776?v=4?s=100" width="100px;" alt="Hy-Vong Georges Dit Rap"/><br /><sub><b>Hy-Vong Georges Dit Rap</b></sub></a><br /><a href="https://github.com/keycloakify/keycloakify-svelte/commits?author=hyvong-iclic" title="Code">💻</a></td>
+    </tr>
+  </tbody>
+</table>
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
