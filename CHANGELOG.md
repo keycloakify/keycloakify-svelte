@@ -1,3 +1,15 @@
+## [0.2.4](https://github.com/keycloakify/keycloakify-svelte/compare/v0.2.3...v0.2.4) (2025-09-11)
+
+
+### Bug Fixes
+
+* badge ([6861264](https://github.com/keycloakify/keycloakify-svelte/commit/68612642d1eca6ff8f6db96fb0e821cb265d00c6))
+* badge style ([3d071a9](https://github.com/keycloakify/keycloakify-svelte/commit/3d071a946f7f89527b245488d1b8d747ab5df069))
+* build problems with tsx 4.20.5 ([5a041cb](https://github.com/keycloakify/keycloakify-svelte/commit/5a041cbf911ac8227af46291f0d0ce2da3026c0c))
+* ci badge ([55ac23d](https://github.com/keycloakify/keycloakify-svelte/commit/55ac23d251996c69a86be4f44ad227f12d78d1a3))
+
+
+
 ## [0.2.2](https://github.com/keycloakify/keycloakify-svelte/compare/v0.2.1...v0.2.2) (2025-08-14)
 
 
@@ -6,6 +18,10 @@
 * https://github.com/keycloakify/keycloakify/issues/903 ([7b2c723](https://github.com/keycloakify/keycloakify-svelte/commit/7b2c723568423c39fac9367fde21836e02246af8))
 * lint ([e3778ef](https://github.com/keycloakify/keycloakify-svelte/commit/e3778ef42c794f1ef28d8665dea8b197fa330102))
 * publint yarn v1 error ([e28213d](https://github.com/keycloakify/keycloakify-svelte/commit/e28213d735fdee84256c295c959339dd075ea39a))
+
+
+
+## [0.2.1](https://github.com/keycloakify/keycloakify-svelte/compare/v0.2.0...v0.2.1) (2025-08-10)
 
 
 
