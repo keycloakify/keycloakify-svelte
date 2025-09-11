@@ -21,6 +21,7 @@ You **MUST** use the Svelte 5 API unless explicitly tasked to write Svelte 4 syn
 ### $state
 
 - `$state` creates reactive variables that update the UI automatically. For example:
+
   ```svelte
   <script>
     let count = $state(0);
@@ -28,6 +29,7 @@ You **MUST** use the Svelte 5 API unless explicitly tasked to write Svelte 4 syn
 
   <button onclick={() => count++}>Clicked: {count}</button>
   ```
+
 - Do **NOT** complicate state management by wrapping it in custom objects; instead, update reactive variables directly.  
   _In Svelte 4, you created state with let, e.g. `let count = 0;`, now use the $state rune, e.g. `let count = $state(0);`._
 - Arrays and objects become deeply reactive proxies. For example:
@@ -410,6 +412,7 @@ export default {
 - **Lexical Visibility:**  
   Snippets can be declared anywhere and reference variables from their outer lexical scope, including script or block-level declarations.  
   _Example:_
+
   ```svelte
   <script>
     let { message = "it's great to see you!" } = $props();
@@ -420,6 +423,7 @@ export default {
   {/snippet}
   {@render hello('alice')}
   ```
+
 - **Scope Limitations:**  
   Snippets are only accessible within their lexical scope; siblings and child blocks share scope, but nested snippets cannot be rendered outside.  
   _Usage caution:_ Do **NOT** attempt to render a snippet outside its declared scope.
@@ -429,6 +433,7 @@ export default {
 - **As Props:**  
   Within a template, snippets are first-class values that can be passed to components as props.  
   _Example:_
+
   ```svelte
   <script>
     import Table from './Table.svelte';
@@ -456,12 +461,14 @@ export default {
     {row}
   />
   ```
+
 - **Slot-like Behavior:**  
   Snippets declared inside component tags become implicit props (akin to slots) for the component.  
   _Svelte 4 used slots for this, e.g. `<Component><p slot="x" let:y>hi {y}</p></Component>`; now use snippets instead, e.g. `<Component>{#snippet x(y)}<p>hi {y}</p>{/snippet}</Component>`._
 - **Content Fallback:**  
   Content not wrapped in a snippet declaration becomes the `children` snippet, rendering as fallback content.  
   _Example:_
+
   ```svelte
   <!-- Button.svelte -->
   <script>
@@ -1101,11 +1108,13 @@ Use:
 - **Progressive enhancement**: Works without JS via `method`/`action`; with JS it submits without full reload.
 - **Single-flight mutations**:
   - Server-driven: call refresh inside the handler:
+
   ```js
   await getPosts().refresh();
   ```
 
   - Client-driven: customize with `enhance` and `submit().updates(...)`:
+
   ```svelte
   <form {...createPost.enhance(async ({ submit }) => {
   	await submit().updates(getPosts());
@@ -1113,9 +1122,11 @@ Use:
   ```
 
   - Optimistic UI: use `withOverride`:
+
   ```js
   await submit().updates(getPosts().withOverride((posts) => [newPost, ...posts]));
   ```
+
 - **Returns**: Instead of redirect, return data; read at `createPost.result`.
 - **buttonProps**: For per-button `formaction`:
 
