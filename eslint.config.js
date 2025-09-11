@@ -9,9 +9,9 @@ import ts from 'typescript-eslint';
 export default ts.config(
   js.configs.recommended,
   ...ts.configs.recommended,
-  ...svelte.configs['flat/recommended'],
+  ...svelte.configs.recommended,
   prettierConfig,
-  ...svelte.configs['flat/prettier'],
+  ...svelte.configs.prettier,
   {
     plugins: { prettier, 'unused-imports': unusedImports },
     rules: {
@@ -46,6 +46,15 @@ export default ts.config(
           varsIgnorePattern: '^_',
           args: 'after-used',
           argsIgnorePattern: '^_',
+        },
+      ],
+      'svelte/no-navigation-without-resolve': [
+        'error',
+        {
+          ignoreGoto: false,
+          ignoreLinks: true,
+          ignorePushState: false,
+          ignoreReplaceState: false,
         },
       ],
     },
