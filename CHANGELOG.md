@@ -1,11 +1,20 @@
-## [0.2.4](https://github.com/keycloakify/keycloakify-svelte/compare/v0.2.3...v0.2.4) (2025-09-11)
+## [0.2.5](https://github.com/keycloakify/keycloakify-svelte/compare/v0.2.4...v0.2.5) (2025-09-16)
+
+
+### Bug Fixes
+
+* build problems with tsx 4.20.5 ([5a041cb](https://github.com/keycloakify/keycloakify-svelte/commit/5a041cbf911ac8227af46291f0d0ce2da3026c0c))
+* format ([9a68d22](https://github.com/keycloakify/keycloakify-svelte/commit/9a68d220c8b095d5c6c6b712ddaabe46f17af750))
+
+
+
+## [0.2.3](https://github.com/keycloakify/keycloakify-svelte/compare/v0.2.2...v0.2.3) (2025-08-19)
 
 
 ### Bug Fixes
 
 * badge ([6861264](https://github.com/keycloakify/keycloakify-svelte/commit/68612642d1eca6ff8f6db96fb0e821cb265d00c6))
 * badge style ([3d071a9](https://github.com/keycloakify/keycloakify-svelte/commit/3d071a946f7f89527b245488d1b8d747ab5df069))
-* build problems with tsx 4.20.5 ([5a041cb](https://github.com/keycloakify/keycloakify-svelte/commit/5a041cbf911ac8227af46291f0d0ce2da3026c0c))
 * ci badge ([55ac23d](https://github.com/keycloakify/keycloakify-svelte/commit/55ac23d251996c69a86be4f44ad227f12d78d1a3))
 
 
