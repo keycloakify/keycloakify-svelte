@@ -1,4 +1,8 @@
-## [0.2.5](https://github.com/keycloakify/keycloakify-svelte/compare/v0.2.4...v0.2.5) (2025-09-16)
+## [0.2.6](https://github.com/keycloakify/keycloakify-svelte/compare/v0.2.5...v0.2.6) (2025-11-16)
+
+
+
+## [0.2.4](https://github.com/keycloakify/keycloakify-svelte/compare/v0.2.3...v0.2.4) (2025-09-11)
 
 
 ### Bug Fixes
