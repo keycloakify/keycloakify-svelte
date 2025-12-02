@@ -2,12 +2,10 @@ import chalk from 'chalk';
 import * as crypto from 'crypto';
 import * as fsPr from 'fs/promises';
 import { join as pathJoin, resolve as pathResolve } from 'path';
-import { assert } from 'tsafe/assert';
+import { assert, is } from 'tsafe/assert';
 import { id } from 'tsafe/id';
-import { is } from 'tsafe/is';
 import { symToStr } from 'tsafe/symToStr';
 import { getNodeModulesBinDirPath } from './nodeModulesBinDirPath';
-import { readThisNpmPackageVersion } from './readThisNpmPackageVersion';
 
 getIsPrettierAvailable.cache = id<boolean | undefined>(undefined);
 
@@ -29,7 +27,10 @@ export async function getIsPrettierAvailable(): Promise<boolean> {
   return isPrettierAvailable;
 }
 
-type PrettierAndConfigHash = { prettier: typeof import('prettier'); configHash: string };
+type PrettierAndConfigHash = {
+  prettier: typeof import('prettier');
+  configHash: string;
+};
 
 getPrettier.cache = id<PrettierAndConfigHash | undefined>(undefined);
 
@@ -43,36 +44,28 @@ export async function getPrettier(): Promise<PrettierAndConfigHash> {
   let prettier = id<typeof import('prettier') | undefined>(undefined);
 
   import_prettier: {
-    // NOTE: When module is linked we want to make sure we import the correct version
-    // of prettier, that is the one of the project, not the one of this repo.
-    // So we do a sketchy eval to bypass ncc.
-    // We make sure to only do that when linking, otherwise we import properly.
-    if (readThisNpmPackageVersion().startsWith('0.0.0')) {
-      const prettierDirPath = pathResolve(pathJoin(getNodeModulesBinDirPath(), '..', 'prettier'));
+    const prettierDirPath = pathResolve(pathJoin(getNodeModulesBinDirPath(), '..', 'prettier'));
 
-      const isCJS = typeof module !== 'undefined' && module.exports;
+    const isCJS = typeof module !== 'undefined' && module.exports;
 
-      if (isCJS) {
-        eval(`${symToStr({ prettier })} = require("${prettierDirPath}")`);
-      } else {
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        prettier = await new Promise((_resolve) => {
-          eval(
-            `import("file:///${pathJoin(prettierDirPath, 'index.mjs').replace(/\\/g, '/')}").then(prettier => _resolve(prettier))`,
-          );
-        });
-      }
-
-      assert(!is<undefined>(prettier));
-
-      break import_prettier;
+    if (isCJS) {
+      eval(`${symToStr({ prettier })} = require("${prettierDirPath}")`);
+    } else {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      prettier = await new Promise((_resolve) => {
+        eval(
+          `import("file:///${pathJoin(prettierDirPath, 'index.mjs').replace(/\\/g, '/')}").then(prettier => _resolve(prettier))`,
+        );
+      });
     }
 
-    prettier = await import('prettier');
+    assert(!is<undefined>(prettier));
+
+    break import_prettier;
   }
 
   const configHash = await (async () => {
-    const configFilePath = await prettier.resolveConfigFile(pathJoin(getNodeModulesBinDirPath(), '..'));
+    const configFilePath = await prettier.resolveConfigFile(pathJoin(getNodeModulesBinDirPath(), '..', '..'));
 
     if (configFilePath === null) {
       return '';
@@ -83,14 +76,19 @@ export async function getPrettier(): Promise<PrettierAndConfigHash> {
     return crypto.createHash('sha256').update(data).digest('hex');
   })();
 
-  const prettierAndConfig: PrettierAndConfigHash = { prettier, configHash };
+  const prettierAndConfig: PrettierAndConfigHash = {
+    prettier,
+    configHash,
+  };
 
   getPrettier.cache = prettierAndConfig;
 
   return prettierAndConfig;
 }
 
-export async function runPrettier(params: { sourceCode: string; filePath: string }): Promise<string> {
+export async function runPrettier(params: { sourceCode: string; filePath: string }): Promise<string>;
+export async function runPrettier(params: { sourceCode: Buffer; filePath: string }): Promise<Buffer>;
+export async function runPrettier(params: { sourceCode: string | Buffer; filePath: string }): Promise<string | Buffer> {
   const { sourceCode, filePath } = params;
 
   let formattedSourceCode: string;
@@ -98,24 +96,29 @@ export async function runPrettier(params: { sourceCode: string; filePath: string
   try {
     const { prettier } = await getPrettier();
 
-    const { ignored, inferredParser } = await prettier.getFileInfo(filePath, { resolveConfig: true });
+    const { ignored, inferredParser } = await prettier.getFileInfo(filePath, {
+      resolveConfig: true,
+    });
 
-    if (ignored) {
+    if (ignored || inferredParser === null) {
       return sourceCode;
     }
 
     const config = await prettier.resolveConfig(filePath);
 
-    formattedSourceCode = await prettier.format(sourceCode, {
-      ...config,
-      filePath,
-      parser: inferredParser ?? undefined,
-    });
+    formattedSourceCode = await prettier.format(
+      typeof sourceCode === 'string' ? sourceCode : sourceCode.toString('utf8'),
+      {
+        ...config,
+        filePath,
+        parser: inferredParser,
+      },
+    );
   } catch (error) {
     console.log(chalk.red(`You probably need to upgrade the version of prettier in your project`));
 
     throw error;
   }
 
-  return formattedSourceCode;
+  return typeof sourceCode === 'string' ? formattedSourceCode : Buffer.from(formattedSourceCode, 'utf8');
 }
