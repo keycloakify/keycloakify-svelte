@@ -5,7 +5,7 @@
   import { kcSanitize } from 'keycloakify/lib/kcSanitize';
   import { getKcClsx } from 'keycloakify/login/lib/kcClsx';
   import { clsx } from 'keycloakify/tools/clsx';
-  import { onMount } from 'svelte';
+  import { onMount, untrack } from 'svelte';
   import type { I18n } from './i18n';
   import type { KcContext } from './KcContext';
 
@@ -24,24 +24,30 @@
     classes,
     children,
   }: TemplateProps<KcContext, I18n> = $props();
-  const { kcClsx } = getKcClsx({ doUseDefaultCss, classes });
+  const { kcClsx } = $derived(getKcClsx({ doUseDefaultCss, classes }));
 
-  const { msgStr, currentLanguage, enabledLanguages } = $i18n;
+  const { msgStr, currentLanguage, enabledLanguages } = $derived($i18n);
 
-  const { realm, auth, url, message, isAppInitiatedAction } = kcContext;
+  const { realm, auth, url, message, isAppInitiatedAction } = $derived(kcContext);
+
   onMount(() => {
-    document.title = documentTitle ?? msgStr('loginTitle', kcContext.realm.displayName);
+    document.title = documentTitle ?? untrack(() => msgStr('loginTitle', kcContext.realm.displayName));
   });
+
   useSetClassName({
     qualifiedName: 'html',
-    className: kcClsx('kcHtmlClass'),
+    className: untrack(() => kcClsx('kcHtmlClass')),
   });
 
   useSetClassName({
     qualifiedName: 'body',
-    className: bodyClassName ?? kcClsx('kcBodyClass'),
+    className: untrack(() => bodyClassName ?? kcClsx('kcBodyClass')),
   });
-  const { isReadyToRender } = useInitialize({ kcContext, doUseDefaultCss });
+
+  const { isReadyToRender } = useInitialize({
+    kcContext: untrack(() => kcContext),
+    doUseDefaultCss: untrack(() => doUseDefaultCss),
+  });
 </script>
 
 {#if $isReadyToRender}

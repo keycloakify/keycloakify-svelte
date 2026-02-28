@@ -3,6 +3,7 @@
   import type { PageProps } from '@keycloakify/svelte/login/pages/PageProps';
   import { useScript } from '@keycloakify/svelte/login/pages/WebauthnRegister.useScript';
   import { getKcClsx } from 'keycloakify/login/lib/kcClsx';
+  import { untrack } from 'svelte';
   import type { KcContext } from '../KcContext';
   import type { I18n } from '../i18n';
 
@@ -14,18 +15,18 @@
     classes,
   }: PageProps<Extract<KcContext, { pageId: 'webauthn-register.ftl' }>, I18n> = $props();
 
-  const { kcClsx } = getKcClsx({ doUseDefaultCss, classes });
+  const { kcClsx } = $derived(getKcClsx({ doUseDefaultCss, classes }));
 
-  const { url, isSetRetry, isAppInitiatedAction } = kcContext;
+  const { url, isSetRetry, isAppInitiatedAction } = $derived(kcContext);
 
-  const { msg, msgStr } = $i18n;
+  const { msg, msgStr } = $derived($i18n);
 
   const authButtonId = 'authenticateWebAuthnButton';
 
   useScript({
     authButtonId,
-    kcContext,
-    i18n,
+    kcContext: untrack(() => kcContext),
+    i18n: untrack(() => i18n),
   });
 </script>
 

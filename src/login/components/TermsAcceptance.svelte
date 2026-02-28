@@ -15,7 +15,7 @@
   const { i18n, kcClsx, messagesPerField, areTermsAccepted, onAreTermsAcceptedValueChange }: TermsAcceptanceProps =
     $props();
 
-  const { msg } = $i18n;
+  const { msg } = $derived($i18n);
 </script>
 
 <div class="form-group">

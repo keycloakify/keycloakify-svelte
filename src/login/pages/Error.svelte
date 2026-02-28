@@ -12,9 +12,9 @@
     classes,
   }: PageProps<Extract<KcContext, { pageId: 'error.ftl' }>, I18n> = $props();
 
-  const { message, client, skipLink } = kcContext;
+  const { message, client, skipLink } = $derived(kcContext);
 
-  const { msg } = $i18n;
+  const { msg } = $derived($i18n);
 </script>
 
 <Template

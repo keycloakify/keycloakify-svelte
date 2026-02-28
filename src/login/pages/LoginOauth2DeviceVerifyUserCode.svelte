@@ -12,14 +12,16 @@
     classes,
   }: PageProps<Extract<KcContext, { pageId: 'login-oauth2-device-verify-user-code.ftl' }>, I18n> = $props();
 
-  const { url } = kcContext;
+  const { url } = $derived(kcContext);
 
-  const { msg, msgStr } = $i18n;
+  const { msg, msgStr } = $derived($i18n);
 
-  const { kcClsx } = getKcClsx({
-    doUseDefaultCss,
-    classes,
-  });
+  const { kcClsx } = $derived(
+    getKcClsx({
+      doUseDefaultCss,
+      classes,
+    }),
+  );
 </script>
 
 <Template

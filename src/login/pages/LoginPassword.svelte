@@ -16,14 +16,16 @@
     classes,
   }: PageProps<Extract<KcContext, { pageId: 'login-password.ftl' }>, I18n> = $props();
 
-  const { kcClsx } = getKcClsx({
-    doUseDefaultCss,
-    classes,
-  });
+  const { kcClsx } = $derived(
+    getKcClsx({
+      doUseDefaultCss,
+      classes,
+    }),
+  );
 
-  const { realm, url, messagesPerField } = kcContext;
+  const { realm, url, messagesPerField } = $derived(kcContext);
 
-  const { msg, msgStr } = $i18n;
+  const { msg, msgStr } = $derived($i18n);
 
   const [isLoginButtonDisabled, setIsLoginButtonDisabled] = useState(false);
 </script>

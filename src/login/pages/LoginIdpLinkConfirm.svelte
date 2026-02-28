@@ -12,14 +12,16 @@
     classes,
   }: PageProps<Extract<KcContext, { pageId: 'login-idp-link-confirm.ftl' }>, I18n> = $props();
 
-  const { kcClsx } = getKcClsx({
-    doUseDefaultCss,
-    classes,
-  });
+  const { kcClsx } = $derived(
+    getKcClsx({
+      doUseDefaultCss,
+      classes,
+    }),
+  );
 
-  const { url, idpAlias } = kcContext;
+  const { url, idpAlias } = $derived(kcContext);
 
-  const { msg } = $i18n;
+  const { msg } = $derived($i18n);
 </script>
 
 <Template

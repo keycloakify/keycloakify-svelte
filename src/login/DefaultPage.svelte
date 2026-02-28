@@ -10,7 +10,7 @@
     doMakeUserConfirmPassword: boolean;
   };
   const props: DefaultPageProps = $props();
-  const { kcContext: kcContext, ...rest } = props;
+  const { kcContext, ...rest } = $derived(props);
   const loadComponent = () => {
     switch (kcContext.pageId) {
       case 'login.ftl':

@@ -12,18 +12,20 @@
     classes,
   }: PageProps<Extract<KcContext, { pageId: 'applications.ftl' }>, I18n> = $props();
 
-  const { kcClsx } = getKcClsx({
-    doUseDefaultCss,
-    classes,
-  });
+  const { kcClsx } = $derived(
+    getKcClsx({
+      doUseDefaultCss,
+      classes,
+    }),
+  );
 
   const {
     url,
     applications: { applications },
     stateChecker,
-  } = kcContext;
+  } = $derived(kcContext);
 
-  const { msg, advancedMsg } = $i18n;
+  const { msg, advancedMsg } = $derived($i18n);
 
   function isArrayWithEmptyObject(variable: unknown): boolean {
     return (

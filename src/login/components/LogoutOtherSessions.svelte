@@ -5,7 +5,7 @@
 
   const { kcClsx, i18n }: { kcClsx: KcClsx; i18n: Readable<I18n> } = $props();
 
-  const { msg } = $i18n;
+  const { msg } = $derived($i18n);
 </script>
 
 <div

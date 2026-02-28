@@ -7,9 +7,9 @@
   import type { Readable } from 'svelte/store';
 
   const props: { kcClsx: KcClsx; i18n: Readable<I18n>; passwordInputId: string; children: Snippet } = $props();
-  const { kcClsx, i18n, passwordInputId, children } = props;
+  const { kcClsx, i18n, passwordInputId, children } = $derived(props);
 
-  const { msgStr } = $i18n;
+  const { msgStr } = $derived($i18n);
 
   const [isPasswordRevealed, toggleIsPasswordRevealed] = useReducer<boolean, boolean>(
     (isPasswordRevealed: boolean) => !isPasswordRevealed,

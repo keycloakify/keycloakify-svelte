@@ -14,18 +14,20 @@
     ...props
   }: PageProps<Extract<KcContext, { pageId: 'password.ftl' }>, I18n> = $props();
 
-  const classes = {
+  const classes = $derived({
     ...props.classes,
     kcBodyClass: clsx(props.classes?.kcBodyClass, 'password'),
-  };
-
-  const { kcClsx } = getKcClsx({
-    doUseDefaultCss,
-    classes,
   });
-  const { url, password, account, stateChecker } = kcContext;
 
-  const { msgStr, msg } = $i18n;
+  const { kcClsx } = $derived(
+    getKcClsx({
+      doUseDefaultCss,
+      classes,
+    }),
+  );
+  const { url, password, account, stateChecker } = $derived(kcContext);
+
+  const { msgStr, msg } = $derived($i18n);
 
   const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');

@@ -6,9 +6,12 @@
   const { attribute, dispatchFormAction, kcClsx, displayableErrors, valueOrValues }: InputFieldByTypeProps<I18n> =
     $props();
 
-  assert(typeof valueOrValues === 'string');
-
-  const value = valueOrValues;
+  const value = $derived(
+    (() => {
+      assert(typeof valueOrValues === 'string');
+      return valueOrValues;
+    })(),
+  );
 </script>
 
 <textarea

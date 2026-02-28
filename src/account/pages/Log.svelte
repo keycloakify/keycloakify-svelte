@@ -12,14 +12,16 @@
     classes,
   }: PageProps<Extract<KcContext, { pageId: 'log.ftl' }>, I18n> = $props();
 
-  const { kcClsx } = getKcClsx({
-    doUseDefaultCss,
-    classes,
-  });
+  const { kcClsx } = $derived(
+    getKcClsx({
+      doUseDefaultCss,
+      classes,
+    }),
+  );
 
-  const { log } = kcContext;
+  const { log } = $derived(kcContext);
 
-  const { msg } = $i18n;
+  const { msg } = $derived($i18n);
 </script>
 
 <Template

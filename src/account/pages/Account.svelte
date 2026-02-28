@@ -13,19 +13,21 @@
     ...props
   }: PageProps<Extract<KcContext, { pageId: 'account.ftl' }>, I18n> = $props();
 
-  const classes = {
+  const classes = $derived({
     ...props.classes,
     kcBodyClass: clsx(props.classes?.kcBodyClass, 'user'),
-  };
-
-  const { kcClsx } = getKcClsx({
-    doUseDefaultCss,
-    classes,
   });
 
-  const { url, realm, messagesPerField, stateChecker, account, referrer } = kcContext;
+  const { kcClsx } = $derived(
+    getKcClsx({
+      doUseDefaultCss,
+      classes,
+    }),
+  );
 
-  const { msg } = $i18n;
+  const { url, realm, messagesPerField, stateChecker, account, referrer } = $derived(kcContext);
+
+  const { msg } = $derived($i18n);
 </script>
 
 <Template

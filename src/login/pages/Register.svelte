@@ -15,11 +15,13 @@
   };
   const props: RegisterProps = $props();
   const { kcContext, i18n, doUseDefaultCss, Template, classes, UserProfileFormFields, doMakeUserConfirmPassword } =
-    props;
-  const { kcClsx } = getKcClsx({
-    doUseDefaultCss,
-    classes,
-  });
+    $derived(props);
+  const { kcClsx } = $derived(
+    getKcClsx({
+      doUseDefaultCss,
+      classes,
+    }),
+  );
 
   const {
     messageHeader,
@@ -30,9 +32,9 @@
     recaptchaSiteKey,
     recaptchaAction,
     termsAcceptanceRequired,
-  } = kcContext;
+  } = $derived(kcContext);
 
-  const { msg, msgStr, advancedMsg } = $i18n;
+  const { msg, msgStr, advancedMsg } = $derived($i18n);
 
   const [isFormSubmittable, setIsFormSubmittable] = useState(false);
   const [areTermsAccepted, setAreTermsAccepted] = useState(false);

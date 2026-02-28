@@ -11,9 +11,9 @@
     classes,
   }: PageProps<Extract<KcContext, { pageId: 'login-verify-email.ftl' }>, I18n> = $props();
 
-  const { msg } = $i18n;
+  const { msg } = $derived($i18n);
 
-  const { url, user } = kcContext;
+  const { url, user } = $derived(kcContext);
 </script>
 
 <Template

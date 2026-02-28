@@ -12,14 +12,16 @@
     classes,
   }: PageProps<Extract<KcContext, { pageId: 'login-oauth-grant.ftl' }>, I18n> = $props();
 
-  const { url, oauth, client } = kcContext;
+  const { url, oauth, client } = $derived(kcContext);
 
-  const { msg, msgStr, advancedMsg, advancedMsgStr } = $i18n;
+  const { msg, msgStr, advancedMsg, advancedMsgStr } = $derived($i18n);
 
-  const { kcClsx } = getKcClsx({
-    doUseDefaultCss,
-    classes,
-  });
+  const { kcClsx } = $derived(
+    getKcClsx({
+      doUseDefaultCss,
+      classes,
+    }),
+  );
 </script>
 
 <Template

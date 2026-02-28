@@ -8,8 +8,8 @@
   import type { I18n } from '../i18n';
 
   let { displayableErrors, ...props }: InputFieldByTypeProps<I18n> = $props();
-  const { attribute, valueOrValues } = props;
-  const inputType = attribute.annotations.inputType ?? '';
+  const { attribute, valueOrValues } = $derived(props);
+  const inputType = $derived(attribute.annotations.inputType ?? '');
 </script>
 
 {#if inputType === 'hidden'}

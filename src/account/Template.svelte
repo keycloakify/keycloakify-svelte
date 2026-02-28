@@ -4,17 +4,17 @@
   import { useSetClassName } from '@keycloakify/svelte/tools/useSetClassName';
   import { getKcClsx } from 'keycloakify/account/lib/kcClsx';
   import { clsx } from 'keycloakify/tools/clsx';
-  import { onMount } from 'svelte';
+  import { onMount, untrack } from 'svelte';
   import type { I18n } from './i18n';
   import type { KcContext } from './KcContext';
   import { kcSanitize } from 'keycloakify/lib/kcSanitize';
 
   const { kcContext, i18n, doUseDefaultCss, active, classes, children }: TemplateProps<KcContext, I18n> = $props();
-  const { kcClsx } = getKcClsx({ doUseDefaultCss, classes });
+  const { kcClsx } = $derived(getKcClsx({ doUseDefaultCss, classes }));
 
-  const { msg, msgStr, currentLanguage, enabledLanguages } = $i18n;
+  const { msg, msgStr, currentLanguage, enabledLanguages } = $derived($i18n);
 
-  const { url, features, realm, message, referrer } = kcContext;
+  const { url, features, realm, message, referrer } = $derived(kcContext);
 
   onMount(() => {
     document.title = msgStr('accountManagementTitle');
@@ -22,15 +22,22 @@
 
   useSetClassName({
     qualifiedName: 'html',
-    className: kcClsx('kcHtmlClass'),
+    className: untrack(() => kcClsx('kcHtmlClass')),
   });
 
   useSetClassName({
     qualifiedName: 'body',
-    className: clsx('admin-console', 'user', kcClsx('kcBodyClass')),
+    className: clsx(
+      'admin-console',
+      'user',
+      untrack(() => kcClsx('kcBodyClass')),
+    ),
   });
 
-  const { isReadyToRender } = useInitialize({ kcContext, doUseDefaultCss });
+  const { isReadyToRender } = useInitialize({
+    kcContext: untrack(() => kcContext),
+    doUseDefaultCss: untrack(() => doUseDefaultCss),
+  });
 </script>
 
 {#if $isReadyToRender}

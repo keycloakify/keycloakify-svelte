@@ -23,16 +23,18 @@
     doMakeUserConfirmPassword,
   }: UpdateEmailProps = $props();
 
-  const { kcClsx } = getKcClsx({
-    doUseDefaultCss,
-    classes,
-  });
+  const { kcClsx } = $derived(
+    getKcClsx({
+      doUseDefaultCss,
+      classes,
+    }),
+  );
 
-  const { msg, msgStr } = $i18n;
+  const { msg, msgStr } = $derived($i18n);
 
   const [isFormSubmittable, setIsFormSubmittable] = useState(false);
 
-  const { url, messagesPerField, isAppInitiatedAction } = kcContext;
+  const { url, messagesPerField, isAppInitiatedAction } = $derived(kcContext);
 </script>
 
 <Template

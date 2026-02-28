@@ -7,59 +7,63 @@
   const { attribute, dispatchFormAction, kcClsx, i18n, valueOrValues, displayableErrors }: InputFieldByTypeProps<I18n> =
     $props();
 
-  const { classDiv, classInput, classLabel, inputType } = (() => {
-    const { inputType } = attribute.annotations;
+  const { classDiv, classInput, classLabel, inputType } = $derived(
+    (() => {
+      const { inputType } = attribute.annotations;
 
-    assert(inputType === 'select-radiobuttons' || inputType === 'multiselect-checkboxes');
+      assert(inputType === 'select-radiobuttons' || inputType === 'multiselect-checkboxes');
 
-    switch (inputType) {
-      case 'select-radiobuttons':
-        return {
-          inputType: 'radio',
-          classDiv: kcClsx('kcInputClassRadio'),
-          classInput: kcClsx('kcInputClassRadioInput'),
-          classLabel: kcClsx('kcInputClassRadioLabel'),
-        };
-      case 'multiselect-checkboxes':
-        return {
-          inputType: 'checkbox',
-          classDiv: kcClsx('kcInputClassCheckbox'),
-          classInput: kcClsx('kcInputClassCheckboxInput'),
-          classLabel: kcClsx('kcInputClassCheckboxLabel'),
-        };
-      default:
-        return {
-          inputType: '',
-          classDiv: '',
-          classInput: '',
-          classLabel: '',
-        };
-    }
-  })();
+      switch (inputType) {
+        case 'select-radiobuttons':
+          return {
+            inputType: 'radio',
+            classDiv: kcClsx('kcInputClassRadio'),
+            classInput: kcClsx('kcInputClassRadioInput'),
+            classLabel: kcClsx('kcInputClassRadioLabel'),
+          };
+        case 'multiselect-checkboxes':
+          return {
+            inputType: 'checkbox',
+            classDiv: kcClsx('kcInputClassCheckbox'),
+            classInput: kcClsx('kcInputClassCheckboxInput'),
+            classLabel: kcClsx('kcInputClassCheckboxLabel'),
+          };
+        default:
+          return {
+            inputType: '',
+            classDiv: '',
+            classInput: '',
+            classLabel: '',
+          };
+      }
+    })(),
+  );
 
-  const options = (() => {
-    walk: {
-      const { inputOptionsFromValidation } = attribute.annotations;
+  const options = $derived(
+    (() => {
+      walk: {
+        const { inputOptionsFromValidation } = attribute.annotations;
 
-      if (inputOptionsFromValidation === undefined) {
-        break walk;
+        if (inputOptionsFromValidation === undefined) {
+          break walk;
+        }
+
+        const validator = (attribute.validators as Record<string, { options?: string[] }>)[inputOptionsFromValidation];
+
+        if (validator === undefined) {
+          break walk;
+        }
+
+        if (validator.options === undefined) {
+          break walk;
+        }
+
+        return validator.options;
       }
 
-      const validator = (attribute.validators as Record<string, { options?: string[] }>)[inputOptionsFromValidation];
-
-      if (validator === undefined) {
-        break walk;
-      }
-
-      if (validator.options === undefined) {
-        break walk;
-      }
-
-      return validator.options;
-    }
-
-    return attribute.validators.options?.options ?? [];
-  })();
+      return attribute.validators.options?.options ?? [];
+    })(),
+  );
 </script>
 
 {#each options as option (option)}

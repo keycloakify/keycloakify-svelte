@@ -15,23 +15,25 @@
     kcClsx: KcClsx;
   };
   const { attribute, groupNameRef, i18n, kcClsx }: GroupLabelProps = $props();
-  const { advancedMsg } = $i18n;
+  const { advancedMsg } = $derived($i18n);
 
   let isGrouplabel = $state<boolean>(false);
-  if (attribute.group?.name !== groupNameRef.current) {
-    groupNameRef.current = attribute.group?.name ?? '';
+  $effect(() => {
+    if (attribute.group?.name !== groupNameRef.current) {
+      groupNameRef.current = attribute.group?.name ?? '';
 
-    if (groupNameRef.current !== '') {
-      assert(attribute.group !== undefined);
-      isGrouplabel = true;
+      if (groupNameRef.current !== '') {
+        assert(attribute.group !== undefined);
+        isGrouplabel = true;
+      }
     }
-  }
+  });
 
-  const html5DataAnnotations = {
+  const html5DataAnnotations = $derived({
     ...Object.fromEntries(
       Object.entries(attribute.group?.html5DataAnnotations ?? {}).map(([key, value]) => [`data-${key}`, value]),
     ),
-  };
+  });
 </script>
 
 {#if isGrouplabel}

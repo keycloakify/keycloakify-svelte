@@ -21,14 +21,16 @@
     UserProfileFormFields,
     doMakeUserConfirmPassword,
   }: IdpReviewUserProfileProps = $props();
-  const { kcClsx } = getKcClsx({
-    doUseDefaultCss,
-    classes,
-  });
+  const { kcClsx } = $derived(
+    getKcClsx({
+      doUseDefaultCss,
+      classes,
+    }),
+  );
 
-  const { msg, msgStr } = $i18n;
+  const { msg, msgStr } = $derived($i18n);
 
-  const { url, messagesPerField } = kcContext;
+  const { url, messagesPerField } = $derived(kcContext);
 
   const [isFomSubmittable, setIsFomSubmittable] = useState(false);
 </script>

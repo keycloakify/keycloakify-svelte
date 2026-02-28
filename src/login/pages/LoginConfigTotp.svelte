@@ -14,14 +14,16 @@
     classes,
   }: PageProps<Extract<KcContext, { pageId: 'login-config-totp.ftl' }>, I18n> = $props();
 
-  const { kcClsx } = getKcClsx({
-    doUseDefaultCss,
-    classes,
-  });
+  const { kcClsx } = $derived(
+    getKcClsx({
+      doUseDefaultCss,
+      classes,
+    }),
+  );
 
-  const { url, isAppInitiatedAction, totp, mode, messagesPerField } = kcContext;
+  const { url, isAppInitiatedAction, totp, mode, messagesPerField } = $derived(kcContext);
 
-  const { msg, msgStr, advancedMsg } = $i18n;
+  const { msg, msgStr, advancedMsg } = $derived($i18n);
 </script>
 
 <Template

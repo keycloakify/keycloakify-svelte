@@ -6,16 +6,18 @@
   import type { I18n } from '../i18n';
 
   const props: PageProps<Extract<KcContext, { pageId: 'code.ftl' }>, I18n> = $props();
-  const { kcContext, i18n, doUseDefaultCss, Template, classes } = props;
+  const { kcContext, i18n, doUseDefaultCss, Template, classes } = $derived(props);
 
-  const { kcClsx } = getKcClsx({
-    doUseDefaultCss,
-    classes,
-  });
+  const { kcClsx } = $derived(
+    getKcClsx({
+      doUseDefaultCss,
+      classes,
+    }),
+  );
 
-  const { code } = kcContext;
+  const { code } = $derived(kcContext);
 
-  const { msg } = $i18n;
+  const { msg } = $derived($i18n);
 </script>
 
 <Template

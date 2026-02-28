@@ -11,8 +11,8 @@
     classes,
   }: PageProps<Extract<KcContext, { pageId: 'federatedIdentity.ftl' }>, I18n> = $props();
 
-  const { url, federatedIdentity, stateChecker } = kcContext;
-  const { msg } = $i18n;
+  const { url, federatedIdentity, stateChecker } = $derived(kcContext);
+  const { msg } = $derived($i18n);
 </script>
 
 <Template

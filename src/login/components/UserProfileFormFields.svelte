@@ -4,7 +4,7 @@
   import InputFieldByType from '@keycloakify/svelte/login/components/InputFieldByType.svelte';
   import type { UserProfileFormFieldsProps } from '@keycloakify/svelte/login/components/UserProfileFormFieldsProps';
   import { useUserProfileForm } from '@keycloakify/svelte/login/lib/useUserProfileForm';
-  import { onMount } from 'svelte';
+  import { onMount, untrack } from 'svelte';
   import { derived } from 'svelte/store';
   import type { I18n } from '../i18n';
   import type { KcContext } from '../KcContext';
@@ -18,14 +18,14 @@
     doMakeUserConfirmPassword,
     beforeField,
     afterField,
-  } = props;
+  } = $derived(props);
 
-  const { advancedMsg } = $i18n;
+  const { advancedMsg } = $derived($i18n);
 
   const { formState, dispatchFormAction } = useUserProfileForm({
-    kcContext,
-    i18n: $i18n,
-    doMakeUserConfirmPassword,
+    kcContext: untrack(() => kcContext),
+    i18n: untrack(() => $i18n),
+    doMakeUserConfirmPassword: untrack(() => doMakeUserConfirmPassword),
   });
   onMount(() => {
     const unsubscribe = formState.subscribe(({ isFormSubmittable }) => {

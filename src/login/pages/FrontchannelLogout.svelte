@@ -11,9 +11,9 @@
     classes,
   }: PageProps<Extract<KcContext, { pageId: 'frontchannel-logout.ftl' }>, I18n> = $props();
 
-  const { logout } = kcContext;
+  const { logout } = $derived(kcContext);
 
-  const { msg, msgStr } = $i18n;
+  const { msg, msgStr } = $derived($i18n);
   let iframeLoadCount = $state(0);
   $effect(() => {
     if (!kcContext.logout.logoutRedirectUri) {

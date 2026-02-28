@@ -11,10 +11,10 @@
     doUseDefaultCss,
     classes,
   }: PageProps<Extract<KcContext, { pageId: 'select-authenticator.ftl' }>, I18n> = $props();
-  const { url, auth } = kcContext;
+  const { url, auth } = $derived(kcContext);
 
-  const { kcClsx } = getKcClsx({ doUseDefaultCss, classes });
-  const { msg, advancedMsg } = $i18n;
+  const { kcClsx } = $derived(getKcClsx({ doUseDefaultCss, classes }));
+  const { msg, advancedMsg } = $derived($i18n);
 </script>
 
 <Template

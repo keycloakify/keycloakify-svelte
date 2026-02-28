@@ -4,6 +4,7 @@
   import type { PageProps } from '@keycloakify/svelte/login/pages/PageProps';
   import { getKcClsx } from 'keycloakify/login/lib/kcClsx';
   import { clsx } from 'keycloakify/tools/clsx';
+  import { untrack } from 'svelte';
   import type { I18n } from '../i18n';
   import type { KcContext } from '../KcContext';
 
@@ -15,18 +16,20 @@
     classes,
   }: PageProps<Extract<KcContext, { pageId: 'login-recovery-authn-code-config.ftl' }>, I18n> = $props();
 
-  const { kcClsx } = getKcClsx({
-    doUseDefaultCss,
-    classes,
-  });
+  const { kcClsx } = $derived(
+    getKcClsx({
+      doUseDefaultCss,
+      classes,
+    }),
+  );
 
-  const { recoveryAuthnCodesConfigBean, isAppInitiatedAction } = kcContext;
+  const { recoveryAuthnCodesConfigBean, isAppInitiatedAction } = $derived(kcContext);
 
-  const { msg, msgStr } = $i18n;
+  const { msg, msgStr } = $derived($i18n);
 
   const olRecoveryCodesListId = 'kc-recovery-codes-list';
 
-  useScript({ olRecoveryCodesListId, i18n });
+  useScript({ olRecoveryCodesListId, i18n: untrack(() => i18n) });
 </script>
 
 <Template

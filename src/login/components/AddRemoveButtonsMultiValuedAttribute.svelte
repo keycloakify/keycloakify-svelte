@@ -4,7 +4,7 @@
     type FormAction,
   } from '@keycloakify/svelte/login/lib/useUserProfileForm';
   import type { Attribute } from 'keycloakify/login/KcContext';
-  import type { EventDispatcher } from 'svelte';
+  import { untrack, type EventDispatcher } from 'svelte';
   import type { Readable } from 'svelte/store';
   import type { I18n } from '../i18n';
 
@@ -17,11 +17,13 @@
   };
   const { attribute, values, fieldIndex, dispatchFormAction, i18n }: AddRemoveButtonsMultiValuedAttributeProps =
     $props();
-  const { msg } = $i18n;
+  const { msg } = $derived($i18n);
 
-  const { hasAdd, hasRemove } = getButtonToDisplayForMultivaluedAttributeField({ attribute, values, fieldIndex });
+  const { hasAdd, hasRemove } = $derived(
+    getButtonToDisplayForMultivaluedAttributeField({ attribute, values, fieldIndex }),
+  );
 
-  const idPostfix = `-${attribute.name}-${fieldIndex + 1}`;
+  const idPostfix = `-${untrack(() => attribute.name)}-${untrack(() => fieldIndex) + 1}`;
 </script>
 
 {#if hasRemove}

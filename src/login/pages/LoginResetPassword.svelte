@@ -13,14 +13,16 @@
     classes,
   }: PageProps<Extract<KcContext, { pageId: 'login-reset-password.ftl' }>, I18n> = $props();
 
-  const { kcClsx } = getKcClsx({
-    doUseDefaultCss,
-    classes,
-  });
+  const { kcClsx } = $derived(
+    getKcClsx({
+      doUseDefaultCss,
+      classes,
+    }),
+  );
 
-  const { url, realm, auth, messagesPerField } = kcContext;
+  const { url, realm, auth, messagesPerField } = $derived(kcContext);
 
-  const { msg, msgStr } = $i18n;
+  const { msg, msgStr } = $derived($i18n);
 </script>
 
 <Template

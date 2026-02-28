@@ -11,9 +11,9 @@
     classes,
   }: PageProps<Extract<KcContext, { pageId: 'saml-post-form.ftl' }>, I18n> = $props();
 
-  const { msgStr, msg } = $i18n;
+  const { msgStr, msg } = $derived($i18n);
 
-  const { samlPost } = kcContext;
+  const { samlPost } = $derived(kcContext);
 
   let htmlFormElement: HTMLFormElement | null = $state(null);
 

@@ -12,14 +12,16 @@
     classes,
   }: PageProps<Extract<KcContext, { pageId: 'delete-credential.ftl' }>, I18n> = $props();
 
-  const { msgStr, msg } = $i18n;
+  const { msgStr, msg } = $derived($i18n);
 
-  const { kcClsx } = getKcClsx({
-    doUseDefaultCss,
-    classes,
-  });
+  const { kcClsx } = $derived(
+    getKcClsx({
+      doUseDefaultCss,
+      classes,
+    }),
+  );
 
-  const { url, credentialLabel } = kcContext;
+  const { url, credentialLabel } = $derived(kcContext);
 </script>
 
 <Template

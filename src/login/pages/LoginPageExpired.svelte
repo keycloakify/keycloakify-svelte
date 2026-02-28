@@ -11,9 +11,9 @@
     classes,
   }: PageProps<Extract<KcContext, { pageId: 'login-page-expired.ftl' }>, I18n> = $props();
 
-  const { url } = kcContext;
+  const { url } = $derived(kcContext);
 
-  const { msg } = $i18n;
+  const { msg } = $derived($i18n);
 </script>
 
 <Template

@@ -6,13 +6,13 @@
 
   const { kcContext }: { kcContext: KcContext } = $props();
 
-  const { i18n } = useI18n({ kcContext });
-  const page = async () => {
+  const { i18n } = $derived(useI18n({ kcContext }));
+  const page = $derived(async () => {
     switch (kcContext.pageId) {
       default:
         return import('@keycloakify/svelte/account/DefaultPage.svelte');
     }
-  };
+  });
 
   const classes = {} satisfies { [key in ClassKey]?: string };
 </script>

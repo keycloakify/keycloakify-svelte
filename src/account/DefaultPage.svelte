@@ -4,7 +4,7 @@
   import type { KcContext } from './KcContext';
 
   const props: PageProps<KcContext, I18n> = $props();
-  const { kcContext: kcContext, ...rest } = props;
+  const { kcContext, ...rest } = $derived(props);
   const loadComponent = () => {
     switch (kcContext.pageId) {
       case 'password.ftl':

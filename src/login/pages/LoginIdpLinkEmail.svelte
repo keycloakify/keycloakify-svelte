@@ -11,9 +11,9 @@
     classes,
   }: PageProps<Extract<KcContext, { pageId: 'login-idp-link-email.ftl' }>, I18n> = $props();
 
-  const { url, realm, brokerContext, idpAlias } = kcContext;
+  const { url, realm, brokerContext, idpAlias } = $derived(kcContext);
 
-  const { msg } = $i18n;
+  const { msg } = $derived($i18n);
 </script>
 
 <Template

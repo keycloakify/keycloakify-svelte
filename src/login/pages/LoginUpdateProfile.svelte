@@ -22,14 +22,16 @@
     doMakeUserConfirmPassword,
   }: LoginUpdateProfileProps = $props();
 
-  const { kcClsx } = getKcClsx({
-    doUseDefaultCss,
-    classes,
-  });
+  const { kcClsx } = $derived(
+    getKcClsx({
+      doUseDefaultCss,
+      classes,
+    }),
+  );
 
-  const { messagesPerField, url, isAppInitiatedAction } = kcContext;
+  const { messagesPerField, url, isAppInitiatedAction } = $derived(kcContext);
 
-  const { msg, msgStr } = $i18n;
+  const { msg, msgStr } = $derived($i18n);
 
   const [isFormSubmittable, setIsFormSubmittable] = useState(false);
 </script>

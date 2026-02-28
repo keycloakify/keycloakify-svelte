@@ -7,32 +7,34 @@
   const { attribute, dispatchFormAction, kcClsx, displayableErrors, i18n, valueOrValues }: InputFieldByTypeProps<I18n> =
     $props();
 
-  const isMultiple = attribute.annotations.inputType === 'multiselect';
-  const options = (() => {
-    walk: {
-      const { inputOptionsFromValidation } = attribute.annotations;
+  const isMultiple = $derived(attribute.annotations.inputType === 'multiselect');
+  const options = $derived(
+    (() => {
+      walk: {
+        const { inputOptionsFromValidation } = attribute.annotations;
 
-      if (inputOptionsFromValidation === undefined) {
-        break walk;
+        if (inputOptionsFromValidation === undefined) {
+          break walk;
+        }
+
+        assert(typeof inputOptionsFromValidation === 'string');
+
+        const validator = (attribute.validators as Record<string, { options?: string[] }>)[inputOptionsFromValidation];
+
+        if (validator === undefined) {
+          break walk;
+        }
+
+        if (validator.options === undefined) {
+          break walk;
+        }
+
+        return validator.options;
       }
 
-      assert(typeof inputOptionsFromValidation === 'string');
-
-      const validator = (attribute.validators as Record<string, { options?: string[] }>)[inputOptionsFromValidation];
-
-      if (validator === undefined) {
-        break walk;
-      }
-
-      if (validator.options === undefined) {
-        break walk;
-      }
-
-      return validator.options;
-    }
-
-    return attribute.validators.options?.options ?? [];
-  })();
+      return attribute.validators.options?.options ?? [];
+    })(),
+  );
 </script>
 
 <select
