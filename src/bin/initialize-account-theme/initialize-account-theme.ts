@@ -26,7 +26,7 @@ export async function command(params: { buildContext: BuildContext }) {
   }
 
   exit_if_uncommitted_changes: {
-    let hasUncommittedChanges: boolean | undefined = undefined;
+    let hasUncommittedChanges: boolean | undefined;
 
     try {
       hasUncommittedChanges =
@@ -73,6 +73,7 @@ export async function command(params: { buildContext: BuildContext }) {
         account: {
           isImplemented: true,
           type: accountThemeType,
+          hasEarlyColorSchemeScript: false,
         },
       },
     },
