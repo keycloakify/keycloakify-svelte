@@ -155,7 +155,7 @@
                       name="rememberMe"
                       type="checkbox"
                       checked={!!login.rememberMe}
-                    />&nbsp;
+                    />
                     {@render msg('rememberMe')()}
                   </label>
                 </div>
