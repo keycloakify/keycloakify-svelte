@@ -1,4 +1,22 @@
+## [0.2.8](https://github.com/keycloakify/keycloakify-svelte/compare/v0.2.8-rc.1...v0.2.8) (2026-02-28)
+
+
+### Bug Fixes
+
+* remember me checkbox ([207b86f](https://github.com/keycloakify/keycloakify-svelte/commit/207b86f7ae86bc3179ded945a7be06a83fa1a155))
+* svelte and lint warnings ([c11eca5](https://github.com/keycloakify/keycloakify-svelte/commit/c11eca57005b7d03ec353129ebe9adee2a3a764e))
+
+
+
+## [0.2.7](https://github.com/keycloakify/keycloakify-svelte/compare/v0.2.6...v0.2.7) (2025-12-02)
+
+
+
 ## [0.2.6](https://github.com/keycloakify/keycloakify-svelte/compare/v0.2.5...v0.2.6) (2025-11-16)
+
+
+
+## [0.2.5](https://github.com/keycloakify/keycloakify-svelte/compare/v0.2.4...v0.2.5) (2025-09-16)
 
 
 
