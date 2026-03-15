@@ -16,6 +16,13 @@ const config = {
       '@keycloakify/svelte': 'src',
     },
   },
+  vitePlugin: {
+    dynamicCompileOptions: ({ filename }) => (filename.includes('node_modules') ? undefined : { runes: true }),
+  },
+  compilerOptions: {
+    modernAst: true,
+    runes: true,
+  },
 };
 
 export default config;

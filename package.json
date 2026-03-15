@@ -1,6 +1,6 @@
 {
   "name": "@keycloakify/svelte",
-  "version": "0.2.10-rc.1",
+  "version": "0.2.10-rc.2",
   "description": "Svelte Components for Keycloakify",
   "keywords": [
     "keycloak",
@@ -52,19 +52,23 @@
     },
     "./login/components/AddRemoveButtonsMultiValuedAttribute.svelte": {
       "types": "./keycloakify-svelte/login/components/AddRemoveButtonsMultiValuedAttribute.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/components/AddRemoveButtonsMultiValuedAttribute.svelte"
+      "svelte": "./keycloakify-svelte/login/components/AddRemoveButtonsMultiValuedAttribute.svelte",
+      "default": "./keycloakify-svelte/login/components/AddRemoveButtonsMultiValuedAttribute.svelte"
     },
     "./login/components/FieldErrors.svelte": {
       "types": "./keycloakify-svelte/login/components/FieldErrors.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/components/FieldErrors.svelte"
+      "svelte": "./keycloakify-svelte/login/components/FieldErrors.svelte",
+      "default": "./keycloakify-svelte/login/components/FieldErrors.svelte"
     },
     "./login/components/GroupLabel.svelte": {
       "types": "./keycloakify-svelte/login/components/GroupLabel.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/components/GroupLabel.svelte"
+      "svelte": "./keycloakify-svelte/login/components/GroupLabel.svelte",
+      "default": "./keycloakify-svelte/login/components/GroupLabel.svelte"
     },
     "./login/components/InputFieldByType.svelte": {
       "types": "./keycloakify-svelte/login/components/InputFieldByType.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/components/InputFieldByType.svelte"
+      "svelte": "./keycloakify-svelte/login/components/InputFieldByType.svelte",
+      "default": "./keycloakify-svelte/login/components/InputFieldByType.svelte"
     },
     "./login/components/InputFieldByTypeProps": {
       "types": "./keycloakify-svelte/login/components/InputFieldByTypeProps.d.ts",
@@ -78,35 +82,43 @@
     },
     "./login/components/InputTag.svelte": {
       "types": "./keycloakify-svelte/login/components/InputTag.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/components/InputTag.svelte"
+      "svelte": "./keycloakify-svelte/login/components/InputTag.svelte",
+      "default": "./keycloakify-svelte/login/components/InputTag.svelte"
     },
     "./login/components/InputTagSelects.svelte": {
       "types": "./keycloakify-svelte/login/components/InputTagSelects.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/components/InputTagSelects.svelte"
+      "svelte": "./keycloakify-svelte/login/components/InputTagSelects.svelte",
+      "default": "./keycloakify-svelte/login/components/InputTagSelects.svelte"
     },
     "./login/components/LogoutOtherSessions.svelte": {
       "types": "./keycloakify-svelte/login/components/LogoutOtherSessions.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/components/LogoutOtherSessions.svelte"
+      "svelte": "./keycloakify-svelte/login/components/LogoutOtherSessions.svelte",
+      "default": "./keycloakify-svelte/login/components/LogoutOtherSessions.svelte"
     },
     "./login/components/PasswordWrapper.svelte": {
       "types": "./keycloakify-svelte/login/components/PasswordWrapper.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/components/PasswordWrapper.svelte"
+      "svelte": "./keycloakify-svelte/login/components/PasswordWrapper.svelte",
+      "default": "./keycloakify-svelte/login/components/PasswordWrapper.svelte"
     },
     "./login/components/SelectTag.svelte": {
       "types": "./keycloakify-svelte/login/components/SelectTag.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/components/SelectTag.svelte"
+      "svelte": "./keycloakify-svelte/login/components/SelectTag.svelte",
+      "default": "./keycloakify-svelte/login/components/SelectTag.svelte"
     },
     "./login/components/TermsAcceptance.svelte": {
       "types": "./keycloakify-svelte/login/components/TermsAcceptance.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/components/TermsAcceptance.svelte"
+      "svelte": "./keycloakify-svelte/login/components/TermsAcceptance.svelte",
+      "default": "./keycloakify-svelte/login/components/TermsAcceptance.svelte"
     },
     "./login/components/TextareaTag.svelte": {
       "types": "./keycloakify-svelte/login/components/TextareaTag.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/components/TextareaTag.svelte"
+      "svelte": "./keycloakify-svelte/login/components/TextareaTag.svelte",
+      "default": "./keycloakify-svelte/login/components/TextareaTag.svelte"
     },
     "./login/components/UserProfileFormFields.svelte": {
       "types": "./keycloakify-svelte/login/components/UserProfileFormFields.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/components/UserProfileFormFields.svelte"
+      "svelte": "./keycloakify-svelte/login/components/UserProfileFormFields.svelte",
+      "default": "./keycloakify-svelte/login/components/UserProfileFormFields.svelte"
     },
     "./login/components/UserProfileFormFieldsProps": {
       "types": "./keycloakify-svelte/login/components/UserProfileFormFieldsProps.d.ts",
@@ -140,11 +152,13 @@
     },
     "./login/DefaultPage.svelte": {
       "types": "./keycloakify-svelte/login/DefaultPage.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/DefaultPage.svelte"
+      "svelte": "./keycloakify-svelte/login/DefaultPage.svelte",
+      "default": "./keycloakify-svelte/login/DefaultPage.svelte"
     },
     "./login/Template.svelte": {
       "types": "./keycloakify-svelte/login/Template.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/Template.svelte"
+      "svelte": "./keycloakify-svelte/login/Template.svelte",
+      "default": "./keycloakify-svelte/login/Template.svelte"
     },
     "./login/Template.useInitialize": {
       "types": "./keycloakify-svelte/login/Template.useInitialize.d.ts",
@@ -163,67 +177,83 @@
     },
     "./login/pages/Code.svelte": {
       "types": "./keycloakify-svelte/login/pages/Code.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/pages/Code.svelte"
+      "svelte": "./keycloakify-svelte/login/pages/Code.svelte",
+      "default": "./keycloakify-svelte/login/pages/Code.svelte"
     },
     "./login/pages/DeleteAccountConfirm.svelte": {
       "types": "./keycloakify-svelte/login/pages/DeleteAccountConfirm.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/pages/DeleteAccountConfirm.svelte"
+      "svelte": "./keycloakify-svelte/login/pages/DeleteAccountConfirm.svelte",
+      "default": "./keycloakify-svelte/login/pages/DeleteAccountConfirm.svelte"
     },
     "./login/pages/DeleteCredential.svelte": {
       "types": "./keycloakify-svelte/login/pages/DeleteCredential.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/pages/DeleteCredential.svelte"
+      "svelte": "./keycloakify-svelte/login/pages/DeleteCredential.svelte",
+      "default": "./keycloakify-svelte/login/pages/DeleteCredential.svelte"
     },
     "./login/pages/Error.svelte": {
       "types": "./keycloakify-svelte/login/pages/Error.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/pages/Error.svelte"
+      "svelte": "./keycloakify-svelte/login/pages/Error.svelte",
+      "default": "./keycloakify-svelte/login/pages/Error.svelte"
     },
     "./login/pages/FrontchannelLogout.svelte": {
       "types": "./keycloakify-svelte/login/pages/FrontchannelLogout.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/pages/FrontchannelLogout.svelte"
+      "svelte": "./keycloakify-svelte/login/pages/FrontchannelLogout.svelte",
+      "default": "./keycloakify-svelte/login/pages/FrontchannelLogout.svelte"
     },
     "./login/pages/IdpReviewUserProfile.svelte": {
       "types": "./keycloakify-svelte/login/pages/IdpReviewUserProfile.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/pages/IdpReviewUserProfile.svelte"
+      "svelte": "./keycloakify-svelte/login/pages/IdpReviewUserProfile.svelte",
+      "default": "./keycloakify-svelte/login/pages/IdpReviewUserProfile.svelte"
     },
     "./login/pages/Info.svelte": {
       "types": "./keycloakify-svelte/login/pages/Info.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/pages/Info.svelte"
+      "svelte": "./keycloakify-svelte/login/pages/Info.svelte",
+      "default": "./keycloakify-svelte/login/pages/Info.svelte"
     },
     "./login/pages/LoginConfigTotp.svelte": {
       "types": "./keycloakify-svelte/login/pages/LoginConfigTotp.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/pages/LoginConfigTotp.svelte"
+      "svelte": "./keycloakify-svelte/login/pages/LoginConfigTotp.svelte",
+      "default": "./keycloakify-svelte/login/pages/LoginConfigTotp.svelte"
     },
     "./login/pages/LoginIdpLinkConfirmOverride.svelte": {
       "types": "./keycloakify-svelte/login/pages/LoginIdpLinkConfirmOverride.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/pages/LoginIdpLinkConfirmOverride.svelte"
+      "svelte": "./keycloakify-svelte/login/pages/LoginIdpLinkConfirmOverride.svelte",
+      "default": "./keycloakify-svelte/login/pages/LoginIdpLinkConfirmOverride.svelte"
     },
     "./login/pages/LoginIdpLinkConfirm.svelte": {
       "types": "./keycloakify-svelte/login/pages/LoginIdpLinkConfirm.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/pages/LoginIdpLinkConfirm.svelte"
+      "svelte": "./keycloakify-svelte/login/pages/LoginIdpLinkConfirm.svelte",
+      "default": "./keycloakify-svelte/login/pages/LoginIdpLinkConfirm.svelte"
     },
     "./login/pages/LoginIdpLinkEmail.svelte": {
       "types": "./keycloakify-svelte/login/pages/LoginIdpLinkEmail.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/pages/LoginIdpLinkEmail.svelte"
+      "svelte": "./keycloakify-svelte/login/pages/LoginIdpLinkEmail.svelte",
+      "default": "./keycloakify-svelte/login/pages/LoginIdpLinkEmail.svelte"
     },
     "./login/pages/LoginOauth2DeviceVerifyUserCode.svelte": {
       "types": "./keycloakify-svelte/login/pages/LoginOauth2DeviceVerifyUserCode.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/pages/LoginOauth2DeviceVerifyUserCode.svelte"
+      "svelte": "./keycloakify-svelte/login/pages/LoginOauth2DeviceVerifyUserCode.svelte",
+      "default": "./keycloakify-svelte/login/pages/LoginOauth2DeviceVerifyUserCode.svelte"
     },
     "./login/pages/LoginOauthGrant.svelte": {
       "types": "./keycloakify-svelte/login/pages/LoginOauthGrant.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/pages/LoginOauthGrant.svelte"
+      "svelte": "./keycloakify-svelte/login/pages/LoginOauthGrant.svelte",
+      "default": "./keycloakify-svelte/login/pages/LoginOauthGrant.svelte"
     },
     "./login/pages/LoginOtp.svelte": {
       "types": "./keycloakify-svelte/login/pages/LoginOtp.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/pages/LoginOtp.svelte"
+      "svelte": "./keycloakify-svelte/login/pages/LoginOtp.svelte",
+      "default": "./keycloakify-svelte/login/pages/LoginOtp.svelte"
     },
     "./login/pages/LoginPageExpired.svelte": {
       "types": "./keycloakify-svelte/login/pages/LoginPageExpired.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/pages/LoginPageExpired.svelte"
+      "svelte": "./keycloakify-svelte/login/pages/LoginPageExpired.svelte",
+      "default": "./keycloakify-svelte/login/pages/LoginPageExpired.svelte"
     },
     "./login/pages/LoginPasskeysConditionalAuthenticate.svelte": {
       "types": "./keycloakify-svelte/login/pages/LoginPasskeysConditionalAuthenticate.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/pages/LoginPasskeysConditionalAuthenticate.svelte"
+      "svelte": "./keycloakify-svelte/login/pages/LoginPasskeysConditionalAuthenticate.svelte",
+      "default": "./keycloakify-svelte/login/pages/LoginPasskeysConditionalAuthenticate.svelte"
     },
     "./login/pages/LoginPasskeysConditionalAuthenticate.useScript": {
       "types": "./keycloakify-svelte/login/pages/LoginPasskeysConditionalAuthenticate.useScript.d.ts",
@@ -232,11 +262,13 @@
     },
     "./login/pages/LoginPassword.svelte": {
       "types": "./keycloakify-svelte/login/pages/LoginPassword.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/pages/LoginPassword.svelte"
+      "svelte": "./keycloakify-svelte/login/pages/LoginPassword.svelte",
+      "default": "./keycloakify-svelte/login/pages/LoginPassword.svelte"
     },
     "./login/pages/LoginRecoveryAuthnCodeConfig.svelte": {
       "types": "./keycloakify-svelte/login/pages/LoginRecoveryAuthnCodeConfig.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/pages/LoginRecoveryAuthnCodeConfig.svelte"
+      "svelte": "./keycloakify-svelte/login/pages/LoginRecoveryAuthnCodeConfig.svelte",
+      "default": "./keycloakify-svelte/login/pages/LoginRecoveryAuthnCodeConfig.svelte"
     },
     "./login/pages/LoginRecoveryAuthnCodeConfig.useScript": {
       "types": "./keycloakify-svelte/login/pages/LoginRecoveryAuthnCodeConfig.useScript.d.ts",
@@ -245,43 +277,53 @@
     },
     "./login/pages/LoginRecoveryAuthnCodeInput.svelte": {
       "types": "./keycloakify-svelte/login/pages/LoginRecoveryAuthnCodeInput.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/pages/LoginRecoveryAuthnCodeInput.svelte"
+      "svelte": "./keycloakify-svelte/login/pages/LoginRecoveryAuthnCodeInput.svelte",
+      "default": "./keycloakify-svelte/login/pages/LoginRecoveryAuthnCodeInput.svelte"
     },
     "./login/pages/LoginResetOtp.svelte": {
       "types": "./keycloakify-svelte/login/pages/LoginResetOtp.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/pages/LoginResetOtp.svelte"
+      "svelte": "./keycloakify-svelte/login/pages/LoginResetOtp.svelte",
+      "default": "./keycloakify-svelte/login/pages/LoginResetOtp.svelte"
     },
     "./login/pages/LoginResetPassword.svelte": {
       "types": "./keycloakify-svelte/login/pages/LoginResetPassword.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/pages/LoginResetPassword.svelte"
+      "svelte": "./keycloakify-svelte/login/pages/LoginResetPassword.svelte",
+      "default": "./keycloakify-svelte/login/pages/LoginResetPassword.svelte"
     },
     "./login/pages/Login.svelte": {
       "types": "./keycloakify-svelte/login/pages/Login.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/pages/Login.svelte"
+      "svelte": "./keycloakify-svelte/login/pages/Login.svelte",
+      "default": "./keycloakify-svelte/login/pages/Login.svelte"
     },
     "./login/pages/LoginUpdatePassword.svelte": {
       "types": "./keycloakify-svelte/login/pages/LoginUpdatePassword.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/pages/LoginUpdatePassword.svelte"
+      "svelte": "./keycloakify-svelte/login/pages/LoginUpdatePassword.svelte",
+      "default": "./keycloakify-svelte/login/pages/LoginUpdatePassword.svelte"
     },
     "./login/pages/LoginUpdateProfile.svelte": {
       "types": "./keycloakify-svelte/login/pages/LoginUpdateProfile.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/pages/LoginUpdateProfile.svelte"
+      "svelte": "./keycloakify-svelte/login/pages/LoginUpdateProfile.svelte",
+      "default": "./keycloakify-svelte/login/pages/LoginUpdateProfile.svelte"
     },
     "./login/pages/LoginUsername.svelte": {
       "types": "./keycloakify-svelte/login/pages/LoginUsername.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/pages/LoginUsername.svelte"
+      "svelte": "./keycloakify-svelte/login/pages/LoginUsername.svelte",
+      "default": "./keycloakify-svelte/login/pages/LoginUsername.svelte"
     },
     "./login/pages/LoginVerifyEmail.svelte": {
       "types": "./keycloakify-svelte/login/pages/LoginVerifyEmail.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/pages/LoginVerifyEmail.svelte"
+      "svelte": "./keycloakify-svelte/login/pages/LoginVerifyEmail.svelte",
+      "default": "./keycloakify-svelte/login/pages/LoginVerifyEmail.svelte"
     },
     "./login/pages/LoginX509Info.svelte": {
       "types": "./keycloakify-svelte/login/pages/LoginX509Info.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/pages/LoginX509Info.svelte"
+      "svelte": "./keycloakify-svelte/login/pages/LoginX509Info.svelte",
+      "default": "./keycloakify-svelte/login/pages/LoginX509Info.svelte"
     },
     "./login/pages/LogoutConfirm.svelte": {
       "types": "./keycloakify-svelte/login/pages/LogoutConfirm.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/pages/LogoutConfirm.svelte"
+      "svelte": "./keycloakify-svelte/login/pages/LogoutConfirm.svelte",
+      "default": "./keycloakify-svelte/login/pages/LogoutConfirm.svelte"
     },
     "./login/pages/PageProps": {
       "types": "./keycloakify-svelte/login/pages/PageProps.d.ts",
@@ -290,27 +332,33 @@
     },
     "./login/pages/Register.svelte": {
       "types": "./keycloakify-svelte/login/pages/Register.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/pages/Register.svelte"
+      "svelte": "./keycloakify-svelte/login/pages/Register.svelte",
+      "default": "./keycloakify-svelte/login/pages/Register.svelte"
     },
     "./login/pages/SamlPostForm.svelte": {
       "types": "./keycloakify-svelte/login/pages/SamlPostForm.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/pages/SamlPostForm.svelte"
+      "svelte": "./keycloakify-svelte/login/pages/SamlPostForm.svelte",
+      "default": "./keycloakify-svelte/login/pages/SamlPostForm.svelte"
     },
     "./login/pages/SelectAuthenticator.svelte": {
       "types": "./keycloakify-svelte/login/pages/SelectAuthenticator.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/pages/SelectAuthenticator.svelte"
+      "svelte": "./keycloakify-svelte/login/pages/SelectAuthenticator.svelte",
+      "default": "./keycloakify-svelte/login/pages/SelectAuthenticator.svelte"
     },
     "./login/pages/Terms.svelte": {
       "types": "./keycloakify-svelte/login/pages/Terms.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/pages/Terms.svelte"
+      "svelte": "./keycloakify-svelte/login/pages/Terms.svelte",
+      "default": "./keycloakify-svelte/login/pages/Terms.svelte"
     },
     "./login/pages/UpdateEmail.svelte": {
       "types": "./keycloakify-svelte/login/pages/UpdateEmail.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/pages/UpdateEmail.svelte"
+      "svelte": "./keycloakify-svelte/login/pages/UpdateEmail.svelte",
+      "default": "./keycloakify-svelte/login/pages/UpdateEmail.svelte"
     },
     "./login/pages/WebauthnAuthenticate.svelte": {
       "types": "./keycloakify-svelte/login/pages/WebauthnAuthenticate.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/pages/WebauthnAuthenticate.svelte"
+      "svelte": "./keycloakify-svelte/login/pages/WebauthnAuthenticate.svelte",
+      "default": "./keycloakify-svelte/login/pages/WebauthnAuthenticate.svelte"
     },
     "./login/pages/WebauthnAuthenticate.useScript": {
       "types": "./keycloakify-svelte/login/pages/WebauthnAuthenticate.useScript.d.ts",
@@ -319,11 +367,13 @@
     },
     "./login/pages/WebauthnError.svelte": {
       "types": "./keycloakify-svelte/login/pages/WebauthnError.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/pages/WebauthnError.svelte"
+      "svelte": "./keycloakify-svelte/login/pages/WebauthnError.svelte",
+      "default": "./keycloakify-svelte/login/pages/WebauthnError.svelte"
     },
     "./login/pages/WebauthnRegister.svelte": {
       "types": "./keycloakify-svelte/login/pages/WebauthnRegister.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/login/pages/WebauthnRegister.svelte"
+      "svelte": "./keycloakify-svelte/login/pages/WebauthnRegister.svelte",
+      "default": "./keycloakify-svelte/login/pages/WebauthnRegister.svelte"
     },
     "./login/pages/WebauthnRegister.useScript": {
       "types": "./keycloakify-svelte/login/pages/WebauthnRegister.useScript.d.ts",
@@ -357,11 +407,13 @@
     },
     "./account/DefaultPage.svelte": {
       "types": "./keycloakify-svelte/account/DefaultPage.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/account/DefaultPage.svelte"
+      "svelte": "./keycloakify-svelte/account/DefaultPage.svelte",
+      "default": "./keycloakify-svelte/account/DefaultPage.svelte"
     },
     "./account/Template.svelte": {
       "types": "./keycloakify-svelte/account/Template.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/account/Template.svelte"
+      "svelte": "./keycloakify-svelte/account/Template.svelte",
+      "default": "./keycloakify-svelte/account/Template.svelte"
     },
     "./account/Template.useInitialize": {
       "types": "./keycloakify-svelte/account/Template.useInitialize.d.ts",
@@ -375,19 +427,23 @@
     },
     "./account/pages/Account.svelte": {
       "types": "./keycloakify-svelte/account/pages/Account.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/account/pages/Account.svelte"
+      "svelte": "./keycloakify-svelte/account/pages/Account.svelte",
+      "default": "./keycloakify-svelte/account/pages/Account.svelte"
     },
     "./account/pages/Applications.svelte": {
       "types": "./keycloakify-svelte/account/pages/Applications.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/account/pages/Applications.svelte"
+      "svelte": "./keycloakify-svelte/account/pages/Applications.svelte",
+      "default": "./keycloakify-svelte/account/pages/Applications.svelte"
     },
     "./account/pages/FederatedIdentity.svelte": {
       "types": "./keycloakify-svelte/account/pages/FederatedIdentity.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/account/pages/FederatedIdentity.svelte"
+      "svelte": "./keycloakify-svelte/account/pages/FederatedIdentity.svelte",
+      "default": "./keycloakify-svelte/account/pages/FederatedIdentity.svelte"
     },
     "./account/pages/Log.svelte": {
       "types": "./keycloakify-svelte/account/pages/Log.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/account/pages/Log.svelte"
+      "svelte": "./keycloakify-svelte/account/pages/Log.svelte",
+      "default": "./keycloakify-svelte/account/pages/Log.svelte"
     },
     "./account/pages/PageProps": {
       "types": "./keycloakify-svelte/account/pages/PageProps.d.ts",
@@ -396,15 +452,18 @@
     },
     "./account/pages/Password.svelte": {
       "types": "./keycloakify-svelte/account/pages/Password.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/account/pages/Password.svelte"
+      "svelte": "./keycloakify-svelte/account/pages/Password.svelte",
+      "default": "./keycloakify-svelte/account/pages/Password.svelte"
     },
     "./account/pages/Sessions.svelte": {
       "types": "./keycloakify-svelte/account/pages/Sessions.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/account/pages/Sessions.svelte"
+      "svelte": "./keycloakify-svelte/account/pages/Sessions.svelte",
+      "default": "./keycloakify-svelte/account/pages/Sessions.svelte"
     },
     "./account/pages/Totp.svelte": {
       "types": "./keycloakify-svelte/account/pages/Totp.svelte.d.ts",
-      "svelte": "./keycloakify-svelte/account/pages/Totp.svelte"
+      "svelte": "./keycloakify-svelte/account/pages/Totp.svelte",
+      "default": "./keycloakify-svelte/account/pages/Totp.svelte"
     }
   },
   "files": [
@@ -420,7 +479,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "prepare": "husky",
+    "prepare": "husky && svelte-kit sync || echo ''",
     "build": "tsx scripts/build.ts",
     "watch": "tsx scripts/watch.ts",
     "link-in-starter": "tsx scripts/link-in-starter.ts",
@@ -433,7 +492,7 @@
     "release": "sh scripts/release.sh"
   },
   "peerDependencies": {
-    "keycloakify": "^11.9.4",
+    "keycloakify": "^11.15.1",
     "svelte": "^5.0.0"
   },
   "devDependencies": {
