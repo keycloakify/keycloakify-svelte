@@ -16,6 +16,27 @@
 
 <Story name="Default" />
 
+<!--
+  Passkeys via WebAuthn conditional UI. Keycloak only sends these fields when the realm
+  offers passkeys on login.ftl; mocking them here is the only way to see the branch
+  without a fully configured realm. Expect autocomplete="username webauthn" on the
+  username input and a hidden #webauth form at the end of the page.
+-->
+<Story
+  name="WithPasskeyConditionalUI"
+  args={{
+    ...args,
+    kcContext: {
+      enableWebAuthnConditionalUI: true,
+      isUserIdentified: 'false',
+      challenge: 'P9OnaFRxQv-PJxt9CUPwbg',
+      userVerification: 'preferred',
+      rpId: 'localhost',
+      createTimeout: 0,
+    },
+  }}
+/>
+
 <!--  -->
 <Story
   name="WithInvalidCredential"
