@@ -1,154 +1,143 @@
-# [1.0.0](https://github.com/keycloakify/keycloakify-svelte/compare/v0.2.12...v1.0.0) (2026-06-06)
-
-## [0.2.11](https://github.com/keycloakify/keycloakify-svelte/compare/v0.2.10...v0.2.11) (2026-05-11)
-
-
-### Bug Fixes
-
-* missing stories ([ecb485a](https://github.com/keycloakify/keycloakify-svelte/commit/ecb485aa003e9b4d8c36941b02c81f559fafaa35))
-
-## [0.2.10](https://github.com/keycloakify/keycloakify-svelte/compare/v0.2.10-rc.3...v0.2.10) (2026-05-11)
-
-## [0.2.10-rc.3](https://github.com/keycloakify/keycloakify-svelte/compare/v0.2.10-rc.2...v0.2.10-rc.3) (2026-05-11)
-
-## [0.2.10-rc.2](https://github.com/keycloakify/keycloakify-svelte/compare/v0.2.10-rc.1...v0.2.10-rc.2) (2026-03-15)
-
-## [0.2.10-rc.1](https://github.com/keycloakify/keycloakify-svelte/compare/v0.2.9...v0.2.10-rc.1) (2026-03-13)
-
-## [0.2.9](https://github.com/keycloakify/keycloakify-svelte/compare/v0.2.8...v0.2.9) (2026-03-13)
-
-
-### Bug Fixes
-
-* import type ([abe4e9b](https://github.com/keycloakify/keycloakify-svelte/commit/abe4e9bac4da7801b160584f731d245f554513bf))
-
-## [0.2.8](https://github.com/keycloakify/keycloakify-svelte/compare/v0.2.8-rc.1...v0.2.8) (2026-02-28)
-
-
-### Bug Fixes
-
-* remember me checkbox ([207b86f](https://github.com/keycloakify/keycloakify-svelte/commit/207b86f7ae86bc3179ded945a7be06a83fa1a155))
-
-## [0.2.8-rc.1](https://github.com/keycloakify/keycloakify-svelte/compare/v0.2.7...v0.2.8-rc.1) (2026-02-28)
-
-
-### Bug Fixes
-
-* svelte and lint warnings ([c11eca5](https://github.com/keycloakify/keycloakify-svelte/commit/c11eca57005b7d03ec353129ebe9adee2a3a764e))
-
-## [0.2.7](https://github.com/keycloakify/keycloakify-svelte/compare/v0.2.6...v0.2.7) (2025-12-02)
-
-## [0.2.6](https://github.com/keycloakify/keycloakify-svelte/compare/v0.2.5...v0.2.6) (2025-11-16)
-
-## [0.2.5](https://github.com/keycloakify/keycloakify-svelte/compare/v0.2.4...v0.2.5) (2025-09-16)
-
-## [0.2.4](https://github.com/keycloakify/keycloakify-svelte/compare/v0.2.3...v0.2.4) (2025-09-11)
-
-
-### Bug Fixes
-
-* build problems with tsx 4.20.5 ([5a041cb](https://github.com/keycloakify/keycloakify-svelte/commit/5a041cbf911ac8227af46291f0d0ce2da3026c0c))
-* format ([9a68d22](https://github.com/keycloakify/keycloakify-svelte/commit/9a68d220c8b095d5c6c6b712ddaabe46f17af750))
-
-## [0.2.3](https://github.com/keycloakify/keycloakify-svelte/compare/v0.2.2...v0.2.3) (2025-08-19)
-
-
-### Bug Fixes
-
-* badge ([6861264](https://github.com/keycloakify/keycloakify-svelte/commit/68612642d1eca6ff8f6db96fb0e821cb265d00c6))
-* badge style ([3d071a9](https://github.com/keycloakify/keycloakify-svelte/commit/3d071a946f7f89527b245488d1b8d747ab5df069))
-* ci badge ([55ac23d](https://github.com/keycloakify/keycloakify-svelte/commit/55ac23d251996c69a86be4f44ad227f12d78d1a3))
-
-## [0.2.2](https://github.com/keycloakify/keycloakify-svelte/compare/v0.2.1...v0.2.2) (2025-08-14)
-
-
-### Bug Fixes
-
-* https://github.com/keycloakify/keycloakify/issues/903 ([7b2c723](https://github.com/keycloakify/keycloakify-svelte/commit/7b2c723568423c39fac9367fde21836e02246af8))
-* lint ([e3778ef](https://github.com/keycloakify/keycloakify-svelte/commit/e3778ef42c794f1ef28d8665dea8b197fa330102))
-* publint yarn v1 error ([e28213d](https://github.com/keycloakify/keycloakify-svelte/commit/e28213d735fdee84256c295c959339dd075ea39a))
-
-## [0.2.1](https://github.com/keycloakify/keycloakify-svelte/compare/v0.2.0...v0.2.1) (2025-08-10)
-
-# [0.2.0](https://github.com/keycloakify/keycloakify-svelte/compare/v0.1.12...v0.2.0) (2025-08-07)
-
-## [0.1.12](https://github.com/keycloakify/keycloakify-svelte/compare/v0.1.11...v0.1.12) (2025-07-13)
-
-
-### Bug Fixes
-
-* not needed to export props if passing paramteric I18n ([837c7d1](https://github.com/keycloakify/keycloakify-svelte/commit/837c7d1b49ee45aed31c0f277e0cc4b79075044b))
-
-## [0.1.11](https://github.com/keycloakify/keycloakify-svelte/compare/v0.1.10...v0.1.11) (2025-07-13)
-
-
-### Bug Fixes
-
-* eject also props ([108a22c](https://github.com/keycloakify/keycloakify-svelte/commit/108a22cac0296910f81946713ea8a06b3325cdd4))
-
-## [0.1.10](https://github.com/keycloakify/keycloakify-svelte/compare/v0.1.9...v0.1.10) (2025-07-13)
-
-
-### Bug Fixes
-
-* wrong path on ejecting UserProfileFormFields nad complete components ejection ([7bbed58](https://github.com/keycloakify/keycloakify-svelte/commit/7bbed583af44f9e24d6ed93c24f1e681a27bcf1a)), closes [#6](https://github.com/keycloakify/keycloakify-svelte/issues/6)
-
-## [0.1.9](https://github.com/keycloakify/keycloakify-svelte/compare/v0.1.8...v0.1.9) (2025-07-03)
-
-
-### Bug Fixes
-
-* removed extra double-quote in page router code snippet ([0f72025](https://github.com/keycloakify/keycloakify-svelte/commit/0f72025c6ace358d0420367c0077965671b4444f))
-* Update Terms.svelte ([c233a11](https://github.com/keycloakify/keycloakify-svelte/commit/c233a11e06bdd3d83fb4ddecac39626836761f1f))
-
-## [0.1.8](https://github.com/keycloakify/keycloakify-svelte/compare/v0.1.7...v0.1.8) (2025-05-16)
-
-
-### Bug Fixes
-
-* input type hidden ([8223e65](https://github.com/keycloakify/keycloakify-svelte/commit/8223e65bb4d030f7a296c4df5d087676d0465db2))
-
-## [0.1.7](https://github.com/keycloakify/keycloakify-svelte/compare/v0.1.6...v0.1.7) (2025-03-14)
-
-
-### Bug Fixes
-
-* issue 38029 ([13a1ba0](https://github.com/keycloakify/keycloakify-svelte/commit/13a1ba0e844e2b6d773b8799ef44ac9d11d80996))
-
-## [0.1.6](https://github.com/keycloakify/keycloakify-svelte/compare/v0.1.5...v0.1.6) (2025-03-10)
-
-
-### Features
-
-* update dependencies ([c89c710](https://github.com/keycloakify/keycloakify-svelte/commit/c89c7107a2c0aa764f7eb594274c7c2adacd56c8))
-
-## [0.1.5](https://github.com/keycloakify/keycloakify-svelte/compare/v0.1.4...v0.1.5) (2025-02-18)
-
-## [0.1.4](https://github.com/keycloakify/keycloakify-svelte/compare/v0.1.3...v0.1.4) (2025-01-24)
-
-## [0.1.3](https://github.com/keycloakify/keycloakify-svelte/compare/v0.1.2...v0.1.3) (2025-01-03)
-
-## [0.1.2](https://github.com/keycloakify/keycloakify-svelte/compare/v0.1.1...v0.1.2) (2025-01-03)
-
-## [0.1.1](https://github.com/keycloakify/keycloakify-svelte/compare/v0.1.0...v0.1.1) (2025-01-02)
-
-# [0.1.0](https://github.com/keycloakify/keycloakify-svelte/compare/v0.0.1-rc.7...v0.1.0) (2024-12-30)
-
-## [0.0.1-rc.7](https://github.com/keycloakify/keycloakify-svelte/compare/v0.0.1-rc.6...v0.0.1-rc.7) (2024-11-28)
-
-## [0.0.1-rc.6](https://github.com/keycloakify/keycloakify-svelte/compare/v0.0.1-rc.5...v0.0.1-rc.6) (2024-11-28)
-
-## [0.0.1-rc.5](https://github.com/keycloakify/keycloakify-svelte/compare/v0.0.1-rc.4...v0.0.1-rc.5) (2024-11-26)
-
-## [0.0.1-rc.4](https://github.com/keycloakify/keycloakify-svelte/compare/v0.0.1-rc.3...v0.0.1-rc.4) (2024-11-26)
-
-## [0.0.1-rc.3](https://github.com/keycloakify/keycloakify-svelte/compare/v0.0.1-rc.2...v0.0.1-rc.3) (2024-11-26)
-
-## [0.0.1-rc.2](https://github.com/keycloakify/keycloakify-svelte/compare/v0.0.1-rc.1...v0.0.1-rc.2) (2024-11-26)
-
-## [0.0.1-rc.1](https://github.com/keycloakify/keycloakify-svelte/compare/ac5015a40b34b7f358080c842c764d4bfea01f7b...v0.0.1-rc.1) (2024-11-26)
-
-
-### Reverts
-
-* Revert "temporary add dist" ([ac5015a](https://github.com/keycloakify/keycloakify-svelte/commit/ac5015a40b34b7f358080c842c764d4bfea01f7b))
+## <small>1.0.1 (2026-08-10)</small>
+
+* chore: add contributors and update ci ([eab3e5a](https://github.com/keycloakify/keycloakify-svelte/commit/eab3e5a))
+* chore: set contribution ([578a08a](https://github.com/keycloakify/keycloakify-svelte/commit/578a08a))
+* chore: setup claude ([21e1866](https://github.com/keycloakify/keycloakify-svelte/commit/21e1866))
+* chore: update dependecies ([5a4a1f3](https://github.com/keycloakify/keycloakify-svelte/commit/5a4a1f3))
+* chore: update dependencies ([9aaec9f](https://github.com/keycloakify/keycloakify-svelte/commit/9aaec9f))
+* chore: update dependencies ([c941718](https://github.com/keycloakify/keycloakify-svelte/commit/c941718))
+* chore: update dependencies ([5b7ee99](https://github.com/keycloakify/keycloakify-svelte/commit/5b7ee99))
+* chore: update dependencies ([82670ff](https://github.com/keycloakify/keycloakify-svelte/commit/82670ff))
+* chore: update dependencies ([b6277ef](https://github.com/keycloakify/keycloakify-svelte/commit/b6277ef))
+* chore: update dependencies ([2067093](https://github.com/keycloakify/keycloakify-svelte/commit/2067093))
+* chore: update deps ([629d5fd](https://github.com/keycloakify/keycloakify-svelte/commit/629d5fd))
+* chore: Update README.md ([ddd972e](https://github.com/keycloakify/keycloakify-svelte/commit/ddd972e))
+* chore: update vite to v8 ([b2aab24](https://github.com/keycloakify/keycloakify-svelte/commit/b2aab24))
+* chore(version): 💯 bump version to 0.1.10 ([b69b24d](https://github.com/keycloakify/keycloakify-svelte/commit/b69b24d))
+* chore(version): 💯 bump version to 0.1.11 ([fddde45](https://github.com/keycloakify/keycloakify-svelte/commit/fddde45))
+* chore(version): 💯 bump version to 0.1.12 ([8b76a5d](https://github.com/keycloakify/keycloakify-svelte/commit/8b76a5d))
+* chore(version): 💯 bump version to 0.1.4 ([a34bbac](https://github.com/keycloakify/keycloakify-svelte/commit/a34bbac))
+* chore(version): 💯 bump version to 0.1.6 ([77ee78a](https://github.com/keycloakify/keycloakify-svelte/commit/77ee78a))
+* chore(version): 💯 bump version to 0.1.7 ([b3b4233](https://github.com/keycloakify/keycloakify-svelte/commit/b3b4233))
+* chore(version): 💯 bump version to 0.1.8 ([3b38fca](https://github.com/keycloakify/keycloakify-svelte/commit/3b38fca))
+* chore(version): 💯 bump version to 0.1.9 ([3a96439](https://github.com/keycloakify/keycloakify-svelte/commit/3a96439))
+* chore(version): 💯 bump version to 0.2.10 ([6b6cf88](https://github.com/keycloakify/keycloakify-svelte/commit/6b6cf88))
+* chore(version): 💯 bump version to 0.2.10-rc.1 ([7ee3ef2](https://github.com/keycloakify/keycloakify-svelte/commit/7ee3ef2))
+* chore(version): 💯 bump version to 0.2.10-rc.2 ([16876b9](https://github.com/keycloakify/keycloakify-svelte/commit/16876b9))
+* chore(version): 💯 bump version to 0.2.10-rc.3 ([faeb96f](https://github.com/keycloakify/keycloakify-svelte/commit/faeb96f))
+* chore(version): 💯 bump version to 0.2.11 ([27b4331](https://github.com/keycloakify/keycloakify-svelte/commit/27b4331))
+* chore(version): 💯 bump version to 0.2.12 ([c250aba](https://github.com/keycloakify/keycloakify-svelte/commit/c250aba))
+* chore(version): 💯 bump version to 0.2.2 ([154125d](https://github.com/keycloakify/keycloakify-svelte/commit/154125d))
+* chore(version): 💯 bump version to 0.2.4 ([6a09513](https://github.com/keycloakify/keycloakify-svelte/commit/6a09513))
+* chore(version): 💯 bump version to 0.2.5 ([c0b5322](https://github.com/keycloakify/keycloakify-svelte/commit/c0b5322))
+* chore(version): 💯 bump version to 0.2.6 ([c05ad2b](https://github.com/keycloakify/keycloakify-svelte/commit/c05ad2b))
+* chore(version): 💯 bump version to 0.2.8 ([775bb83](https://github.com/keycloakify/keycloakify-svelte/commit/775bb83))
+* chore(version): 💯 bump version to 0.2.8-rc.1 ([d32bc9d](https://github.com/keycloakify/keycloakify-svelte/commit/d32bc9d))
+* chore(version): 💯 bump version to 0.2.9 ([83b4ceb](https://github.com/keycloakify/keycloakify-svelte/commit/83b4ceb))
+* chore(version): 💯 bump version to 1.0.0 ([34c4cbe](https://github.com/keycloakify/keycloakify-svelte/commit/34c4cbe))
+* fix: badge ([6861264](https://github.com/keycloakify/keycloakify-svelte/commit/6861264))
+* fix: badge style ([3d071a9](https://github.com/keycloakify/keycloakify-svelte/commit/3d071a9))
+* fix: build problems with tsx 4.20.5 ([5a041cb](https://github.com/keycloakify/keycloakify-svelte/commit/5a041cb))
+* fix: ci ([beb5248](https://github.com/keycloakify/keycloakify-svelte/commit/beb5248))
+* fix: ci badge ([55ac23d](https://github.com/keycloakify/keycloakify-svelte/commit/55ac23d))
+* fix: coderabbit review ([94ae40a](https://github.com/keycloakify/keycloakify-svelte/commit/94ae40a))
+* fix: duplicated ([c094624](https://github.com/keycloakify/keycloakify-svelte/commit/c094624))
+* fix: duplicated ([680dde4](https://github.com/keycloakify/keycloakify-svelte/commit/680dde4))
+* fix: eject also props ([108a22c](https://github.com/keycloakify/keycloakify-svelte/commit/108a22c))
+* fix: format ([9a68d22](https://github.com/keycloakify/keycloakify-svelte/commit/9a68d22))
+* fix: https://github.com/keycloakify/keycloakify/issues/903 ([7b2c723](https://github.com/keycloakify/keycloakify-svelte/commit/7b2c723))
+* fix: implement WebAuthn conditional UI (passkeys) on Login.svelte ([8887eac](https://github.com/keycloakify/keycloakify-svelte/commit/8887eac)), closes [#webauth](https://github.com/keycloakify/keycloakify-svelte/issues/webauth) [#18](https://github.com/keycloakify/keycloakify-svelte/issues/18)
+* fix: import type ([abe4e9b](https://github.com/keycloakify/keycloakify-svelte/commit/abe4e9b))
+* fix: input type hidden ([8223e65](https://github.com/keycloakify/keycloakify-svelte/commit/8223e65))
+* fix: issue 38029 ([13a1ba0](https://github.com/keycloakify/keycloakify-svelte/commit/13a1ba0))
+* fix: lint ([e3778ef](https://github.com/keycloakify/keycloakify-svelte/commit/e3778ef))
+* fix: missing stories ([ecb485a](https://github.com/keycloakify/keycloakify-svelte/commit/ecb485a))
+* fix: not needed to export props if passing paramteric I18n ([837c7d1](https://github.com/keycloakify/keycloakify-svelte/commit/837c7d1))
+* fix: package manager ([669396c](https://github.com/keycloakify/keycloakify-svelte/commit/669396c))
+* fix: publint yarn v1 error ([e28213d](https://github.com/keycloakify/keycloakify-svelte/commit/e28213d))
+* fix: remember me checkbox ([207b86f](https://github.com/keycloakify/keycloakify-svelte/commit/207b86f))
+* fix: removed extra double-quote in page router code snippet ([0f72025](https://github.com/keycloakify/keycloakify-svelte/commit/0f72025))
+* fix: svelte and lint warnings ([c11eca5](https://github.com/keycloakify/keycloakify-svelte/commit/c11eca5))
+* fix: Update Terms.svelte ([c233a11](https://github.com/keycloakify/keycloakify-svelte/commit/c233a11))
+* fix: wrong path on ejecting UserProfileFormFields nad complete components ejection ([7bbed58](https://github.com/keycloakify/keycloakify-svelte/commit/7bbed58)), closes [#6](https://github.com/keycloakify/keycloakify-svelte/issues/6)
+* #10: In keycloakify-svelte the build is in ESM and it end up in 'prettier' being imported unconditio ([ebc2172](https://github.com/keycloakify/keycloakify-svelte/commit/ebc2172))
+* account ([4ba8f2c](https://github.com/keycloakify/keycloakify-svelte/commit/4ba8f2c))
+* add changelog ([225121f](https://github.com/keycloakify/keycloakify-svelte/commit/225121f))
+* add github workflow ([8550c29](https://github.com/keycloakify/keycloakify-svelte/commit/8550c29))
+* add nvmrc ([543eced](https://github.com/keycloakify/keycloakify-svelte/commit/543eced))
+* add stories ([91b864c](https://github.com/keycloakify/keycloakify-svelte/commit/91b864c))
+* add story ([321ab0c](https://github.com/keycloakify/keycloakify-svelte/commit/321ab0c))
+* Bump version ([a4d9610](https://github.com/keycloakify/keycloakify-svelte/commit/a4d9610))
+* Bump version ([1f75a79](https://github.com/keycloakify/keycloakify-svelte/commit/1f75a79))
+* Bump version ([d20430f](https://github.com/keycloakify/keycloakify-svelte/commit/d20430f))
+* Bump version ([ee6d310](https://github.com/keycloakify/keycloakify-svelte/commit/ee6d310))
+* Bump version ([3deb69a](https://github.com/keycloakify/keycloakify-svelte/commit/3deb69a))
+* Bump version ([75bc734](https://github.com/keycloakify/keycloakify-svelte/commit/75bc734))
+* Bump version ([caf7757](https://github.com/keycloakify/keycloakify-svelte/commit/caf7757))
+* Bump version ([1dba911](https://github.com/keycloakify/keycloakify-svelte/commit/1dba911))
+* Bump version ([da7f711](https://github.com/keycloakify/keycloakify-svelte/commit/da7f711))
+* clean console.log ([e32dee5](https://github.com/keycloakify/keycloakify-svelte/commit/e32dee5))
+* complete login pages + i18n reactivity ([9dee9ed](https://github.com/keycloakify/keycloakify-svelte/commit/9dee9ed))
+* config for linking and publish ([2406388](https://github.com/keycloakify/keycloakify-svelte/commit/2406388))
+* Create dependabot.yml for version updates ([866fba5](https://github.com/keycloakify/keycloakify-svelte/commit/866fba5))
+* edit workflow ([e370d60](https://github.com/keycloakify/keycloakify-svelte/commit/e370d60))
+* enable to publish under the keycloakify namespace ([ec0d3d5](https://github.com/keycloakify/keycloakify-svelte/commit/ec0d3d5))
+* first commit ([7a7da08](https://github.com/keycloakify/keycloakify-svelte/commit/7a7da08))
+* fix case name ([4f831ee](https://github.com/keycloakify/keycloakify-svelte/commit/4f831ee))
+* fix Component --> Snippet ([5b3c5e0](https://github.com/keycloakify/keycloakify-svelte/commit/5b3c5e0))
+* fix dirname not defined ([abdf6c1](https://github.com/keycloakify/keycloakify-svelte/commit/abdf6c1))
+* fix duplicated key on package ([bbb4d29](https://github.com/keycloakify/keycloakify-svelte/commit/bbb4d29))
+* fix gen ([2f9d1a7](https://github.com/keycloakify/keycloakify-svelte/commit/2f9d1a7))
+* fix import ([7a75128](https://github.com/keycloakify/keycloakify-svelte/commit/7a75128))
+* fix initialize account theme ([f98d12a](https://github.com/keycloakify/keycloakify-svelte/commit/f98d12a))
+* fix linking and kc update ([837eb72](https://github.com/keycloakify/keycloakify-svelte/commit/837eb72))
+* fix page ejection ([edaa82d](https://github.com/keycloakify/keycloakify-svelte/commit/edaa82d))
+* Fix prettier resolution when linked ([fd302ad](https://github.com/keycloakify/keycloakify-svelte/commit/fd302ad))
+* fix reactivity ([b3abaf8](https://github.com/keycloakify/keycloakify-svelte/commit/b3abaf8))
+* fix reactivity ([800c795](https://github.com/keycloakify/keycloakify-svelte/commit/800c795))
+* fix switch case ([5223fa1](https://github.com/keycloakify/keycloakify-svelte/commit/5223fa1))
+* fix temp kcpage story for account ([82e479e](https://github.com/keycloakify/keycloakify-svelte/commit/82e479e))
+* Give an error when trying to initialize an admin theme, stop labelling as unusable ([8d292cd](https://github.com/keycloakify/keycloakify-svelte/commit/8d292cd))
+* https://github.com/keycloakify/keycloakify/issues/903 ([7c8a076](https://github.com/keycloakify/keycloakify-svelte/commit/7c8a076))
+* ignore dist ([bd9c819](https://github.com/keycloakify/keycloakify-svelte/commit/bd9c819))
+* Implement extra option 'the page is not listed here' ([8e863e1](https://github.com/keycloakify/keycloakify-svelte/commit/8e863e1))
+* pages boilerplate ([37630e5](https://github.com/keycloakify/keycloakify-svelte/commit/37630e5))
+* Release ([a5cb08b](https://github.com/keycloakify/keycloakify-svelte/commit/a5cb08b))
+* Release ([09c6b9f](https://github.com/keycloakify/keycloakify-svelte/commit/09c6b9f))
+* Release ([5c70985](https://github.com/keycloakify/keycloakify-svelte/commit/5c70985))
+* Release ([80c0243](https://github.com/keycloakify/keycloakify-svelte/commit/80c0243))
+* Release ([5146d8d](https://github.com/keycloakify/keycloakify-svelte/commit/5146d8d))
+* Release ([c56670d](https://github.com/keycloakify/keycloakify-svelte/commit/c56670d))
+* Release ([a61f958](https://github.com/keycloakify/keycloakify-svelte/commit/a61f958))
+* Release ([7834840](https://github.com/keycloakify/keycloakify-svelte/commit/7834840))
+* Release ([84af9ce](https://github.com/keycloakify/keycloakify-svelte/commit/84af9ce))
+* Release ([c2da5fb](https://github.com/keycloakify/keycloakify-svelte/commit/c2da5fb))
+* Release ([d2e9a66](https://github.com/keycloakify/keycloakify-svelte/commit/d2e9a66))
+* rename bin file ([4982058](https://github.com/keycloakify/keycloakify-svelte/commit/4982058))
+* restore cd dist ([60fee8a](https://github.com/keycloakify/keycloakify-svelte/commit/60fee8a))
+* temp try without prettier ([8841e1a](https://github.com/keycloakify/keycloakify-svelte/commit/8841e1a))
+* temp userprofileformfields optional ([dccf49b](https://github.com/keycloakify/keycloakify-svelte/commit/dccf49b))
+* try fixing cjs ([04bb2a6](https://github.com/keycloakify/keycloakify-svelte/commit/04bb2a6))
+* try this config ([34c74cb](https://github.com/keycloakify/keycloakify-svelte/commit/34c74cb))
+* try this config ([ad796c9](https://github.com/keycloakify/keycloakify-svelte/commit/ad796c9))
+* try this config ([8ba4f77](https://github.com/keycloakify/keycloakify-svelte/commit/8ba4f77))
+* try this config ([b1a0b7b](https://github.com/keycloakify/keycloakify-svelte/commit/b1a0b7b))
+* try without typeVersions ([8baf677](https://github.com/keycloakify/keycloakify-svelte/commit/8baf677))
+* update ([8387986](https://github.com/keycloakify/keycloakify-svelte/commit/8387986))
+* update ([5c484e7](https://github.com/keycloakify/keycloakify-svelte/commit/5c484e7))
+* update ([c2b12b0](https://github.com/keycloakify/keycloakify-svelte/commit/c2b12b0))
+* Update account boilerplate ([7aa088a](https://github.com/keycloakify/keycloakify-svelte/commit/7aa088a))
+* update dependencies ([8996162](https://github.com/keycloakify/keycloakify-svelte/commit/8996162))
+* update dependnecies and fix missing bin ([a8be824](https://github.com/keycloakify/keycloakify-svelte/commit/a8be824))
+* Update keycloakify ([cac479c](https://github.com/keycloakify/keycloakify-svelte/commit/cac479c))
+* Update NPM publishing auth setup ([dc5700f](https://github.com/keycloakify/keycloakify-svelte/commit/dc5700f))
+* update pages ([210bd3f](https://github.com/keycloakify/keycloakify-svelte/commit/210bd3f))
+* update peer dep requirement to keycloakify ([1c8876f](https://github.com/keycloakify/keycloakify-svelte/commit/1c8876f))
+* update profile form fields ([ac31a2c](https://github.com/keycloakify/keycloakify-svelte/commit/ac31a2c))
+* update README ([c7f9d7d](https://github.com/keycloakify/keycloakify-svelte/commit/c7f9d7d)), closes [#1](https://github.com/keycloakify/keycloakify-svelte/issues/1)
+* Update ts-ci action version ([cc0659b](https://github.com/keycloakify/keycloakify-svelte/commit/cc0659b))
+* Use LICENSE as the file that indicate the root of the project instead of package.json since they are ([b9ebc13](https://github.com/keycloakify/keycloakify-svelte/commit/b9ebc13))
+* use onmount ([56970b5](https://github.com/keycloakify/keycloakify-svelte/commit/56970b5))
+* use snippet on i18n for html rendering ([f4ebaab](https://github.com/keycloakify/keycloakify-svelte/commit/f4ebaab))
+* Use span instead of div when possible for rendered i18n messages ([adc55e5](https://github.com/keycloakify/keycloakify-svelte/commit/adc55e5))
+* feat: update dependencies ([c89c710](https://github.com/keycloakify/keycloakify-svelte/commit/c89c710))
