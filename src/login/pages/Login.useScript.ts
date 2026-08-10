@@ -2,7 +2,7 @@ import { useInsertScriptTags } from '@keycloakify/svelte/tools/useInsertScriptTa
 import { assert } from 'keycloakify/tools/assert';
 import { waitForElementMountedOnDom } from 'keycloakify/tools/waitForElementMountedOnDom';
 import { onMount } from 'svelte';
-import type { Readable } from 'svelte/store';
+import { get, type Readable } from 'svelte/store';
 import type { KcContext } from '../KcContext';
 
 type KcContextLike = {
@@ -30,16 +30,25 @@ export function useScript(params: { webAuthnButtonId: string; kcContext: KcConte
 
   const { url, isUserIdentified, challenge, userVerification, rpId, createTimeout } = kcContext;
 
-  onMount(() => {
-    const unsubscribe = i18n.subscribe(($i18n) => {
-      const { msgStr, isFetchingTranslations } = $i18n;
+  // NOTE: In the React source this is called unconditionally, but there `useInsertScriptTags`
+  // only registers the "mounted once" guard, it never inserts anything when the flag is off.
+  // In Svelte that guard reloads the page as soon as a second Login mounts, so bailing out
+  // early keeps the guard scoped to the pages that actually insert the script.
+  if (kcContext.enableWebAuthnConditionalUI !== true) {
+    return;
+  }
 
-      const { insertScriptTags } = useInsertScriptTags({
-        componentOrHookName: 'Login',
-        scriptTags: [
-          {
-            type: 'module',
-            textContent: () => `
+  // NOTE: Must be called during component initialization, once. The `textContent` closure is
+  // evaluated lazily, at insertion time, so it picks up the translations that are current then.
+  const { insertScriptTags } = useInsertScriptTags({
+    componentOrHookName: 'Login',
+    scriptTags: [
+      {
+        type: 'module',
+        textContent: () => {
+          const { msgStr } = get(i18n);
+
+          return `
                     import { authenticateByWebAuthn } from "${url.resourcesPath}/js/webauthnAuthenticate.js";
                     import { initAuthenticate } from "${url.resourcesPath}/js/passkeysConditionalAuth.js";
 
@@ -62,12 +71,17 @@ export function useScript(params: { webAuthnButtonId: string; kcContext: KcConte
                         ...input,
                         errmsg : ${JSON.stringify(msgStr('passkey-unsupported-browser-text'))}
                     });
-                `,
-          },
-        ],
-      });
+                `;
+        },
+      },
+    ],
+  });
 
-      if (isFetchingTranslations || kcContext.enableWebAuthnConditionalUI !== true) {
+  onMount(() => {
+    const unsubscribe = i18n.subscribe(($i18n) => {
+      const { isFetchingTranslations } = $i18n;
+
+      if (isFetchingTranslations) {
         return;
       }
 
