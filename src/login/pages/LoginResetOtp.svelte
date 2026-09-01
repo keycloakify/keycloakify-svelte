@@ -42,7 +42,7 @@
   >
     <div class={kcClsx('kcInputWrapperClass')}>
       <div class={kcClsx('kcInfoAreaWrapperClass')}>
-        <p id="kc-otp-reset-form-description">{msg('otp-reset-description')}</p>
+        <p id="kc-otp-reset-form-description">{@render msg('otp-reset-description')()}</p>
         {#each configuredOtpCredentials.userOtpCredentials as otpCredential, index (otpCredential.id)}
           <input
             id={`kc-otp-credential-${index}`}

@@ -126,7 +126,7 @@
       </form>
       {#if shouldDisplayAuthenticators}
         {#if authenticators.authenticators.length > 1}
-          <p class={kcClsx('kcSelectAuthListItemTitle')}>{msg('passkey-available-authenticators')}</p>
+          <p class={kcClsx('kcSelectAuthListItemTitle')}>{@render msg('passkey-available-authenticators')()}</p>
         {/if}
         <div class={kcClsx('kcFormClass')}>
           {#each authenticators.authenticators as authenticator, i (authenticator.credentialId)}
@@ -151,7 +151,7 @@
                   id={`kc-webauthn-authenticator-label-${i}`}
                   class={kcClsx('kcSelectAuthListItemHeadingClass')}
                 >
-                  {advancedMsg(authenticator.label)}
+                  {@render advancedMsg(authenticator.label)()}
                 </div>
                 {#if authenticator.transports !== undefined && authenticator.transports.displayNameProperties !== undefined && authenticator.transports.displayNameProperties.length !== 0}
                   <div
@@ -159,14 +159,16 @@
                     class={kcClsx('kcSelectAuthListItemDescriptionClass')}
                   >
                     {#each authenticator.transports.displayNameProperties as nameProperty, i (nameProperty)}
-                      <span> {advancedMsg(nameProperty)} </span>
+                      <span> {@render advancedMsg(nameProperty)()} </span>
                       {#if i !== authenticator.transports.displayNameProperties.length - 1}
                         <span>, </span>{/if}
                     {/each}
                   </div>
                 {/if}
                 <div class={kcClsx('kcSelectAuthListItemDescriptionClass')}>
-                  <span id={`kc-webauthn-authenticator-createdlabel-${i}`}>{msg('passkey-createdAt-label')}</span>
+                  <span id={`kc-webauthn-authenticator-createdlabel-${i}`}
+                    >{@render msg('passkey-createdAt-label')()}</span
+                  >
                   <span id={`kc-webauthn-authenticator-created-${i}`}>{authenticator.createdAt}</span>
                 </div>
               </div>
@@ -200,7 +202,7 @@
                   for="username"
                   class={kcClsx('kcLabelClass')}
                 >
-                  {msg('passkey-autofill-select')}
+                  {@render msg('passkey-autofill-select')()}
                 </label>
                 <!-- svelte-ignore a11y_autofocus -->
                 <input
