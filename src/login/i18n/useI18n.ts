@@ -1,4 +1,5 @@
 import { useState } from '@keycloakify/svelte/tools/useState';
+import { kcSanitize } from 'keycloakify/lib/kcSanitize';
 import {
   type LanguageTag as LanguageTag_defaultSet,
   type MessageKey as MessageKey_defaultSet,
@@ -65,10 +66,12 @@ export function createUseI18n<
       const { htmlString, msgKey } = params;
       return createRawSnippet(() => ({
         render: () => {
+          const htmlString_sanitized = kcSanitize(htmlString);
+
           const elementName = (() => {
-            if (htmlString.includes('<') && htmlString.includes('>')) {
+            if (htmlString_sanitized.includes('<') && htmlString_sanitized.includes('>')) {
               for (const tagName of ['div', 'section', 'article', 'ul', 'ol']) {
-                if (htmlString.includes(`<${tagName}`)) {
+                if (htmlString_sanitized.includes(`<${tagName}`)) {
                   return 'div';
                 }
               }
@@ -76,7 +79,7 @@ export function createUseI18n<
             return 'span';
           })();
 
-          return `<${elementName} data-kc-msg="${msgKey}">${htmlString}</${elementName}>`;
+          return `<${elementName} data-kc-msg="${msgKey}">${htmlString_sanitized}</${elementName}>`;
         },
       }));
     }
@@ -108,7 +111,7 @@ export function createUseI18n<
   })();
 
   add_style: {
-    const attributeName = 'data-kc-i18n';
+    const attributeName = 'data-kc-msg';
 
     // Check if already exists in head
     if (document.querySelector(`style[${attributeName}]`) !== null) {

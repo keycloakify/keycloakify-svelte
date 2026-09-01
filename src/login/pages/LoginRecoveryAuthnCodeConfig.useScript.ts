@@ -17,8 +17,18 @@ export function useScript(params: { olRecoveryCodesListId: string; i18n: Readabl
   const { olRecoveryCodesListId, i18n } = params;
 
   onMount(() => {
+    let hasInserted = false;
+
     const unsubscribe = i18n.subscribe(($i18n) => {
+      if (hasInserted) {
+        return;
+      }
+
       const { msgStr, isFetchingTranslations } = $i18n;
+
+      if (isFetchingTranslations) {
+        return;
+      }
 
       const { insertScriptTags } = useInsertScriptTags({
         componentOrHookName: 'LoginRecoveryAuthnCodeConfig',
@@ -140,9 +150,8 @@ export function useScript(params: { olRecoveryCodesListId: string; i18n: Readabl
           },
         ],
       });
-      if (isFetchingTranslations) {
-        return;
-      }
+
+      hasInserted = true;
 
       (async () => {
         await waitForElementMountedOnDom({

@@ -26,12 +26,13 @@
   }: TemplateProps<KcContext, I18n> = $props();
   const { kcClsx } = $derived(getKcClsx({ doUseDefaultCss, classes }));
 
-  const { msgStr, currentLanguage, enabledLanguages } = $derived($i18n);
+  const { msg, msgStr, currentLanguage, enabledLanguages } = $derived($i18n);
 
   const { realm, auth, url, message, isAppInitiatedAction } = $derived(kcContext);
 
   onMount(() => {
-    document.title = documentTitle ?? untrack(() => msgStr('loginTitle', kcContext.realm.displayName));
+    document.title =
+      documentTitle ?? untrack(() => msgStr('loginTitle', kcContext.realm.displayName || kcContext.realm.name));
   });
 
   useSetClassName({
@@ -60,7 +61,7 @@
         id="kc-header-wrapper"
         class={kcClsx('kcHeaderWrapperClass')}
       >
-        {msgStr('loginTitleHtml', realm.displayNameHtml)}
+        {@render msg('loginTitleHtml', realm.displayNameHtml || realm.name)()}
       </div>
     </div>
 
@@ -136,7 +137,7 @@
               >
                 <div class="kc-login-tooltip">
                   <i class={kcClsx('kcResetFlowIcon')}></i>
-                  <span class="kc-tooltip-text">{msgStr('restartLoginTooltip')}</span>
+                  <span class="kc-tooltip-text">{@render msg('restartLoginTooltip')()}</span>
                 </div>
               </a>
             </div>
@@ -147,7 +148,7 @@
             <div class={clsx(kcClsx('kcLabelWrapperClass'), 'subtitle')}>
               <span class="subtitle">
                 <span class="required">*</span>
-                {msgStr('requiredFields')}
+                {@render msg('requiredFields')()}
               </span>
             </div>
             <div class="col-md-10">{@render node()}</div>
@@ -203,7 +204,7 @@
                     return false;
                   }}
                 >
-                  {msgStr('doTryAnotherWay')}
+                  {@render msg('doTryAnotherWay')()}
                 </a>
               </div>
             </form>

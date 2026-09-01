@@ -20,7 +20,6 @@
           id="logout-sessions"
           name="logout-sessions"
           value="on"
-          checked={true}
         />
         {@render msg('logoutOtherSessions')()}
       </label>

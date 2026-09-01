@@ -32,7 +32,7 @@
   );
   const html5DataAnnotations = $derived({
     ...Object.fromEntries(
-      Object.entries(attribute.group?.html5DataAnnotations ?? {}).map(([key, value]) => [`data-${key}`, value]),
+      Object.entries(attribute.html5DataAnnotations ?? {}).map(([key, value]) => [`data-${key}`, value]),
     ),
   });
 </script>
@@ -63,7 +63,7 @@
   min={attribute.annotations.inputTypeMin}
   step={attribute.annotations.inputTypeStep}
   {...html5DataAnnotations}
-  onchange={(event) =>
+  oninput={(event) =>
     dispatchFormAction('formAction', {
       action: 'update',
       name: attribute.name,

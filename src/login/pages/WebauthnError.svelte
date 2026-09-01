@@ -12,7 +12,7 @@
     classes,
   }: PageProps<Extract<KcContext, { pageId: 'webauthn-error.ftl' }>, I18n> = $props();
 
-  const { url, isAppInitiatedAction } = $derived(kcContext);
+  const { url, isAppInitiatedAction, execution } = $derived(kcContext);
 
   const { msg, msgStr } = $derived($i18n);
 
@@ -57,7 +57,7 @@
       // @ts-expect-error: Trusted Keycloak's code
       document.getElementById('isSetRetry').value = 'retry';
       // @ts-expect-error: Trusted Keycloak's code
-      document.getElementById('executionValue').value = '${execution}';
+      document.getElementById('executionValue').value = execution;
       // @ts-expect-error: Trusted Keycloak's code
       document.getElementById('kc-error-credential-form').requestSubmit();
     }}

@@ -120,6 +120,12 @@
 
       case 'login-idp-link-confirm-override.ftl':
         return import('@keycloakify/svelte/login/pages/LoginIdpLinkConfirmOverride.svelte');
+
+      case 'link-idp-action.ftl':
+        return import('@keycloakify/svelte/login/pages/LinkIdpAction.svelte');
+
+      case 'select-organization.ftl':
+        return import('@keycloakify/svelte/login/pages/SelectOrganization.svelte');
     }
   };
   const lazyComponent = loadComponent();

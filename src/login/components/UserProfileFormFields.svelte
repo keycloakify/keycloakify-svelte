@@ -34,18 +34,39 @@
     return () => unsubscribe();
   });
 
-  const groupNameRef = { current: '' };
   const formFieldStates = derived(formState, ($formState) => $formState.formFieldStates);
   const displayableErrors = derived(formFieldStates, ($formFieldStates) =>
     $formFieldStates.map((f) => f.displayableErrors),
   );
+
+  // NOTE: Mirrors React's `groupNameRef` mutable object scoped to the enclosing `.map()`: a
+  // synchronous, single-pass computation of which attribute opens a new group, instead of
+  // recomputing it per-item inside GroupLabel (where it can't be kept in render order).
+  const groupStartFlags = $derived.by(() => {
+    const flags: boolean[] = [];
+    let currentGroupName = '';
+
+    for (const { attribute } of $formFieldStates) {
+      const groupName = attribute.group?.name ?? '';
+
+      if (groupName !== currentGroupName) {
+        currentGroupName = groupName;
+        flags.push(groupName !== '');
+        continue;
+      }
+
+      flags.push(false);
+    }
+
+    return flags;
+  });
 </script>
 
 {#each $formFieldStates as formFieldState, i (i)}
   {@const { attribute, valueOrValues } = formFieldState}
   <GroupLabel
     {attribute}
-    {groupNameRef}
+    isGroupStart={groupStartFlags[i]}
     {i18n}
     {kcClsx}
   />

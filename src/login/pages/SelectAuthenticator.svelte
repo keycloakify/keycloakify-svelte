@@ -22,7 +22,7 @@
   {i18n}
   {doUseDefaultCss}
   {classes}
-  displayMessage={false}
+  displayInfo={false}
 >
   {#snippet headerNode()}
     {@render msg('loginChooseAuthenticator')()}

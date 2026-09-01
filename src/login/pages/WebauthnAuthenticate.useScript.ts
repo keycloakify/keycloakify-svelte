@@ -30,8 +30,18 @@ export function useScript(params: { authButtonId: string; kcContext: KcContextLi
   const { url, isUserIdentified, challenge, userVerification, rpId, createTimeout } = kcContext;
 
   onMount(() => {
+    let hasInserted = false;
+
     const unsubscribe = i18n.subscribe(($i18n) => {
+      if (hasInserted) {
+        return;
+      }
+
       const { msgStr, isFetchingTranslations } = $i18n;
+
+      if (isFetchingTranslations) {
+        return;
+      }
 
       const { insertScriptTags } = useInsertScriptTags({
         componentOrHookName: 'WebauthnAuthenticate',
@@ -39,27 +49,26 @@ export function useScript(params: { authButtonId: string; kcContext: KcContextLi
           {
             type: 'module',
             textContent: () => `
-    
+
                         import { authenticateByWebAuthn } from "${url.resourcesPath}/js/webauthnAuthenticate.js";
                         const authButton = document.getElementById('${authButtonId}');
                         authButton.addEventListener("click", function() {
                             const input = {
                                 isUserIdentified : ${isUserIdentified},
-                                challenge : '${challenge}',
-                                userVerification : '${userVerification}',
-                                rpId : '${rpId}',
-                                createTimeout : ${createTimeout},
+                                challenge : ${JSON.stringify(challenge)},
+                                userVerification : ${JSON.stringify(userVerification)},
+                                rpId : ${JSON.stringify(rpId)},
+                                createTimeout : ${JSON.stringify(createTimeout)},
                                 errmsg : ${JSON.stringify(msgStr('webauthn-unsupported-browser-text'))}
                             };
                             authenticateByWebAuthn(input);
-                        });
+                        }, { once: true });
                     `,
           },
         ],
       });
-      if (isFetchingTranslations) {
-        return;
-      }
+
+      hasInserted = true;
 
       (async () => {
         await waitForElementMountedOnDom({

@@ -12,7 +12,6 @@ export type TemplateProps<KcContext, I18n> = {
   displayInfo?: boolean;
   displayMessage?: boolean;
   displayRequiredFields?: boolean;
-  showAnotherWayIfPresent?: boolean;
   headerNode: Snippet;
   socialProvidersNode?: Snippet | null;
   infoNode?: Snippet | null;

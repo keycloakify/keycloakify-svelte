@@ -210,6 +210,11 @@
       "svelte": "./keycloakify-svelte/login/pages/Info.svelte",
       "default": "./keycloakify-svelte/login/pages/Info.svelte"
     },
+    "./login/pages/LinkIdpAction.svelte": {
+      "types": "./keycloakify-svelte/login/pages/LinkIdpAction.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/LinkIdpAction.svelte",
+      "default": "./keycloakify-svelte/login/pages/LinkIdpAction.svelte"
+    },
     "./login/pages/LoginConfigTotp.svelte": {
       "types": "./keycloakify-svelte/login/pages/LoginConfigTotp.svelte.d.ts",
       "svelte": "./keycloakify-svelte/login/pages/LoginConfigTotp.svelte",
@@ -344,6 +349,11 @@
       "types": "./keycloakify-svelte/login/pages/SelectAuthenticator.svelte.d.ts",
       "svelte": "./keycloakify-svelte/login/pages/SelectAuthenticator.svelte",
       "default": "./keycloakify-svelte/login/pages/SelectAuthenticator.svelte"
+    },
+    "./login/pages/SelectOrganization.svelte": {
+      "types": "./keycloakify-svelte/login/pages/SelectOrganization.svelte.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/SelectOrganization.svelte",
+      "default": "./keycloakify-svelte/login/pages/SelectOrganization.svelte"
     },
     "./login/pages/Terms.svelte": {
       "types": "./keycloakify-svelte/login/pages/Terms.svelte.d.ts",

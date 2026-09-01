@@ -30,7 +30,7 @@
     ? undefined
     : parseInt(`${attribute.annotations.inputTypeMaxlength}`)}
   {value}
-  onchange={(event) =>
+  oninput={(event) =>
     dispatchFormAction('formAction', {
       action: 'update',
       name: attribute.name,
@@ -41,5 +41,4 @@
       action: 'focus lost',
       name: attribute.name,
       fieldIndex: undefined,
-    })}
-></textarea>
+    })}></textarea>

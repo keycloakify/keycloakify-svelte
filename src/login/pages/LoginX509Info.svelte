@@ -76,7 +76,7 @@
             for="username"
             class={kcClsx('kcLabelClass')}
           >
-            {msg('doX509Login')}
+            {@render msg('doX509Login')()}
           </label>
         </div>
         <div class={kcClsx('kcLabelWrapperClass')}>

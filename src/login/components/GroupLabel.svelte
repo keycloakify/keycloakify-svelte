@@ -8,25 +8,20 @@
 
   type GroupLabelProps = {
     attribute: Attribute;
-    groupNameRef: {
-      current: string;
-    };
+    isGroupStart: boolean;
     i18n: Readable<I18n>;
     kcClsx: KcClsx;
   };
-  const { attribute, groupNameRef, i18n, kcClsx }: GroupLabelProps = $props();
+  const { attribute, isGroupStart, i18n, kcClsx }: GroupLabelProps = $props();
   const { advancedMsg } = $derived($i18n);
 
-  let isGrouplabel = $state<boolean>(false);
-  $effect(() => {
-    if (attribute.group?.name !== groupNameRef.current) {
-      groupNameRef.current = attribute.group?.name ?? '';
-
-      if (groupNameRef.current !== '') {
-        assert(attribute.group !== undefined);
-        isGrouplabel = true;
-      }
+  const isGrouplabel = $derived.by(() => {
+    if (!isGroupStart) {
+      return false;
     }
+
+    assert(attribute.group !== undefined);
+    return true;
   });
 
   const html5DataAnnotations = $derived({

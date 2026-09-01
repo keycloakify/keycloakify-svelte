@@ -56,8 +56,18 @@ export function useScript(params: { authButtonId: string; kcContext: KcContextLi
   } = kcContext;
 
   onMount(() => {
+    let hasInserted = false;
+
     const unsubscribe = i18n.subscribe(($i18n) => {
+      if (hasInserted) {
+        return;
+      }
+
       const { msgStr, isFetchingTranslations } = $i18n;
+
+      if (isFetchingTranslations) {
+        return;
+      }
 
       const { insertScriptTags } = useInsertScriptTags({
         componentOrHookName: 'LoginRecoveryAuthnCodeConfig',
@@ -69,9 +79,9 @@ export function useScript(params: { authButtonId: string; kcContext: KcContextLi
                     const registerButton = document.getElementById('${authButtonId}');
                     registerButton.addEventListener("click", function() {
                         const input = {
-                            challenge : '${challenge}',
-                            userid : '${userid}',
-                            username : '${username}',
+                            challenge : ${JSON.stringify(challenge)},
+                            userid : ${JSON.stringify(userid)},
+                            username : ${JSON.stringify(username)},
                             signatureAlgorithms : ${JSON.stringify(signatureAlgorithms)},
                             rpEntityName : ${JSON.stringify(rpEntityName)},
                             rpId : ${JSON.stringify(rpId)},
@@ -79,21 +89,21 @@ export function useScript(params: { authButtonId: string; kcContext: KcContextLi
                             authenticatorAttachment : ${JSON.stringify(authenticatorAttachment)},
                             requireResidentKey : ${JSON.stringify(requireResidentKey)},
                             userVerificationRequirement : ${JSON.stringify(userVerificationRequirement)},
-                            createTimeout : ${createTimeout},
+                            createTimeout : ${JSON.stringify(createTimeout)},
                             excludeCredentialIds : ${JSON.stringify(excludeCredentialIds)},
                             initLabel : ${JSON.stringify(msgStr('webauthn-registration-init-label'))},
                             initLabelPrompt : ${JSON.stringify(msgStr('webauthn-registration-init-label-prompt'))},
                             errmsg : ${JSON.stringify(msgStr('webauthn-unsupported-browser-text'))}
                         };
                         registerByWebAuthn(input);
-                    });
+                    }, { once: true });
                 `,
           },
         ],
       });
-      if (isFetchingTranslations) {
-        return;
-      }
+
+      hasInserted = true;
+
       (async () => {
         await waitForElementMountedOnDom({
           elementId: authButtonId,

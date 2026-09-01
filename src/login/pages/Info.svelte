@@ -25,7 +25,7 @@
   displayMessage={false}
 >
   {#snippet headerNode()}
-    <span>{@html kcSanitize(messageHeader ?? message.summary)}</span>
+    <span>{@html kcSanitize(messageHeader ? advancedMsgStr(messageHeader) : message.summary)}</span>
   {/snippet}
 
   <div id="kc-info-message">

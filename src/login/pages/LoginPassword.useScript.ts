@@ -2,57 +2,57 @@ import { useInsertScriptTags } from '@keycloakify/svelte/tools/useInsertScriptTa
 import { assert } from 'keycloakify/tools/assert';
 import { waitForElementMountedOnDom } from 'keycloakify/tools/waitForElementMountedOnDom';
 import { onMount } from 'svelte';
-import type { Readable } from 'svelte/store';
+import { get, type Readable } from 'svelte/store';
 import type { KcContext } from '../KcContext';
 
 type KcContextLike = {
   url: {
     resourcesPath: string;
   };
-  isUserIdentified: boolean | 'true' | 'false';
+  isUserIdentified: 'true' | 'false';
   challenge: string;
-  userVerification: string;
+  userVerification: KcContext.WebauthnAuthenticate['userVerification'];
   rpId: string;
   createTimeout: number | string;
+  enableWebAuthnConditionalUI?: boolean;
 };
 
-assert<keyof KcContextLike extends keyof KcContext.LoginPasskeysConditionalAuthenticate ? true : false>();
-assert<KcContext.LoginPasskeysConditionalAuthenticate extends KcContextLike ? true : false>();
+assert<keyof KcContextLike extends keyof KcContext.LoginPassword ? true : false>();
+assert<KcContext.LoginPassword extends KcContextLike ? true : false>();
 
 type I18nLike = {
   msgStr: (key: 'webauthn-unsupported-browser-text' | 'passkey-unsupported-browser-text') => string;
   isFetchingTranslations: boolean;
 };
 
-export function useScript(params: { authButtonId: string; kcContext: KcContextLike; i18n: Readable<I18nLike> }) {
-  const { authButtonId, kcContext, i18n } = params;
+export function useScript(params: { webAuthnButtonId: string; kcContext: KcContextLike; i18n: Readable<I18nLike> }) {
+  const { webAuthnButtonId, kcContext, i18n } = params;
 
   const { url, isUserIdentified, challenge, userVerification, rpId, createTimeout } = kcContext;
 
-  onMount(() => {
-    let hasInserted = false;
+  // NOTE: In the React source this is called unconditionally, but there `useInsertScriptTags`
+  // only registers the "mounted once" guard, it never inserts anything when the flag is off.
+  // In Svelte that guard reloads the page as soon as a second LoginPassword mounts, so bailing out
+  // early keeps the guard scoped to the pages that actually insert the script.
+  if (kcContext.enableWebAuthnConditionalUI !== true) {
+    return;
+  }
 
-    const unsubscribe = i18n.subscribe(($i18n) => {
-      if (hasInserted) {
-        return;
-      }
+  // NOTE: Must be called during component initialization, once. The `textContent` closure is
+  // evaluated lazily, at insertion time, so it picks up the translations that are current then.
+  const { insertScriptTags } = useInsertScriptTags({
+    componentOrHookName: 'LoginPassword',
+    scriptTags: [
+      {
+        type: 'module',
+        textContent: () => {
+          const { msgStr } = get(i18n);
 
-      const { msgStr, isFetchingTranslations } = $i18n;
-
-      if (isFetchingTranslations) {
-        return;
-      }
-
-      const { insertScriptTags } = useInsertScriptTags({
-        componentOrHookName: 'LoginPasskeysConditionalAuthenticate',
-        scriptTags: [
-          {
-            type: 'module',
-            textContent: () => `
+          return `
                     import { authenticateByWebAuthn } from "${url.resourcesPath}/js/webauthnAuthenticate.js";
                     import { initAuthenticate } from "${url.resourcesPath}/js/passkeysConditionalAuth.js";
 
-                    const authButton = document.getElementById("${authButtonId}");
+                    const authButton = document.getElementById("${webAuthnButtonId}");
                     const input = {
                         isUserIdentified : ${isUserIdentified},
                         challenge : ${JSON.stringify(challenge)},
@@ -70,30 +70,24 @@ export function useScript(params: { authButtonId: string; kcContext: KcContextLi
                     initAuthenticate({
                         ...input,
                         errmsg : ${JSON.stringify(msgStr('passkey-unsupported-browser-text'))}
-                    }, available => {
-                        const loginForm = document.getElementById("kc-form-login");
-                        const passkeyButton = document.getElementById("kc-form-passkey-button");
-
-                        if (!loginForm || !passkeyButton) {
-                            return;
-                        }
-
-                        if (available) {
-                            loginForm.style.display = "block";
-                        } else {
-                            passkeyButton.style.display = "block";
-                        }
                     });
-                `,
-          },
-        ],
-      });
+                `;
+        },
+      },
+    ],
+  });
 
-      hasInserted = true;
+  onMount(() => {
+    const unsubscribe = i18n.subscribe(($i18n) => {
+      const { isFetchingTranslations } = $i18n;
+
+      if (isFetchingTranslations) {
+        return;
+      }
 
       (async () => {
         await waitForElementMountedOnDom({
-          elementId: authButtonId,
+          elementId: webAuthnButtonId,
         });
 
         insertScriptTags();

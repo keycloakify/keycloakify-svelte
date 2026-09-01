@@ -84,7 +84,7 @@
           class={kcClsx(
             'kcButtonClass',
             'kcButtonPrimaryClass',
-            isAppInitiatedAction && 'kcButtonBlockClass',
+            !isAppInitiatedAction && 'kcButtonBlockClass',
             'kcButtonLargeClass',
           )}
           type="submit"

@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { PageProps } from '@keycloakify/svelte/login/pages/PageProps';
+  import { useState } from '@keycloakify/svelte/tools/useState';
   import { kcSanitize } from 'keycloakify/lib/kcSanitize';
   import { getKcClsx } from 'keycloakify/login/lib/kcClsx';
   import type { KcContext } from '../KcContext';
@@ -23,6 +24,8 @@
   const { otpLogin, url, messagesPerField } = $derived(kcContext);
 
   const { msg, msgStr } = $derived($i18n);
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
 </script>
 
 <Template
@@ -39,6 +42,10 @@
     id="kc-otp-login-form"
     class={kcClsx('kcFormClass')}
     action={url.loginAction}
+    onsubmit={() => {
+      setIsSubmitting(true);
+      return true;
+    }}
     method="post"
   >
     {#if otpLogin.userOtpCredentials.length > 1}
@@ -123,6 +130,7 @@
           id="kc-login"
           type="submit"
           value={msgStr('doLogIn')}
+          disabled={$isSubmitting}
         />
       </div>
     </div>
