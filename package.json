@@ -512,7 +512,7 @@
     "@sveltejs/package": "^2.5.8",
     "@sveltejs/vite-plugin-svelte": "^7.3.0",
     "@types/eslint": "^9.6.1",
-    "@types/node": "^24.13.3",
+    "@types/node": "^26.4.0",
     "all-contributors-cli": "^6.26.1",
     "chalk": "^6.0.0",
     "cli-select": "^1.1.2",
