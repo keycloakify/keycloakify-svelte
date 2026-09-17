@@ -17,7 +17,7 @@ type KcContextLike = {
   rpId: string;
   attestationConveyancePreference: string;
   authenticatorAttachment: string;
-  requireResidentKey: string;
+  requireResidentKey?: string;
   userVerificationRequirement: string;
   createTimeout: number | string;
   excludeCredentialIds: string;
