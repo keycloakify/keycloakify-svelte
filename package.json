@@ -270,6 +270,11 @@
       "svelte": "./keycloakify-svelte/login/pages/LoginPassword.svelte",
       "default": "./keycloakify-svelte/login/pages/LoginPassword.svelte"
     },
+    "./login/pages/LoginPassword.useScript": {
+      "types": "./keycloakify-svelte/login/pages/LoginPassword.useScript.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/LoginPassword.useScript.js",
+      "default": "./keycloakify-svelte/login/pages/LoginPassword.useScript.js"
+    },
     "./login/pages/LoginRecoveryAuthnCodeConfig.svelte": {
       "types": "./keycloakify-svelte/login/pages/LoginRecoveryAuthnCodeConfig.svelte.d.ts",
       "svelte": "./keycloakify-svelte/login/pages/LoginRecoveryAuthnCodeConfig.svelte",
