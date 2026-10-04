@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { FormFieldError } from '@keycloakify/svelte/login/lib/useUserProfileForm';
+  import type { FormFieldError } from '#keycloakify-svelte/login/lib/useUserProfileForm.js';
   import type { Attribute } from 'keycloakify/login/KcContext';
   import type { KcClsx } from 'keycloakify/login/lib/kcClsx';
 

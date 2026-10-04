@@ -1,6 +1,6 @@
 <script lang="ts">
-  import LogoutOtherSessions from '@keycloakify/svelte/login/components/LogoutOtherSessions.svelte';
-  import type { PageProps } from '@keycloakify/svelte/login/pages/PageProps';
+  import LogoutOtherSessions from '#keycloakify-svelte/login/components/LogoutOtherSessions.svelte';
+  import type { PageProps } from '#keycloakify-svelte/login/pages/PageProps.js';
   import { kcSanitize } from 'keycloakify/lib/kcSanitize';
   import { getKcClsx } from 'keycloakify/login/lib/kcClsx';
   import type { KcContext } from '../KcContext';

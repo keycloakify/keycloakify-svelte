@@ -144,6 +144,12 @@ export async function command(params: { buildContext: BuildContext }) {
     let componentCode = fs
       .readFileSync(pathJoin(getThisCodebaseRootDirPath(), 'src', themeType, pagesOrDot, componentBasename))
       .toString('utf8');
+    // The sources import each other through the `#keycloakify-svelte/*` subpath import, which only
+    // resolves inside this package: map them back to the public `@keycloakify/svelte/*` specifiers.
+    componentCode = componentCode.replace(
+      /(['"])#keycloakify-svelte\/([^'"]+?)(?:\/index)?(?:\.js)?\1/g,
+      (_, quote, path) => `${quote}@keycloakify/svelte/${path}${quote}`,
+    );
     if (userProfileFormFieldsValue) {
       componentCode = componentCode.replace(
         new RegExp(`from '@keycloakify/svelte/login/components/(${componentBasenames.join('|')})`, 'g'),

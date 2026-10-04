@@ -1,4 +1,4 @@
-import { useInsertLinkTags } from '@keycloakify/svelte/tools/useInsertLinkTags';
+import { useInsertLinkTags } from '#keycloakify-svelte/tools/useInsertLinkTags.js';
 import { assert } from 'keycloakify/tools/assert';
 import type { KcContext } from './KcContext';
 

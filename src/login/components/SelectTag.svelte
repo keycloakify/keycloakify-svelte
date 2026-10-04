@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { InputFieldByTypeProps } from '@keycloakify/svelte/login/components/InputFieldByTypeProps';
-  import { inputLabel } from '@keycloakify/svelte/login/components/inputLabel';
+  import type { InputFieldByTypeProps } from '#keycloakify-svelte/login/components/InputFieldByTypeProps.js';
+  import { inputLabel } from '#keycloakify-svelte/login/components/inputLabel.js';
   import { assert } from 'keycloakify/tools/assert';
   import type { I18n } from '../i18n';
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { useReducer } from '@keycloakify/svelte/tools/useReducer';
+  import { useReducer } from '#keycloakify-svelte/tools/useReducer.js';
   import type { KcClsx } from 'keycloakify/login/lib/kcClsx';
   import { assert } from 'keycloakify/tools/assert';
   import { onMount, type Snippet } from 'svelte';

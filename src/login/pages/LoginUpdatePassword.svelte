@@ -1,7 +1,7 @@
 <script lang="ts">
-  import LogoutOtherSessions from '@keycloakify/svelte/login/components/LogoutOtherSessions.svelte';
-  import PasswordWrapper from '@keycloakify/svelte/login/components/PasswordWrapper.svelte';
-  import type { PageProps } from '@keycloakify/svelte/login/pages/PageProps';
+  import LogoutOtherSessions from '#keycloakify-svelte/login/components/LogoutOtherSessions.svelte';
+  import PasswordWrapper from '#keycloakify-svelte/login/components/PasswordWrapper.svelte';
+  import type { PageProps } from '#keycloakify-svelte/login/pages/PageProps.js';
   import { kcSanitize } from 'keycloakify/lib/kcSanitize';
   import { getKcClsx } from 'keycloakify/login/lib/kcClsx';
   import type { I18n } from '../i18n';

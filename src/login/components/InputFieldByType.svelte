@@ -1,10 +1,10 @@
 <script lang="ts">
-  import type { InputFieldByTypeProps } from '@keycloakify/svelte/login/components/InputFieldByTypeProps';
-  import InputTag from '@keycloakify/svelte/login/components/InputTag.svelte';
-  import InputTagSelects from '@keycloakify/svelte/login/components/InputTagSelects.svelte';
-  import PasswordWrapper from '@keycloakify/svelte/login/components/PasswordWrapper.svelte';
-  import SelectTag from '@keycloakify/svelte/login/components/SelectTag.svelte';
-  import TextareaTag from '@keycloakify/svelte/login/components/TextareaTag.svelte';
+  import type { InputFieldByTypeProps } from '#keycloakify-svelte/login/components/InputFieldByTypeProps.js';
+  import InputTag from '#keycloakify-svelte/login/components/InputTag.svelte';
+  import InputTagSelects from '#keycloakify-svelte/login/components/InputTagSelects.svelte';
+  import PasswordWrapper from '#keycloakify-svelte/login/components/PasswordWrapper.svelte';
+  import SelectTag from '#keycloakify-svelte/login/components/SelectTag.svelte';
+  import TextareaTag from '#keycloakify-svelte/login/components/TextareaTag.svelte';
   import type { I18n } from '../i18n';
 
   let { displayableErrors, ...props }: InputFieldByTypeProps<I18n> = $props();

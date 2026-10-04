@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { PageProps } from '@keycloakify/svelte/account/pages/PageProps';
+  import type { PageProps } from '#keycloakify-svelte/account/pages/PageProps.js';
   import type { I18n } from './i18n';
   import type { KcContext } from './KcContext';
 
@@ -8,25 +8,25 @@
   const loadComponent = () => {
     switch (kcContext.pageId) {
       case 'password.ftl':
-        return import('@keycloakify/svelte/account/pages/Password.svelte');
+        return import('#keycloakify-svelte/account/pages/Password.svelte');
 
       case 'sessions.ftl':
-        return import('@keycloakify/svelte/account/pages/Sessions.svelte');
+        return import('#keycloakify-svelte/account/pages/Sessions.svelte');
 
       case 'account.ftl':
-        return import('@keycloakify/svelte/account/pages/Account.svelte');
+        return import('#keycloakify-svelte/account/pages/Account.svelte');
 
       case 'totp.ftl':
-        return import('@keycloakify/svelte/account/pages/Totp.svelte');
+        return import('#keycloakify-svelte/account/pages/Totp.svelte');
 
       case 'applications.ftl':
-        return import('@keycloakify/svelte/account/pages/Applications.svelte');
+        return import('#keycloakify-svelte/account/pages/Applications.svelte');
 
       case 'log.ftl':
-        return import('@keycloakify/svelte/account/pages/Log.svelte');
+        return import('#keycloakify-svelte/account/pages/Log.svelte');
 
       case 'federatedIdentity.ftl':
-        return import('@keycloakify/svelte/account/pages/FederatedIdentity.svelte');
+        return import('#keycloakify-svelte/account/pages/FederatedIdentity.svelte');
     }
   };
   const lazyComponent = loadComponent();

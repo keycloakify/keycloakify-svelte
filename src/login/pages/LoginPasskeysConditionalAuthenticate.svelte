@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { useScript } from '@keycloakify/svelte/login/pages/LoginPasskeysConditionalAuthenticate.useScript';
-  import type { PageProps } from '@keycloakify/svelte/login/pages/PageProps';
+  import { useScript } from '#keycloakify-svelte/login/pages/LoginPasskeysConditionalAuthenticate.useScript.js';
+  import type { PageProps } from '#keycloakify-svelte/login/pages/PageProps.js';
   import { type ClassKey, getKcClsx } from 'keycloakify/login/lib/kcClsx';
   import { clsx } from 'keycloakify/tools/clsx';
   import type { CxArg } from 'keycloakify/tools/clsx_withTransform';

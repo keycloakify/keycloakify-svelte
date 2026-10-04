@@ -1,4 +1,4 @@
-import type { FormAction, FormFieldError } from '@keycloakify/svelte/login/lib/useUserProfileForm';
+import type { FormAction, FormFieldError } from '#keycloakify-svelte/login/lib/useUserProfileForm.js';
 import type { Attribute } from 'keycloakify/login/KcContext';
 import type { KcClsx } from 'keycloakify/login/lib/kcClsx';
 import type { EventDispatcher } from 'svelte';

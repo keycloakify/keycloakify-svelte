@@ -70,10 +70,10 @@ This package registers a Keycloakify **custom handler** binary named `_keycloaki
 
 ## Conventions
 
-- **Svelte 5 runes mode is enforced** (`svelte.config.js` sets `runes: true`, `modernAst: true`). Write runes (`$state`, `$props`, `$derived`, `$effect`), not legacy reactive syntax.
+- **Svelte 5 runes mode is enforced** (the `sveltekit()` plugin options in `vite.config.ts` set `runes: true`, `modernAst: true`; SvelteKit 3 no longer reads `svelte.config.js`). Write runes (`$state`, `$props`, `$derived`, `$effect`), not legacy reactive syntax.
 - **Mirror keycloakify.** When porting or fixing a page, diff against the equivalent React file in the `keycloakify` package and stay structurally faithful — that is why the hook shims exist.
 - **New page/tool exports must be added to the `exports` map in `package.json`** (each entry is explicit; there is no wildcard). The build does not auto-generate these.
-- Path aliases: `@keycloakify/svelte` → `src` (and `@keycloakify/svelte/*` → `src/*`), configured in `svelte.config.js`.
+- Internal imports use the subpath import `#keycloakify-svelte/*` → `src/*` (`imports` in `package.json`) with explicit extensions: `.js` for TS modules (resolved to the `.ts` file, e.g. `#keycloakify-svelte/tools/useState.js`, `#keycloakify-svelte/login/KcContext/index.js`) and `.svelte` for components. `svelte-package` rewrites them to relative paths in `dist/`; `eject-page` maps them back to the public `@keycloakify/svelte/*` specifiers when copying a source file into a user project. Files that are templates for user projects (`stories/`, `src/bin/**/boilerplate`) keep using `@keycloakify/svelte/*`.
 - Releases: `scripts/release.sh` (via `yarn release`) — main-branch only, bumps version, regenerates `CHANGELOG.md` (conventional-commits/angular), commits, pushes. Commit messages follow Conventional Commits.
 - A Svelte MCP server is configured (`.gemini/`) for Svelte 5 / SvelteKit docs and a `svelte-autofixer`; use it when authoring Svelte to validate idioms.
 

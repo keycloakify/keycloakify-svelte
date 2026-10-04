@@ -1,4 +1,4 @@
-import { type ClassKey, type TemplateProps } from '@keycloakify/svelte/login/TemplateProps';
+import { type ClassKey, type TemplateProps } from '#keycloakify-svelte/login/TemplateProps.js';
 import type { Component } from 'svelte';
 import type { Readable } from 'svelte/store';
 

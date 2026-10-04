@@ -491,6 +491,9 @@
       "default": "./keycloakify-svelte/account/pages/Totp.svelte"
     }
   },
+  "imports": {
+    "#keycloakify-svelte/*": "./src/*"
+  },
   "files": [
     "keycloakify-svelte",
     "!keycloakify-svelte/**/*.test.*",
@@ -522,9 +525,8 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "@sveltejs/adapter-auto": "^7.0.1",
-    "@sveltejs/kit": "^2.70.3",
-    "@sveltejs/package": "^2.5.8",
+    "@sveltejs/kit": "^3.0.0",
+    "@sveltejs/package": "^3.0.0",
     "@sveltejs/vite-plugin-svelte": "^7.3.1",
     "@types/eslint": "^9.6.1",
     "@types/node": "^24.19.1",

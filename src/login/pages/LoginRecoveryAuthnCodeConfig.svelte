@@ -1,7 +1,7 @@
 <script lang="ts">
-  import LogoutOtherSessions from '@keycloakify/svelte/login/components/LogoutOtherSessions.svelte';
-  import { useScript } from '@keycloakify/svelte/login/pages/LoginRecoveryAuthnCodeConfig.useScript';
-  import type { PageProps } from '@keycloakify/svelte/login/pages/PageProps';
+  import LogoutOtherSessions from '#keycloakify-svelte/login/components/LogoutOtherSessions.svelte';
+  import { useScript } from '#keycloakify-svelte/login/pages/LoginRecoveryAuthnCodeConfig.useScript.js';
+  import type { PageProps } from '#keycloakify-svelte/login/pages/PageProps.js';
   import { getKcClsx } from 'keycloakify/login/lib/kcClsx';
   import { clsx } from 'keycloakify/tools/clsx';
   import { untrack } from 'svelte';

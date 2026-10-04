@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-namespace */
-import { useState } from '@keycloakify/svelte/tools/useState';
+import { useState } from '#keycloakify-svelte/tools/useState.js';
 import type { Attribute, PasswordPolicies, Validators } from 'keycloakify/login/KcContext';
 import * as reactlessApi from 'keycloakify/login/lib/getUserProfileApi';
 import { onMount, type EventDispatcher, type Snippet } from 'svelte';

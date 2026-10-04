@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { type FormAction, type FormFieldError } from '@keycloakify/svelte/login/lib/useUserProfileForm';
+import { type FormAction, type FormFieldError } from '#keycloakify-svelte/login/lib/useUserProfileForm.js';
 import type { Attribute } from 'keycloakify/login/KcContext';
 import type { KcClsx } from 'keycloakify/login/lib/kcClsx';
 import type { EventDispatcher, Snippet } from 'svelte';

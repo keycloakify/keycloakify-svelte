@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { useInitialize } from '@keycloakify/svelte/login/Template.useInitialize';
-  import type { TemplateProps } from '@keycloakify/svelte/login/TemplateProps';
-  import { useSetClassName } from '@keycloakify/svelte/tools/useSetClassName';
+  import { useInitialize } from '#keycloakify-svelte/login/Template.useInitialize.js';
+  import type { TemplateProps } from '#keycloakify-svelte/login/TemplateProps.js';
+  import { useSetClassName } from '#keycloakify-svelte/tools/useSetClassName.js';
   import { kcSanitize } from 'keycloakify/lib/kcSanitize';
   import { getKcClsx } from 'keycloakify/login/lib/kcClsx';
   import { clsx } from 'keycloakify/tools/clsx';

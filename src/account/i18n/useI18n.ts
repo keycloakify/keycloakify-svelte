@@ -1,4 +1,4 @@
-import { useState } from '@keycloakify/svelte/tools/useState';
+import { useState } from '#keycloakify-svelte/tools/useState.js';
 import {
   type LanguageTag as LanguageTag_defaultSet,
   type MessageKey as MessageKey_defaultSet,

@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type { UserProfileFormFieldsProps } from '@keycloakify/svelte/login/components/UserProfileFormFieldsProps';
-  import type { PageProps } from '@keycloakify/svelte/login/pages/PageProps';
-  import { useState } from '@keycloakify/svelte/tools/useState';
+  import type { UserProfileFormFieldsProps } from '#keycloakify-svelte/login/components/UserProfileFormFieldsProps.js';
+  import type { PageProps } from '#keycloakify-svelte/login/pages/PageProps.js';
+  import { useState } from '#keycloakify-svelte/tools/useState.js';
   import { getKcClsx } from 'keycloakify/login/lib/kcClsx';
   import type { Component } from 'svelte';
   import type { I18n } from '../i18n';

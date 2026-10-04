@@ -1,14 +1,14 @@
 <script lang="ts">
-  import PasswordWrapper from '@keycloakify/svelte/login/components/PasswordWrapper.svelte';
-  import type { PageProps } from '@keycloakify/svelte/login/pages/PageProps';
-  import { useState } from '@keycloakify/svelte/tools/useState';
+  import PasswordWrapper from '#keycloakify-svelte/login/components/PasswordWrapper.svelte';
+  import type { PageProps } from '#keycloakify-svelte/login/pages/PageProps.js';
+  import { useState } from '#keycloakify-svelte/tools/useState.js';
   import { kcSanitize } from 'keycloakify/lib/kcSanitize';
   import { getKcClsx } from 'keycloakify/login/lib/kcClsx';
   import { clsx } from 'keycloakify/tools/clsx';
   import { untrack } from 'svelte';
   import type { I18n } from '../i18n';
   import type { KcContext } from '../KcContext';
-  import { useScript } from '@keycloakify/svelte/login/pages/Login.useScript';
+  import { useScript } from '#keycloakify-svelte/login/pages/Login.useScript.js';
   const {
     kcContext,
     i18n,

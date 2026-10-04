@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { useInitialize } from '@keycloakify/svelte/account/Template.useInitialize';
-  import type { TemplateProps } from '@keycloakify/svelte/account/TemplateProps';
-  import { useSetClassName } from '@keycloakify/svelte/tools/useSetClassName';
+  import { useInitialize } from '#keycloakify-svelte/account/Template.useInitialize.js';
+  import type { TemplateProps } from '#keycloakify-svelte/account/TemplateProps.js';
+  import { useSetClassName } from '#keycloakify-svelte/tools/useSetClassName.js';
   import { getKcClsx } from 'keycloakify/account/lib/kcClsx';
   import { clsx } from 'keycloakify/tools/clsx';
   import { onMount, untrack } from 'svelte';

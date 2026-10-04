@@ -1,4 +1,4 @@
-import { useInsertScriptTags } from '@keycloakify/svelte/tools/useInsertScriptTags';
+import { useInsertScriptTags } from '#keycloakify-svelte/tools/useInsertScriptTags.js';
 import { assert } from 'keycloakify/tools/assert';
 import { waitForElementMountedOnDom } from 'keycloakify/tools/waitForElementMountedOnDom';
 import { onMount } from 'svelte';

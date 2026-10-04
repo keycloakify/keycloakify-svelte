@@ -1,9 +1,9 @@
 <script lang="ts">
-  import FieldErrors from '@keycloakify/svelte/login/components/FieldErrors.svelte';
-  import GroupLabel from '@keycloakify/svelte/login/components/GroupLabel.svelte';
-  import InputFieldByType from '@keycloakify/svelte/login/components/InputFieldByType.svelte';
-  import type { UserProfileFormFieldsProps } from '@keycloakify/svelte/login/components/UserProfileFormFieldsProps';
-  import { useUserProfileForm } from '@keycloakify/svelte/login/lib/useUserProfileForm';
+  import FieldErrors from '#keycloakify-svelte/login/components/FieldErrors.svelte';
+  import GroupLabel from '#keycloakify-svelte/login/components/GroupLabel.svelte';
+  import InputFieldByType from '#keycloakify-svelte/login/components/InputFieldByType.svelte';
+  import type { UserProfileFormFieldsProps } from '#keycloakify-svelte/login/components/UserProfileFormFieldsProps.js';
+  import { useUserProfileForm } from '#keycloakify-svelte/login/lib/useUserProfileForm.js';
   import { onMount, untrack } from 'svelte';
   import { derived } from 'svelte/store';
   import type { I18n } from '../i18n';

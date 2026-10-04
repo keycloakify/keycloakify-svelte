@@ -1,6 +1,6 @@
-import type { KcContext } from '@keycloakify/svelte/login/KcContext';
-import { useInsertLinkTags } from '@keycloakify/svelte/tools/useInsertLinkTags';
-import { useInsertScriptTags } from '@keycloakify/svelte/tools/useInsertScriptTags';
+import type { KcContext } from '#keycloakify-svelte/login/KcContext/index.js';
+import { useInsertLinkTags } from '#keycloakify-svelte/tools/useInsertLinkTags.js';
+import { useInsertScriptTags } from '#keycloakify-svelte/tools/useInsertScriptTags.js';
 import { assert } from 'keycloakify/tools/assert';
 import { onMount } from 'svelte';
 

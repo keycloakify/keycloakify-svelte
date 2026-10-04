@@ -2,7 +2,7 @@
   import {
     getButtonToDisplayForMultivaluedAttributeField,
     type FormAction,
-  } from '@keycloakify/svelte/login/lib/useUserProfileForm';
+  } from '#keycloakify-svelte/login/lib/useUserProfileForm.js';
   import type { Attribute } from 'keycloakify/login/KcContext';
   import { untrack, type EventDispatcher } from 'svelte';
   import type { Readable } from 'svelte/store';

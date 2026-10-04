@@ -1,7 +1,7 @@
 import { onMount } from 'svelte';
 import { id } from 'tsafe/id';
-import { useConst } from '@keycloakify/svelte/tools/useConst';
-import { useReducer } from '@keycloakify/svelte/tools/useReducer';
+import { useConst } from '#keycloakify-svelte/tools/useConst.js';
+import { useReducer } from '#keycloakify-svelte/tools/useReducer.js';
 
 const alreadyMountedComponentOrHookNames = new Set<string>();
 

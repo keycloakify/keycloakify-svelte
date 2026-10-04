@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { PageProps } from '@keycloakify/svelte/login/pages/PageProps';
-  import { useState } from '@keycloakify/svelte/tools/useState';
+  import type { PageProps } from '#keycloakify-svelte/login/pages/PageProps.js';
+  import { useState } from '#keycloakify-svelte/tools/useState.js';
   import { kcSanitize } from 'keycloakify/lib/kcSanitize';
   import { getKcClsx } from 'keycloakify/login/lib/kcClsx';
   import type { KcContext } from '../KcContext';

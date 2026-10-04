@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { PageProps } from '@keycloakify/svelte/account/pages/PageProps';
+  import type { PageProps } from '#keycloakify-svelte/account/pages/PageProps.js';
   import { getKcClsx } from 'keycloakify/account/lib/kcClsx';
   import type { KcContext } from '../KcContext';
   import type { I18n } from '../i18n';

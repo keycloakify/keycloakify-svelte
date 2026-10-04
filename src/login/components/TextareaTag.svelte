@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { InputFieldByTypeProps } from '@keycloakify/svelte/login/components/InputFieldByTypeProps';
+  import type { InputFieldByTypeProps } from '#keycloakify-svelte/login/components/InputFieldByTypeProps.js';
   import { assert } from 'keycloakify/tools/assert';
   import type { I18n } from '../i18n';
 
