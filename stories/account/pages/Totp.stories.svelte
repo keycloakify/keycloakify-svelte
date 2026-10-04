@@ -44,7 +44,6 @@
       keycloakifyVersion: '9.6.1',
       themeVersion: '1.0.10',
       themeType: 'account',
-      themeName: 'keycloakify',
       pageId: 'totp.ftl',
     },
   }}
@@ -92,7 +91,6 @@
       keycloakifyVersion: '9.6.1',
       themeVersion: '1.0.10',
       themeType: 'account',
-      themeName: 'keycloakify',
       pageId: 'totp.ftl',
     },
   }}
@@ -131,7 +129,6 @@
       keycloakifyVersion: '9.6.1',
       themeVersion: '1.0.10',
       themeType: 'account',
-      themeName: 'keycloakify',
       pageId: 'totp.ftl',
     },
   }}
@@ -179,7 +176,6 @@
       keycloakifyVersion: '9.6.1',
       themeVersion: '1.0.10',
       themeType: 'account',
-      themeName: 'keycloakify',
       pageId: 'totp.ftl',
     },
   }}

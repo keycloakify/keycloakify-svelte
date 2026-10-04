@@ -79,7 +79,7 @@
         accountUrl: '/account',
       },
       messagesPerField: {
-        printIfExists: (field) => (field === 'email' || field === 'firstName' ? 'has-error' : ''),
+        printIfExists: (field: string) => (field === 'email' || field === 'firstName' ? 'has-error' : ''),
       },
       stateChecker: 'state-checker',
     },
