@@ -29,7 +29,7 @@
   {/snippet}
   <div id="kc-error-message">
     <p class="instruction">{@html kcSanitize(message.summary)}</p>
-    {#if !skipLink && client !== undefined && client.baseUrl !== undefined}
+    {#if !skipLink && !!client?.baseUrl}
       <p>
         <a
           id="backToApplication"

@@ -14,6 +14,8 @@ type KcContextLike = {
   userVerification: string;
   rpId: string;
   createTimeout: number | string;
+  mediation?: string;
+  authenticatorAttachment?: string;
   enableWebAuthnConditionalUI?: boolean;
 };
 
@@ -28,7 +30,16 @@ type I18nLike = {
 export function useScript(params: { webAuthnButtonId: string; kcContext: KcContextLike; i18n: Readable<I18nLike> }) {
   const { webAuthnButtonId, kcContext, i18n } = params;
 
-  const { url, isUserIdentified, challenge, userVerification, rpId, createTimeout } = kcContext;
+  const {
+    url,
+    isUserIdentified,
+    challenge,
+    userVerification,
+    rpId,
+    createTimeout,
+    mediation,
+    authenticatorAttachment,
+  } = kcContext;
 
   // NOTE: In the React source this is called unconditionally, but there `useInsertScriptTags`
   // only registers the "mounted once" guard, it never inserts anything when the flag is off.
@@ -58,7 +69,9 @@ export function useScript(params: { webAuthnButtonId: string; kcContext: KcConte
                         challenge : ${JSON.stringify(challenge)},
                         userVerification : ${JSON.stringify(userVerification)},
                         rpId : ${JSON.stringify(rpId)},
-                        createTimeout : ${createTimeout}
+                        createTimeout : ${JSON.stringify(createTimeout)},
+                        mediation : ${JSON.stringify(mediation)},
+                        authenticatorAttachment : ${JSON.stringify(authenticatorAttachment)}
                     };
                     authButton.addEventListener("click", () => {
                         authenticateByWebAuthn({

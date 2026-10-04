@@ -8,7 +8,7 @@
   import { untrack } from 'svelte';
   import type { I18n } from '../i18n';
   import type { KcContext } from '../KcContext';
-  import { useScript } from './LoginPassword.useScript';
+  import { useScript } from '@keycloakify/svelte/login/pages/LoginPassword.useScript';
 
   const {
     Template,

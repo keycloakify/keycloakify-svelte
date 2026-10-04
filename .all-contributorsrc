@@ -28,6 +28,20 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/99980776?v=4",
       "profile": "https://github.com/hyvonggdr",
       "contributions": ["code"]
+    },
+    {
+      "login": "mars3142",
+      "name": "Peter Siegmund",
+      "avatar_url": "https://avatars.githubusercontent.com/u/220423?v=4",
+      "profile": "https://blog.mars3142.dev/",
+      "contributions": ["code"]
+    },
+    {
+      "login": "Tinggaard",
+      "name": "Jens Tinggaard",
+      "avatar_url": "https://avatars.githubusercontent.com/u/25910953?v=4",
+      "profile": "https://t1ng.dk/",
+      "contributions": ["code"]
     }
   ],
   "contributorsPerLine": 7,

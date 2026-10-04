@@ -8,7 +8,7 @@
   import { untrack } from 'svelte';
   import type { I18n } from '../i18n';
   import type { KcContext } from '../KcContext';
-  import { useScript } from './Login.useScript';
+  import { useScript } from '@keycloakify/svelte/login/pages/Login.useScript';
   const {
     kcContext,
     i18n,
@@ -170,6 +170,7 @@
               {kcClsx}
               {i18n}
               passwordInputId="password"
+              tabindex={4}
             >
               <input
                 tabindex={3}

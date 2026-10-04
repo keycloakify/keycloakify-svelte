@@ -270,6 +270,11 @@
       "svelte": "./keycloakify-svelte/login/pages/LoginPassword.svelte",
       "default": "./keycloakify-svelte/login/pages/LoginPassword.svelte"
     },
+    "./login/pages/LoginPassword.useScript": {
+      "types": "./keycloakify-svelte/login/pages/LoginPassword.useScript.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/LoginPassword.useScript.js",
+      "default": "./keycloakify-svelte/login/pages/LoginPassword.useScript.js"
+    },
     "./login/pages/LoginRecoveryAuthnCodeConfig.svelte": {
       "types": "./keycloakify-svelte/login/pages/LoginRecoveryAuthnCodeConfig.svelte.d.ts",
       "svelte": "./keycloakify-svelte/login/pages/LoginRecoveryAuthnCodeConfig.svelte",
@@ -300,6 +305,11 @@
       "svelte": "./keycloakify-svelte/login/pages/Login.svelte",
       "default": "./keycloakify-svelte/login/pages/Login.svelte"
     },
+    "./login/pages/Login.useScript": {
+      "types": "./keycloakify-svelte/login/pages/Login.useScript.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/Login.useScript.js",
+      "default": "./keycloakify-svelte/login/pages/Login.useScript.js"
+    },
     "./login/pages/LoginUpdatePassword.svelte": {
       "types": "./keycloakify-svelte/login/pages/LoginUpdatePassword.svelte.d.ts",
       "svelte": "./keycloakify-svelte/login/pages/LoginUpdatePassword.svelte",
@@ -314,6 +324,11 @@
       "types": "./keycloakify-svelte/login/pages/LoginUsername.svelte.d.ts",
       "svelte": "./keycloakify-svelte/login/pages/LoginUsername.svelte",
       "default": "./keycloakify-svelte/login/pages/LoginUsername.svelte"
+    },
+    "./login/pages/LoginUsername.useScript": {
+      "types": "./keycloakify-svelte/login/pages/LoginUsername.useScript.d.ts",
+      "svelte": "./keycloakify-svelte/login/pages/LoginUsername.useScript.js",
+      "default": "./keycloakify-svelte/login/pages/LoginUsername.useScript.js"
     },
     "./login/pages/LoginVerifyEmail.svelte": {
       "types": "./keycloakify-svelte/login/pages/LoginVerifyEmail.svelte.d.ts",
@@ -502,7 +517,7 @@
     "release": "sh scripts/release.sh"
   },
   "peerDependencies": {
-    "keycloakify": "^11.15.1",
+    "keycloakify": "^11.16.1",
     "svelte": "^5.0.0"
   },
   "devDependencies": {
@@ -526,7 +541,7 @@
     "eslint-plugin-unused-imports": "^4.4.1",
     "globals": "^17.12.0",
     "husky": "^9.1.7",
-    "keycloakify": "^11.16.0",
+    "keycloakify": "^11.16.1",
     "npm-check-updates": "^23.1.0",
     "prettier": "^3.9.6",
     "prettier-plugin-svelte": "^4.1.1",
