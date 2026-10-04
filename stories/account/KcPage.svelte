@@ -2,12 +2,14 @@
   import Template from '@keycloakify/svelte/account/Template.svelte';
   import type { KcContext } from 'keycloakify/account/KcContext';
   import type { ClassKey } from 'keycloakify/account/lib/kcClsx';
-  import type { Component } from 'svelte';
+  import { untrack, type Component } from 'svelte';
   import { useI18n } from './i18n';
 
   const { kcContext }: { kcContext: KcContext } = $props();
 
-  const { i18n } = useI18n({ kcContext });
+  const { i18n } = useI18n({
+    kcContext: untrack(() => kcContext),
+  });
 
   const classes = {} satisfies { [key in ClassKey]?: string };
 

@@ -2,19 +2,24 @@
   import Template from '@keycloakify/svelte/account/Template.svelte';
   import type { KcContext } from 'keycloakify/account/KcContext';
   import type { ClassKey } from 'keycloakify/account/lib/kcClsx';
+  import { untrack, type Component } from 'svelte';
   import { useI18n } from './i18n';
 
   const { kcContext }: { kcContext: KcContext } = $props();
 
-  const { i18n } = $derived(useI18n({ kcContext }));
-  const page = $derived(async () => {
+  const { i18n } = useI18n({
+    kcContext: untrack(() => kcContext),
+  });
+
+  const classes = {} satisfies { [key in ClassKey]?: string };
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const page = async (): Promise<{ default?: Component<any> }> => {
     switch (kcContext.pageId) {
       default:
         return import('@keycloakify/svelte/account/DefaultPage.svelte');
     }
-  });
-
-  const classes = {} satisfies { [key in ClassKey]?: string };
+  };
 </script>
 
 {#await page() then { default: Page }}

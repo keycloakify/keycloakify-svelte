@@ -243,7 +243,7 @@ export async function command(params: { buildContext: BuildContext }) {
           `+`,
           `     //...`,
           `     default:`,
-          `       return import('@keycloakify/svelte/login/DefaultPage.svelte');`,
+          `       return import('@keycloakify/svelte/${themeType}/DefaultPage.svelte');`,
           `   }`,
           ` }`,
         ].map((line) => {
