@@ -9,3 +9,7 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "weekly"
+    ignore:
+      # Keep @types/node in sync with the Node version in .nvmrc (lts/krypton = 24)
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
