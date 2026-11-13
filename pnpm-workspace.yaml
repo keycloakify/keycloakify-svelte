@@ -1,0 +1,7 @@
+ignoreWorkspaceRootCheck: true
+minimumReleaseAge: 0
+overrides:
+  tmp: ^0.2.7
+
+allowBuilds:
+  esbuild: true

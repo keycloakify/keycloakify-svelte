@@ -10,6 +10,6 @@ updates:
     schedule:
       interval: "weekly"
     ignore:
-      # Keep @types/node in sync with the Node version in .nvmrc (lts/krypton = 24)
+      # Keep @types/node in sync with the Node version in .nvmrc (lts/lithium = 26)
       - dependency-name: "@types/node"
         update-types: ["version-update:semver-major"]

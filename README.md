@@ -45,8 +45,8 @@ git clone https://github.com/keycloakify/keycloakify-svelte
 git clone https://github.com/keycloakify/keycloakify-starter-svelte
 
 cd keycloakify-svelte
-yarn install
-yarn link-in-starter # When prompted select the starter you want to link into
+pnpm install
+pnpm link-in-starter # When prompted select the starter you want to link into
 
 # At this point you can navigate to the starter you've picked.
 # The changes in the library will be reflected live in the starter.

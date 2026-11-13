@@ -31,8 +31,8 @@ import { createWaitForThrottle } from './tools/waitForThrottle';
 
   {
     const child = child_process.spawn(
-      'npx',
-      ['svelte-package', '--input src', '--output dist/keycloakify-svelte', '--watch'],
+      'pnpm',
+      ['exec', 'svelte-package', '--input src', '--output dist/keycloakify-svelte', '--watch'],
       {
         shell: true,
         cwd: getThisCodebaseRootDirPath(),

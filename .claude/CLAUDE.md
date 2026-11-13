@@ -11,20 +11,23 @@ The published package is **not** this repo's root — it is built into `dist/` a
 ## Commands
 
 ```bash
-yarn install            # uses yarn (see .npmrc / packageManager); Node = .nvmrc (lts/krypton)
+pnpm install            # uses pnpm (see packageManager / pnpm-workspace.yaml); Node = .nvmrc (lts/lithium)
 
-yarn build              # full production build into dist/ (svelte-package + ncc bin + publint)
-yarn watch              # incremental build into dist/, stamps a 0.0.0-rc.<timestamp> version
-yarn svelte:check       # type-check (.svelte + .ts) via svelte-check
-yarn svelte:check:watch
-yarn lint               # prettier --write then eslint --fix  (this is what runs on pre-commit)
-yarn format             # prettier --write only
+pnpm build              # full production build into dist/ (svelte-package + esbuild bin + publint)
+pnpm watch              # incremental build into dist/, stamps a 0.0.0-rc.<timestamp> version
+pnpm svelte:check       # type-check (.svelte + .ts) via svelte-check
+pnpm svelte:check:watch
+pnpm lint               # prettier --write then eslint --fix  (this is what runs on pre-commit)
+pnpm format             # prettier --write only
 
 # Local development against a real theme project:
-yarn link-in-starter    # prompts to pick a checked-out keycloakify-starter-svelte; live-links the lib
+pnpm link-in-starter    # prompts to pick a checked-out keycloakify-starter-svelte; live-links the lib via pnpm `link:` overrides
+pnpm release            # version bump + changelog delimiter stamp (main branch only; see scripts/release.sh)
 ```
 
-There is **no unit test runner**. Verification is done via type-checking (`yarn svelte:check`), the Storybook-style `*.stories.svelte` files under `stories/`, and visual checks in a linked starter project. The husky `pre-commit` hook runs `yarn lint`.
+There is **no unit test runner**. Verification is done via type-checking (`pnpm svelte:check`), the Storybook-style `*.stories.svelte` files under `stories/`, and visual checks in a linked starter project. The husky `pre-commit` hook runs `pnpm lint`.
+
+`CHANGELOG.md` is written by hand, newest entry on top: follow the `changelog-update` skill (`.claude/skills/changelog-update/SKILL.md`) whenever a change is worth an entry.
 
 ## Architecture
 
@@ -58,11 +61,11 @@ This package registers a Keycloakify **custom handler** binary named `_keycloaki
 - `update-kc-gen`, `initialize-account-theme`.
 - `initialize-admin-theme` → intentionally errors (no admin theme support in Svelte).
 
-`src/bin/core.ts` re-exports the contract (types, constants, `readParams`) from `keycloakify/bin/shared/*` — that is the integration seam with the core project. The bin is bundled with `@vercel/ncc` during `postBuild` (`scripts/shared/postBuild.ts`) into a single executable.
+`src/bin/core.ts` re-exports the contract (types, constants, `readParams`) from `keycloakify/bin/shared/*` — that is the integration seam with the core project. The bin is bundled with esbuild during `postBuild` (`scripts/shared/postBuild.ts`) into a single executable.
 
 ### Build pipeline
 
-`yarn build` (`scripts/build.ts`): `svelte-kit sync` → `svelte-package` (compiles `src/` → `dist/keycloakify-svelte/`) → copies `package.json`/`LICENSE`/`README`/`src`/`stories` into `dist/` → `publint` → removes the un-bundled bin → `postBuild()` (ncc-bundles the bin and rewrites `package.json` `bin`). The package is then published from `dist/`.
+`pnpm build` (`scripts/build.ts`): `svelte-kit sync` → `svelte-package` (compiles `src/` → `dist/keycloakify-svelte/`) → copies `package.json`/`LICENSE`/`README`/`src`/`stories` into `dist/` → `publint` → removes the un-bundled bin → `postBuild()` (esbuild-bundles the bin and rewrites `package.json` `bin`). The package is then published from `dist/`.
 
 ### Stories
 
@@ -74,7 +77,7 @@ This package registers a Keycloakify **custom handler** binary named `_keycloaki
 - **Mirror keycloakify.** When porting or fixing a page, diff against the equivalent React file in the `keycloakify` package and stay structurally faithful — that is why the hook shims exist.
 - **New page/tool exports must be added to the `exports` map in `package.json`** (each entry is explicit; there is no wildcard). The build does not auto-generate these.
 - Internal imports use the subpath import `#keycloakify-svelte/*` → `src/*` (`imports` in `package.json`) with explicit extensions: `.js` for TS modules (resolved to the `.ts` file, e.g. `#keycloakify-svelte/tools/useState.js`, `#keycloakify-svelte/login/KcContext/index.js`) and `.svelte` for components. `svelte-package` rewrites them to relative paths in `dist/`; `eject-page` maps them back to the public `@keycloakify/svelte/*` specifiers when copying a source file into a user project. Files that are templates for user projects (`stories/`, `src/bin/**/boilerplate`) keep using `@keycloakify/svelte/*`.
-- Releases: `scripts/release.sh` (via `yarn release`) — main-branch only, bumps version, regenerates `CHANGELOG.md` (conventional-commits/angular), commits, pushes. Commit messages follow Conventional Commits.
+- Releases: `scripts/release.sh` (via `pnpm release`) — stable releases main-branch only, bumps version, stamps the `CHANGELOG.md` version delimiter (`scripts/stamp-changelog.sh`), commits, pushes. Commit messages follow Conventional Commits.
 - A Svelte MCP server is configured (`.gemini/`) for Svelte 5 / SvelteKit docs and a `svelte-autofixer`; use it when authoring Svelte to validate idioms.
 
 ## Decision Protocol

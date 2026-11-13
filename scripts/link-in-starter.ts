@@ -57,21 +57,20 @@ import { removeNodeModules } from './tools/removeNodeModules';
     recursive: true,
     force: true,
   });
-  fs.rmSync(pathJoin(getThisCodebaseRootDirPath(), '.yarn_home'), {
-    recursive: true,
-    force: true,
-  });
-
-  run('yarn install');
-  run('yarn run build');
+  run('pnpm install');
+  run('pnpm run build');
 
   const dInitialCompilationCompleted = new Deferred<void>();
 
   {
-    const child = child_process.spawn('npx', ['tsx', pathJoin(getThisCodebaseRootDirPath(), 'scripts', 'watch.ts')], {
-      shell: true,
-      cwd: getThisCodebaseRootDirPath(),
-    });
+    const child = child_process.spawn(
+      'pnpm',
+      ['exec', 'tsx', pathJoin(getThisCodebaseRootDirPath(), 'scripts', 'watch.ts')],
+      {
+        shell: true,
+        cwd: getThisCodebaseRootDirPath(),
+      },
+    );
 
     const SVELTE_BUILD_WATCHING_FOR_FILE_CHANGES = 'Watching for file changes';
 
@@ -103,9 +102,7 @@ import { removeNodeModules } from './tools/removeNodeModules';
     nodeModulesDirPath: pathJoin(starterDirPath, 'node_modules'),
   });
 
-  run('yarn install', { cwd: pathJoin('..', starterName) });
-
-  run(`npx tsx ${pathJoin('scripts', 'link-in-app.ts')} ${starterName}`);
+  run(`pnpm exec tsx ${pathJoin('scripts', 'link-in-app.ts')} ${starterName}`);
 
   const durationSeconds = Math.round((Date.now() - startTime) / 1000);
 

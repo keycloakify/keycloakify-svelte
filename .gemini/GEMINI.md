@@ -1,7 +1,7 @@
 ## Project Configuration
 
 - **Language**: TypeScript
-- **Package Manager**: yarn
+- **Package Manager**: pnpm
 - **Add-ons**: prettier, eslint, mcp
 
 ---

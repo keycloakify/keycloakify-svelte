@@ -8,10 +8,10 @@ console.log(chalk.cyan(`Building @keycloakify/svelte...`));
 
 const startTime = Date.now();
 
-run('npx svelte-kit sync && rm -rf dist', {
+run('pnpm exec svelte-kit sync && rm -rf dist', {
   cwd: getThisCodebaseRootDirPath(),
 });
-run('npx svelte-package --input src --output dist/keycloakify-svelte', {
+run('pnpm exec svelte-package --input src --output dist/keycloakify-svelte', {
   cwd: getThisCodebaseRootDirPath(),
 });
 run('cp package.json dist/package.json && cp LICENSE dist/LICENSE && cp README.md dist/README.md', {
@@ -23,7 +23,7 @@ run('cp -r src dist/src', {
 run('cp -r stories dist/stories', {
   cwd: getThisCodebaseRootDirPath(),
 });
-run('npx publint --pack npm', {
+run('pnpm exec publint --pack npm', {
   cwd: join(getThisCodebaseRootDirPath(), 'dist'),
 });
 run('rm -rf dist/keycloakify-svelte/bin', {
