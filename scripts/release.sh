@@ -81,7 +81,7 @@ fi
 # Using the package.json version
 version="$(jq -r '.version' "$(dirname "$0")/../package.json")"
 
-# release candidate: no changelog, it is regenerated on the stable release
+# release candidate: no changelog delimiter, it is stamped on the stable release
 if [ "$releaseType" = "rc" ]; then
   git add package.json
   git commit -m "chore(version): 🔜 release candidate version $version"
@@ -89,11 +89,10 @@ if [ "$releaseType" = "rc" ]; then
   exit 0
 fi
 
-# changelog
+# stable release: stamp the changelog version delimiter (entries are written by hand)
 if [ "$versionType" != "none" ]; then
-  rm CHANGELOG.md
-  npm run changelog
-  git add package.json yarn.lock CHANGELOG.md
+  sh "$(dirname "$0")/stamp-changelog.sh" "$version" || exit 1
+  git add package.json CHANGELOG.md
   git commit -m "chore(version): 💯 bump version to $version"
   # Gotta push them all
   git push
