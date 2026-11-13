@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2026-11-13] — Peer dependencies raised, lockfile refresh
+
+**Type:** chore
+
+### Changes
+
+- **Peer dependencies raised to the latest versions**: `keycloakify` `^11.16.4` (was `^11.16.1`) and `svelte`
+  `^5.57.3` (was `^5.0.0`). The `FormFieldError` type already follows keycloakify 11.16.4 (see the password policies
+  entry below).
+- Lockfile refreshed with `pnpm update`: the transitive dependencies imported from `yarn.lock` move to their latest
+  in-range versions (acorn 8.19, postcss 8.5.32, svelte2tsx 0.7.63, …). TypeScript stays on 6.0: typescript-eslint,
+  svelte-check and `@sveltejs/kit` / `@sveltejs/package` don't support TypeScript 7 yet.
+- Verified: `pnpm install --frozen-lockfile`, `pnpm build` (publint: all good), `pnpm svelte:check` (0 errors),
+  `eslint .`, `pnpm _format --list-different`.
+
+### Files modified
+
+- `package.json` — `peerDependencies`
+- `pnpm-lock.yaml` — transitive dependencies refreshed
+
 ## [2026-11-13] — Hand-written changelog
 
 **Type:** chore
@@ -36,8 +56,7 @@ All notable changes to this project will be documented in this file.
   Keycloak 26+) and excludes them from `FormFieldError.Source.PasswordPolicy['name']`, since they can't be validated
   client side (they need the stored credentials). The Svelte `FormFieldError` type
   (`@keycloakify/svelte/login/lib/useUserProfileForm`) mirrors the change (port of keycloakify `bfaf6b60`): without
-  it the type equality checks against keycloakify's `getUserProfileApi` failed (`svelte-check`: 2 errors). Peer
-  dependency range unchanged.
+  it the type equality checks against keycloakify's `getUserProfileApi` failed (`svelte-check`: 2 errors).
 - The other keycloakify 11.16.1 → 11.16.4 change (custom handler resolution in `keycloakify/bin`) lives in the core
   CLI: nothing to port.
 
@@ -74,7 +93,7 @@ All notable changes to this project will be documented in this file.
   always passed. pnpm forwards it (no file was out of format).
 - Development dependencies: keycloakify 11.16.4, svelte 5.57.3, `@sveltejs/kit` 3.2, Vite 8.3.8, svelte-check 4.7.8,
   eslint 10.14, prettier 3.10, chokidar 6, all-contributors-cli 7, `@types/node` 26 (TypeScript stays on 6.0).
-  Development Node version moved to `lts/lithium` (26). Peer dependency ranges are unchanged.
+  Development Node version moved to `lts/lithium` (26).
 - Verified: `pnpm install --frozen-lockfile`, `pnpm build` (publint: all good), `pnpm svelte:check` (0 errors),
   `eslint .`, `pnpm _format --list-different`, `link-in-app.ts` against a pnpm copy of the Svelte starter (svelte,
   `@sveltejs/vite-plugin-svelte`, keycloakify and `@keycloakify/svelte` all resolve to the linked copies).

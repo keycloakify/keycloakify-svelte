@@ -519,8 +519,8 @@
     "release": "sh scripts/release.sh"
   },
   "peerDependencies": {
-    "keycloakify": "^11.16.1",
-    "svelte": "^5.0.0"
+    "keycloakify": "^11.16.4",
+    "svelte": "^5.57.3"
   },
   "dependencies": {
     "tsafe": "^1.8.12"
