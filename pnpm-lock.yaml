@@ -238,7 +238,7 @@ importers:
         version: 3.10.1
       prettier-plugin-svelte:
         specifier: ^4.1.1
-        version: 4.1.1(prettier@3.10.1)(svelte@5.57.3(@typescript-eslint/types@8.72.2))
+        version: 4.2.0(prettier@3.10.1)(svelte@5.57.3(@typescript-eslint/types@8.72.2))
       publint:
         specifier: ^0.3.25
         version: 0.3.25
@@ -952,6 +952,7 @@ packages:
   all-contributors-cli@7.0.2:
     resolution: {integrity: sha512-dgZfjqyQ5mWo/InlyxtBNG58Ks4n7eGMot19euaXN5to4O3UdV5D352Aqqzw7qMnd3u3gWN9j4n7TFaj96Ia5Q==}
     engines: {node: '>=22.22.0'}
+    deprecated: This package has been renamed to @all-contributors/cli. Please replace your current usage with the new package to continue receiving updates.
     hasBin: true
 
   ansi-escapes@3.2.0:
@@ -1553,8 +1554,8 @@ packages:
     resolution: {integrity: sha512-SxToR7P8Y2lWmv/kTzVLC1t/GDI2WGjMwNhLLE9qtH8Q13C+aEmuRlzDst4Up4s0Wc8sF2M+J57iB3cMLqftfg==}
     engines: {node: '>=6.0.0'}
 
-  prettier-plugin-svelte@4.1.1:
-    resolution: {integrity: sha512-wXvbXMjSvb4C9ENWTHXyd+ihakKCsJ6rJhLP6/8HFNj4GkZr48jqL9PoKsl2sk7SyCZRTnJ7O2TTowUpOxP/KA==}
+  prettier-plugin-svelte@4.2.0:
+    resolution: {integrity: sha512-VgUFSR6+7/KLloVSIgKMwY/9OFxaixY/xsOBUCP95ZKaxSa6JBtLKzq6L1L/Tw6Jc1C7K+op7D1Yu5qD+YdPHA==}
     engines: {node: '>=20'}
     peerDependencies:
       prettier: ^3.0.0
@@ -2952,7 +2953,7 @@ snapshots:
     dependencies:
       fast-diff: 1.3.0
 
-  prettier-plugin-svelte@4.1.1(prettier@3.10.1)(svelte@5.57.3(@typescript-eslint/types@8.72.2)):
+  prettier-plugin-svelte@4.2.0(prettier@3.10.1)(svelte@5.57.3(@typescript-eslint/types@8.72.2)):
     dependencies:
       prettier: 3.10.1
       svelte: 5.57.3(@typescript-eslint/types@8.72.2)
